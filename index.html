@@ -394,9 +394,9 @@
         }
 
         .stat-card:nth-child(3) .stat-value {
-            color: var(--accent-amber);
+            color: var(--accent-green);
             background: none;
-            -webkit-text-fill-color: var(--accent-amber);
+            -webkit-text-fill-color: var(--accent-green);
         }
 
         .stat-card:nth-child(4) .stat-value {
@@ -840,49 +840,23 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">402K</div>
+                    <div class="stat-value">320K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Need Attention</div>
-                    <div class="stat-value">1</div>
+                    <div class="stat-value">0</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">30%</div>
+                    <div class="stat-value">24%</div>
                 </div>
             </div>
 
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
-                <div class="session-card" onclick="showInfo('session-gradschool')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-discord">🎓</div>
-                            <div>
-                                <div class="session-name">ct-gradschool</div>
-                                <div class="session-type">Discord • Channel</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-private">Private</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-critical">169K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-critical" style="width: 84%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-critical">🚨 84%</div>
-                    </div>
-                </div>
-
                 <div class="session-card" onclick="showInfo('session-setup')">
                     <div class="session-header">
                         <div class="session-info">
@@ -923,15 +897,41 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">67K / 200K</span>
+                            <span class="progress-value status-healthy">85K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 33%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 43%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 33%</div>
+                        <div class="status-indicator status-healthy">✓ 43%</div>
+                    </div>
+                </div>
+
+                <div class="session-card" onclick="showInfo('session-gradschool')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-discord">🎓</div>
+                            <div>
+                                <div class="session-name">ct-gradschool</div>
+                                <div class="session-type">Discord • Channel</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-private">Private</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-healthy">69K / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-healthy" style="width: 34%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-healthy">✓ 34%</div>
                     </div>
                 </div>
 
@@ -1043,7 +1043,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 19, 2026 • 5:40 PM EDT</div>
+                <div class="update-time">Last sync: April 19, 2026 • 6:43 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1110,21 +1110,21 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 402K means about 402,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 320K means about 320,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
             'attention': {
                 title: 'Need Attention',
-                icon: '⚠️',
+                icon: '✅',
                 what: 'Sessions flagged as "Need Attention" are getting close to their memory limit (usually 75%+). They\'ll need to be compacted soon or Pete might lose context.',
                 why: 'When a session hits its limit, Pete has to summarize and forget older messages to make room. Catching it early prevents data loss and keeps conversations smooth.',
-                example: 'Like your phone warning you when storage is almost full. Currently: ct-gradschool (84%) needs immediate attention!'
+                example: 'Currently at 0 — all sessions are healthy and well within their limits! No action needed. 🎉'
             },
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows the average memory usage across all sessions. 30% means most sessions have plenty of room. Lower is better.',
+                what: 'This shows the average memory usage across all sessions. 24% means most sessions have plenty of room. Lower is better.',
                 why: 'Helps you see overall system health at a glance. If average capacity creeps toward 50%+, it might be time to compact some sessions.',
                 example: 'Like checking the gas gauges on a fleet of cars — currently all tanks are well-fueled with plenty of room to go.'
             },
@@ -1132,14 +1132,14 @@
                 title: 'Main Session',
                 icon: '💬',
                 what: 'This is the primary webchat conversation — direct chats with Chris. It\'s marked PRIVATE because it contains personal context and conversations.',
-                why: 'At 33% capacity, this session is healthy with plenty of room for continued conversations.',
+                why: 'At 43% capacity, this session is healthy with plenty of room for continued conversations.',
                 example: 'This is like Chris\'s main chat thread with Pete. All the back-and-forth about work, projects, and daily tasks lives here.'
             },
             'session-gradschool': {
                 title: 'Grad School Channel',
                 icon: '🎓',
-                what: 'This session handles Chris\'s graduate coursework at UNC Charlotte. Currently at 84% — CRITICAL threshold reached!',
-                why: 'At 84%, this session needs compaction immediately to avoid hitting the limit. Contains portfolio and assignment work.',
+                what: 'This session handles Chris\'s graduate coursework at UNC Charlotte. Currently at 34% — plenty of room!',
+                why: 'Contains portfolio and assignment work. Session has been compacted recently and is running efficiently.',
                 example: 'Used for help with assignments, video scripts for the AI portfolio, and final project work for the Master\'s degree.'
             },
             'session-aviation': {
