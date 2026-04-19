@@ -836,7 +836,7 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">347K</div>
+                    <div class="stat-value">353K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
@@ -846,7 +846,7 @@
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">28%</div>
+                    <div class="stat-value">29%</div>
                 </div>
             </div>
 
@@ -859,7 +859,7 @@
                             <div class="channel-icon channel-imessage">💬</div>
                             <div>
                                 <div class="session-name">main</div>
-                                <div class="session-type">iMessage • Direct</div>
+                                <div class="session-type">Webchat • Direct</div>
                             </div>
                         </div>
                         <span class="badge badge-private">Private</span>
@@ -893,15 +893,15 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-warning">159K / 200K</span>
+                            <span class="progress-value status-warning">165K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-warning" style="width: 79%"></div>
+                            <div class="progress-bar progress-warning" style="width: 83%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-warning">⚠️ 79%</div>
+                        <div class="status-indicator status-warning">⚠️ 83%</div>
                     </div>
                 </div>
 
@@ -974,12 +974,12 @@
                             <span class="progress-value status-healthy">20K / 128K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 15%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 16%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge openai">◆ gpt-4o</div>
-                        <div class="status-indicator status-healthy">✓ 15%</div>
+                        <div class="status-indicator status-healthy">✓ 16%</div>
                     </div>
                 </div>
 
@@ -1039,7 +1039,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 18, 2026 • 11:28 PM EDT</div>
+                <div class="update-time">Last sync: April 19, 2026 • 12:30 AM EDT</div>
             </footer>
         </div>
     </div>
@@ -1106,7 +1106,7 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 347K means about 347,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 353K means about 353,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1120,22 +1120,22 @@
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows the average memory usage across all sessions. 28% means most sessions have plenty of room. Lower is better.',
+                what: 'This shows the average memory usage across all sessions. 29% means most sessions have plenty of room. Lower is better.',
                 why: 'Helps you see overall system health at a glance. If average capacity creeps toward 50%+, it might be time to compact some sessions.',
                 example: 'Like checking the gas gauges on a fleet of cars — if most are near empty, you\'ve got a problem brewing.'
             },
             'session-main': {
-                title: 'Main Session (iMessage)',
+                title: 'Main Session (Webchat)',
                 icon: '💬',
-                what: 'This is the primary iMessage conversation — direct texts with Chris. It\'s marked PRIVATE because it contains personal context and conversations.',
+                what: 'This is the primary webchat conversation — direct chats with Chris. It\'s marked PRIVATE because it contains personal context and conversations.',
                 why: 'At 10% capacity, this session is fresh and has plenty of room. Recently compacted and ready for new conversations.',
-                example: 'This is like Chris\'s main text thread with Pete. All the back-and-forth about work, projects, and daily tasks lives here.'
+                example: 'This is like Chris\'s main chat thread with Pete. All the back-and-forth about work, projects, and daily tasks lives here.'
             },
             'session-gradschool': {
                 title: 'Grad School Channel',
                 icon: '🎓',
-                what: 'This session handles Chris\'s graduate coursework at UNC Charlotte. Currently at 79% and needs attention soon.',
-                why: 'At 79%, this session should be compacted soon to avoid hitting the limit. Key context will be preserved when compacting.',
+                what: 'This session handles Chris\'s graduate coursework at UNC Charlotte. Currently at 83% and needs attention soon.',
+                why: 'At 83%, this session should be compacted soon to avoid hitting the limit. Key context will be preserved when compacting.',
                 example: 'Used for help with assignments, video scripts for the AI portfolio, and final project work for the Master\'s degree.'
             },
             'session-aviation': {
