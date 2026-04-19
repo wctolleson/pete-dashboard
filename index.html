@@ -836,7 +836,7 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">287K</div>
+                    <div class="stat-value">330K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
@@ -846,7 +846,7 @@
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">24%</div>
+                    <div class="stat-value">28%</div>
                 </div>
             </div>
 
@@ -867,15 +867,15 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">31K / 200K</span>
+                            <span class="progress-value status-healthy">44K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 16%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 22%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 16%</div>
+                        <div class="status-indicator status-healthy">✓ 22%</div>
                     </div>
                 </div>
 
@@ -893,15 +893,15 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">88K / 200K</span>
+                            <span class="progress-value status-warning">103K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 44%"></div>
+                            <div class="progress-bar progress-warning" style="width: 51%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 44%</div>
+                        <div class="status-indicator status-warning">⚠ 51%</div>
                     </div>
                 </div>
 
@@ -919,15 +919,15 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">65K / 128K</span>
+                            <span class="progress-value status-warning">80K / 128K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 51%"></div>
+                            <div class="progress-bar progress-warning" style="width: 62%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge openai">◆ gpt-4o</div>
-                        <div class="status-indicator status-healthy">✓ 51%</div>
+                        <div class="status-indicator status-warning">⚠ 62%</div>
                     </div>
                 </div>
 
@@ -945,15 +945,15 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">51K / 200K</span>
+                            <span class="progress-value status-healthy">53K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 26%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 27%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 26%</div>
+                        <div class="status-indicator status-healthy">✓ 27%</div>
                     </div>
                 </div>
 
@@ -1039,7 +1039,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 19, 2026 • 10:41 AM EDT</div>
+                <div class="update-time">Last sync: April 19, 2026 • 11:44 AM EDT</div>
             </footer>
         </div>
     </div>
@@ -1106,7 +1106,7 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 287K means about 287,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 330K means about 330,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1120,7 +1120,7 @@
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows the average memory usage across all sessions. 24% means most sessions have plenty of room. Lower is better.',
+                what: 'This shows the average memory usage across all sessions. 28% means most sessions have plenty of room. Lower is better.',
                 why: 'Helps you see overall system health at a glance. If average capacity creeps toward 50%+, it might be time to compact some sessions.',
                 example: 'Like checking the gas gauges on a fleet of cars — currently all tanks are well-fueled with plenty of room to go.'
             },
@@ -1128,21 +1128,21 @@
                 title: 'Main Session (BlueBubbles)',
                 icon: '💬',
                 what: 'This is the primary iMessage conversation — direct chats with Chris via BlueBubbles. It\'s marked PRIVATE because it contains personal context and conversations.',
-                why: 'At 16% capacity, this session is healthy with plenty of room for continued conversations.',
+                why: 'At 22% capacity, this session is healthy with plenty of room for continued conversations.',
                 example: 'This is like Chris\'s main chat thread with Pete. All the back-and-forth about work, projects, and daily tasks lives here.'
             },
             'session-gradschool': {
                 title: 'Grad School Channel',
                 icon: '🎓',
-                what: 'This session handles Chris\'s graduate coursework at UNC Charlotte. Currently at 44% — comfortable headroom.',
-                why: 'At 44%, this session has been recently compacted and has plenty of room. Key context is preserved while making space for new work.',
+                what: 'This session handles Chris\'s graduate coursework at UNC Charlotte. Currently at 51% — moderate usage but still healthy.',
+                why: 'At 51%, this session has accumulated significant context from coursework discussions. Watch for 75% threshold.',
                 example: 'Used for help with assignments, video scripts for the AI portfolio, and final project work for the Master\'s degree.'
             },
             'session-aviation': {
                 title: 'Aviation Solicitations',
                 icon: '✈️',
                 what: 'This Discord channel tracks airport RFPs and solicitations. It runs weekly scans of 29 Mid-Atlantic airports looking for new opportunities.',
-                why: 'Marked PUBLIC because others (like Jmo) can see and participate. Running on GPT-4o to save costs.',
+                why: 'Marked PUBLIC because others (like Jmo) can see and participate. Running on GPT-4o to save costs. At 62% — getting fuller.',
                 example: 'Every Monday, Pete checks airport procurement sites and reports any new RFPs for terminal construction or PM services.'
             },
             'session-setup': {
