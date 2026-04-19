@@ -499,6 +499,10 @@
             background: linear-gradient(135deg, #34C759 0%, #30D158 100%);
         }
 
+        .channel-webchat {
+            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+        }
+
         .session-name {
             font-weight: 600;
             font-size: 1rem;
@@ -836,53 +840,27 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">399K</div>
+                    <div class="stat-value">441K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Need Attention</div>
-                    <div class="stat-value">2</div>
+                    <div class="stat-value">1</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">35%</div>
+                    <div class="stat-value">34%</div>
                 </div>
             </div>
 
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
-                <div class="session-card" onclick="showInfo('session-main')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-imessage">💬</div>
-                            <div>
-                                <div class="session-name">main</div>
-                                <div class="session-type">BlueBubbles • Direct</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-private">Private</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">63K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 32%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 32%</div>
-                    </div>
-                </div>
-
                 <div class="session-card" onclick="showInfo('session-gradschool')">
                     <div class="session-header">
                         <div class="session-info">
-                            <div class="channel-icon channel-discord">💬</div>
+                            <div class="channel-icon channel-discord">🎓</div>
                             <div>
                                 <div class="session-name">ct-gradschool</div>
                                 <div class="session-type">Discord • Channel</div>
@@ -893,22 +871,22 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-warning">148K / 200K</span>
+                            <span class="progress-value status-warning">151K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-warning" style="width: 74%"></div>
+                            <div class="progress-bar progress-warning" style="width: 76%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-warning">⚠ 74%</div>
+                        <div class="status-indicator status-warning">⚠ 76%</div>
                     </div>
                 </div>
 
                 <div class="session-card" onclick="showInfo('session-aviation')">
                     <div class="session-header">
                         <div class="session-info">
-                            <div class="channel-icon channel-discord">💬</div>
+                            <div class="channel-icon channel-discord">✈️</div>
                             <div>
                                 <div class="session-name">aviation-solicitations</div>
                                 <div class="session-type">Discord • Channel</div>
@@ -919,22 +897,22 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-warning">80K / 128K</span>
+                            <span class="progress-value status-healthy">111K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-warning" style="width: 63%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 56%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
-                        <div class="model-badge openai">◆ gpt-4o</div>
-                        <div class="status-indicator status-warning">⚠ 63%</div>
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-healthy">✓ 56%</div>
                     </div>
                 </div>
 
                 <div class="session-card" onclick="showInfo('session-setup')">
                     <div class="session-header">
                         <div class="session-info">
-                            <div class="channel-icon channel-discord">💬</div>
+                            <div class="channel-icon channel-discord">🔧</div>
                             <div>
                                 <div class="session-name">setup-and-getting-better</div>
                                 <div class="session-type">Discord • Channel</div>
@@ -945,22 +923,48 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">57K / 128K</span>
+                            <span class="progress-value status-healthy">80K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 45%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 40%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-healthy">✓ 40%</div>
+                    </div>
+                </div>
+
+                <div class="session-card" onclick="showInfo('session-main')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-webchat">💬</div>
+                            <div>
+                                <div class="session-name">main</div>
+                                <div class="session-type">Webchat • Direct</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-private">Private</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-healthy">48K / 128K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-healthy" style="width: 38%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge openai">◆ gpt-4o</div>
-                        <div class="status-indicator status-healthy">✓ 45%</div>
+                        <div class="status-indicator status-healthy">✓ 38%</div>
                     </div>
                 </div>
 
                 <div class="session-card" onclick="showInfo('session-heartbeat')">
                     <div class="session-header">
                         <div class="session-info">
-                            <div class="channel-icon channel-discord">⚙️</div>
+                            <div class="channel-icon channel-discord">💓</div>
                             <div>
                                 <div class="session-name">heartbeat-channel</div>
                                 <div class="session-type">Discord • System</div>
@@ -986,7 +990,7 @@
                 <div class="session-card" onclick="showInfo('session-aviation2')">
                     <div class="session-header">
                         <div class="session-info">
-                            <div class="channel-icon channel-discord">💬</div>
+                            <div class="channel-icon channel-discord">✈️</div>
                             <div>
                                 <div class="session-name">aviation-solicitation-2</div>
                                 <div class="session-type">Discord • Channel</div>
@@ -1039,7 +1043,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 19, 2026 • 12:46 PM EDT</div>
+                <div class="update-time">Last sync: April 19, 2026 • 1:49 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1106,7 +1110,7 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 399K means about 399,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 441K means about 441,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1115,34 +1119,34 @@
                 icon: '⚠️',
                 what: 'Sessions flagged as "Need Attention" are getting close to their memory limit (usually 60%+). They\'ll need to be compacted soon or Pete might lose context.',
                 why: 'When a session hits its limit, Pete has to summarize and forget older messages to make room. Catching it early prevents data loss and keeps conversations smooth.',
-                example: 'Like your phone warning you when storage is almost full. Currently: ct-gradschool (74%) and aviation-solicitations (63%) need monitoring.'
+                example: 'Like your phone warning you when storage is almost full. Currently: ct-gradschool (76%) needs monitoring.'
             },
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows the average memory usage across all sessions. 35% means most sessions have plenty of room. Lower is better.',
+                what: 'This shows the average memory usage across all sessions. 34% means most sessions have plenty of room. Lower is better.',
                 why: 'Helps you see overall system health at a glance. If average capacity creeps toward 50%+, it might be time to compact some sessions.',
                 example: 'Like checking the gas gauges on a fleet of cars — currently all tanks are well-fueled with plenty of room to go.'
             },
             'session-main': {
-                title: 'Main Session (BlueBubbles)',
+                title: 'Main Session',
                 icon: '💬',
-                what: 'This is the primary iMessage conversation — direct chats with Chris via BlueBubbles. It\'s marked PRIVATE because it contains personal context and conversations.',
-                why: 'At 32% capacity, this session is healthy with plenty of room for continued conversations.',
+                what: 'This is the primary webchat conversation — direct chats with Chris. It\'s marked PRIVATE because it contains personal context and conversations.',
+                why: 'At 38% capacity, this session is healthy with plenty of room for continued conversations.',
                 example: 'This is like Chris\'s main chat thread with Pete. All the back-and-forth about work, projects, and daily tasks lives here.'
             },
             'session-gradschool': {
                 title: 'Grad School Channel',
                 icon: '🎓',
-                what: 'This session handles Chris\'s graduate coursework at UNC Charlotte. Currently at 74% — approaching compaction threshold.',
-                why: 'At 74%, this session should be compacted soon to avoid hitting the 75% threshold. Contains portfolio and assignment work.',
+                what: 'This session handles Chris\'s graduate coursework at UNC Charlotte. Currently at 76% — approaching compaction threshold.',
+                why: 'At 76%, this session should be compacted soon to avoid hitting the limit. Contains portfolio and assignment work.',
                 example: 'Used for help with assignments, video scripts for the AI portfolio, and final project work for the Master\'s degree.'
             },
             'session-aviation': {
                 title: 'Aviation Solicitations',
                 icon: '✈️',
                 what: 'This Discord channel tracks airport RFPs and solicitations. It runs weekly scans of 29 Mid-Atlantic airports looking for new opportunities.',
-                why: 'Marked PUBLIC because others (like Jmo) can see and participate. Running on GPT-4o to save costs. At 63% — getting fuller.',
+                why: 'Marked PUBLIC because others (like Jmo) can see and participate. At 56% — healthy but actively used.',
                 example: 'Every Monday, Pete checks airport procurement sites and reports any new RFPs for terminal construction or PM services.'
             },
             'session-setup': {
@@ -1162,9 +1166,9 @@
             'session-aviation2': {
                 title: 'Aviation Solicitation 2',
                 icon: '✈️',
-                what: 'A secondary channel for aviation work — possibly for deeper dives into specific solicitations or separate workstreams.',
+                what: 'A secondary channel for aviation work — used for deeper dives into specific solicitations like the MWAA proposal.',
                 why: 'Keeps different aviation discussions organized without cluttering the main solicitations channel.',
-                example: 'If the main channel is for scanning, this might be for actually working on a specific proposal response.'
+                example: 'While the main channel is for scanning, this one is for actually working on specific proposal responses.'
             },
             'session-test': {
                 title: 'Test Stuff',
