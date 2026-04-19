@@ -182,12 +182,37 @@
             border-radius: 16px;
             padding: 24px;
             transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
         }
 
         .stat-card:hover {
             background: var(--bg-card-hover);
             border-color: rgba(255,255,255,0.12);
             transform: translateY(-2px);
+        }
+
+        .stat-card .info-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .stat-card .info-btn:hover {
+            background: var(--accent-blue);
+            color: white;
         }
 
         .stat-label {
@@ -264,6 +289,7 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
 
         .session-card::before {
@@ -436,6 +462,131 @@
         .status-warning { color: var(--accent-amber); }
         .status-critical { color: var(--accent-red); }
 
+        /* Slide-out Panel */
+        .panel-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .panel-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .info-panel {
+            position: fixed;
+            top: 0;
+            right: -480px;
+            width: 480px;
+            max-width: 90vw;
+            height: 100vh;
+            background: var(--bg-secondary);
+            border-left: 1px solid var(--border);
+            z-index: 101;
+            transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow-y: auto;
+        }
+
+        .info-panel.active {
+            right: 0;
+        }
+
+        .panel-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: var(--bg-secondary);
+            z-index: 10;
+        }
+
+        .panel-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .panel-close {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 0.2s;
+        }
+
+        .panel-close:hover {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: var(--accent-red);
+            color: var(--accent-red);
+        }
+
+        .panel-content {
+            padding: 24px;
+        }
+
+        .panel-section {
+            margin-bottom: 32px;
+        }
+
+        .panel-section-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+        }
+
+        .panel-text {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .panel-example {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 16px;
+        }
+
+        .panel-example-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent-blue);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .panel-example-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .panel-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -476,6 +627,18 @@
     <div class="bg-glow bg-glow-1"></div>
     <div class="bg-glow bg-glow-2"></div>
 
+    <!-- Slide-out Panel -->
+    <div class="panel-overlay" onclick="closePanel()"></div>
+    <div class="info-panel" id="infoPanel">
+        <div class="panel-header">
+            <span class="panel-title" id="panelTitle">Info</span>
+            <button class="panel-close" onclick="closePanel()">×</button>
+        </div>
+        <div class="panel-content" id="panelContent">
+            <!-- Content injected by JS -->
+        </div>
+    </div>
+
     <div class="container">
         <header>
             <div class="logo">
@@ -490,19 +653,23 @@
         </header>
 
         <div class="stats-grid">
-            <div class="stat-card">
+            <div class="stat-card" onclick="showInfo('sessions')">
+                <button class="info-btn">?</button>
                 <div class="stat-label">Active Sessions</div>
                 <div class="stat-value">7</div>
             </div>
-            <div class="stat-card">
+            <div class="stat-card" onclick="showInfo('tokens')">
+                <button class="info-btn">?</button>
                 <div class="stat-label">Total Tokens</div>
                 <div class="stat-value">379K</div>
             </div>
-            <div class="stat-card">
+            <div class="stat-card" onclick="showInfo('attention')">
+                <button class="info-btn">?</button>
                 <div class="stat-label">Need Attention</div>
                 <div class="stat-value">2</div>
             </div>
-            <div class="stat-card">
+            <div class="stat-card" onclick="showInfo('capacity')">
+                <button class="info-btn">?</button>
                 <div class="stat-label">Avg Capacity</div>
                 <div class="stat-value">27%</div>
             </div>
@@ -511,7 +678,7 @@
         <div class="section-title">Active Sessions</div>
 
         <div class="sessions-grid">
-            <div class="session-card">
+            <div class="session-card" onclick="showInfo('session-main')">
                 <div class="session-header">
                     <div class="session-info">
                         <div class="channel-icon channel-imessage">💬</div>
@@ -537,7 +704,7 @@
                 </div>
             </div>
 
-            <div class="session-card">
+            <div class="session-card" onclick="showInfo('session-aviation')">
                 <div class="session-header">
                     <div class="session-info">
                         <div class="channel-icon channel-discord">💬</div>
@@ -563,7 +730,7 @@
                 </div>
             </div>
 
-            <div class="session-card">
+            <div class="session-card" onclick="showInfo('session-gradschool')">
                 <div class="session-header">
                     <div class="session-info">
                         <div class="channel-icon channel-discord">💬</div>
@@ -589,7 +756,7 @@
                 </div>
             </div>
 
-            <div class="session-card">
+            <div class="session-card" onclick="showInfo('session-setup')">
                 <div class="session-header">
                     <div class="session-info">
                         <div class="channel-icon channel-discord">💬</div>
@@ -615,7 +782,7 @@
                 </div>
             </div>
 
-            <div class="session-card">
+            <div class="session-card" onclick="showInfo('session-heartbeat')">
                 <div class="session-header">
                     <div class="session-info">
                         <div class="channel-icon channel-discord">⚙️</div>
@@ -641,7 +808,7 @@
                 </div>
             </div>
 
-            <div class="session-card">
+            <div class="session-card" onclick="showInfo('session-aviation2')">
                 <div class="session-header">
                     <div class="session-info">
                         <div class="channel-icon channel-discord">💬</div>
@@ -667,7 +834,7 @@
                 </div>
             </div>
 
-            <div class="session-card">
+            <div class="session-card" onclick="showInfo('session-test')">
                 <div class="session-header">
                     <div class="session-info">
                         <div class="channel-icon channel-discord">🧪</div>
@@ -695,10 +862,130 @@
         </div>
 
         <footer>
-            <div class="footer-text">Real-time neural session monitoring</div>
+            <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
             <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-            <div class="update-time">Last sync: April 18, 2026 • 10:30 PM EDT</div>
+            <div class="update-time">Last sync: April 18, 2026 • 10:36 PM EDT</div>
         </footer>
     </div>
+
+    <script>
+        const infoData = {
+            'sessions': {
+                title: 'Active Sessions',
+                icon: '🧵',
+                what: 'A session is like an ongoing conversation thread. Each Discord channel, iMessage chat, or other communication channel gets its own session. Pete keeps track of each conversation separately.',
+                why: 'This matters because Pete can handle multiple conversations at once without mixing them up. If you\'re chatting in Discord and someone else texts via iMessage, both conversations stay separate and organized.',
+                example: 'Think of it like having 7 different phone calls going at once — Pete remembers what each conversation is about and who\'s in it.'
+            },
+            'tokens': {
+                title: 'Total Tokens',
+                icon: '🧮',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 379K means about 379,000 tokens are currently being tracked across all sessions.',
+                why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
+                example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
+            },
+            'attention': {
+                title: 'Need Attention',
+                icon: '⚠️',
+                what: 'Sessions flagged as "Need Attention" are getting close to their memory limit (usually 75%+). They\'ll need to be compacted soon or Pete might lose context.',
+                why: 'When a session hits its limit, Pete has to summarize and forget older messages to make room. Catching it early prevents data loss and keeps conversations smooth.',
+                example: 'Like your phone warning you when storage is almost full — time to delete some old photos or things start failing.'
+            },
+            'capacity': {
+                title: 'Average Capacity',
+                icon: '📊',
+                what: 'This shows the average memory usage across all sessions. 27% means most sessions have plenty of room. Lower is better.',
+                why: 'Helps you see overall system health at a glance. If average capacity creeps toward 50%+, it might be time to compact some sessions.',
+                example: 'Like checking the gas gauges on a fleet of cars — if most are near empty, you\'ve got a problem brewing.'
+            },
+            'session-main': {
+                title: 'Main Session (iMessage)',
+                icon: '💬',
+                what: 'This is the primary iMessage conversation — direct texts with Chris. It\'s marked PRIVATE because it contains personal context and conversations.',
+                why: 'At 78% capacity, this session is getting full. Recent conversations are taking up space. Consider compacting if you want to preserve memory for new chats.',
+                example: 'This is like Chris\'s main text thread with Pete. All the back-and-forth about work, projects, and daily tasks lives here.'
+            },
+            'session-aviation': {
+                title: 'Aviation Solicitations',
+                icon: '✈️',
+                what: 'This Discord channel tracks airport RFPs and solicitations. It runs weekly scans of 29 Mid-Atlantic airports looking for new opportunities.',
+                why: 'Marked PUBLIC because others (like Jmo) can see and participate. Just compacted and switched to GPT-4o to save costs.',
+                example: 'Every Monday, Pete checks airport procurement sites and reports any new RFPs for terminal construction or PM services.'
+            },
+            'session-gradschool': {
+                title: 'Grad School Channel',
+                icon: '🎓',
+                what: 'This session handles Chris\'s graduate coursework at UNC Charlotte. Currently at 0% because it was just compacted.',
+                why: '"Compacted" means the old conversation was summarized and cleared to make room. Key info was saved to files first.',
+                example: 'Used for help with assignments, video scripts for the AI portfolio, and final project work for the Master\'s degree.'
+            },
+            'session-setup': {
+                title: 'Setup & Getting Better',
+                icon: '🔧',
+                what: 'A Discord channel dedicated to configuring and improving Pete\'s capabilities — debugging, testing features, and tweaking settings.',
+                why: 'PRIVATE because it contains technical details about Pete\'s configuration that shouldn\'t be public.',
+                example: 'Where Chris asks "how do I make Pete do X?" and we figure it out together through trial and error.'
+            },
+            'session-heartbeat': {
+                title: 'Heartbeat Channel',
+                icon: '💓',
+                what: 'A SYSTEM channel where Pete posts periodic check-ins, alerts, and status updates. Runs on the cheaper GPT-4o model.',
+                why: 'Heartbeats let Pete proactively check things (email, calendar, etc.) without being asked. It\'s like Pete\'s internal clock.',
+                example: 'Every so often, Pete wakes up, checks if anything needs attention, and either reports findings or says "all good."'
+            },
+            'session-aviation2': {
+                title: 'Aviation Solicitation 2',
+                icon: '✈️',
+                what: 'A secondary channel for aviation work — possibly for deeper dives into specific solicitations or separate workstreams.',
+                why: 'Keeps different aviation discussions organized without cluttering the main solicitations channel.',
+                example: 'If the main channel is for scanning, this might be for actually working on a specific proposal response.'
+            },
+            'session-test': {
+                title: 'Test Stuff',
+                icon: '🧪',
+                what: 'A sandbox channel for experimenting with Pete\'s features without affecting important conversations.',
+                why: 'Every system needs a safe place to try things that might break. Better to break here than in production.',
+                example: 'Testing new commands, trying out integrations, or just seeing what happens when you push buttons.'
+            }
+        };
+
+        function showInfo(key) {
+            const data = infoData[key];
+            if (!data) return;
+
+            document.getElementById('panelTitle').textContent = data.title;
+            document.getElementById('panelContent').innerHTML = `
+                <div class="panel-icon">${data.icon}</div>
+                
+                <div class="panel-section">
+                    <div class="panel-section-title">What is this?</div>
+                    <p class="panel-text">${data.what}</p>
+                </div>
+                
+                <div class="panel-section">
+                    <div class="panel-section-title">Why does it matter?</div>
+                    <p class="panel-text">${data.why}</p>
+                </div>
+                
+                <div class="panel-example">
+                    <div class="panel-example-title">💡 Real-world example</div>
+                    <p class="panel-example-text">${data.example}</p>
+                </div>
+            `;
+
+            document.querySelector('.panel-overlay').classList.add('active');
+            document.getElementById('infoPanel').classList.add('active');
+        }
+
+        function closePanel() {
+            document.querySelector('.panel-overlay').classList.remove('active');
+            document.getElementById('infoPanel').classList.remove('active');
+        }
+
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closePanel();
+        });
+    </script>
 </body>
 </html>
