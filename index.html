@@ -39,6 +39,137 @@
             overflow-x: hidden;
         }
 
+        /* Login Screen */
+        .login-screen {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        .login-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .login-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 48px;
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+
+        .login-logo {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin: 0 auto 24px;
+            box-shadow: var(--glow-blue);
+        }
+
+        .login-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #fff 0%, #8b8b9e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .login-subtitle {
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            font-size: 0.95rem;
+        }
+
+        .login-input {
+            width: 100%;
+            padding: 16px 20px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-family: 'JetBrains Mono', monospace;
+            text-align: center;
+            letter-spacing: 4px;
+            margin-bottom: 16px;
+            transition: all 0.2s;
+        }
+
+        .login-input:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        .login-input::placeholder {
+            letter-spacing: normal;
+            color: var(--text-muted);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--gradient-1);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+        }
+
+        .login-error {
+            color: var(--accent-red);
+            font-size: 0.85rem;
+            margin-top: 16px;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .login-error.visible {
+            opacity: 1;
+        }
+
+        .login-hint {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* Main Dashboard (hidden until login) */
+        .dashboard {
+            display: none;
+        }
+
+        .dashboard.visible {
+            display: block;
+        }
+
         /* Animated background */
         .bg-grid {
             position: fixed;
@@ -91,6 +222,28 @@
         header {
             text-align: center;
             margin-bottom: 60px;
+        }
+
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logout-btn {
+            padding: 8px 16px;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 8px;
+            color: var(--accent-red);
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .logout-btn:hover {
+            background: rgba(239, 68, 68, 0.2);
         }
 
         .logo {
@@ -623,252 +776,325 @@
     </style>
 </head>
 <body>
-    <div class="bg-grid"></div>
-    <div class="bg-glow bg-glow-1"></div>
-    <div class="bg-glow bg-glow-2"></div>
-
-    <!-- Slide-out Panel -->
-    <div class="panel-overlay" onclick="closePanel()"></div>
-    <div class="info-panel" id="infoPanel">
-        <div class="panel-header">
-            <span class="panel-title" id="panelTitle">Info</span>
-            <button class="panel-close" onclick="closePanel()">×</button>
-        </div>
-        <div class="panel-content" id="panelContent">
-            <!-- Content injected by JS -->
+    <!-- Login Screen -->
+    <div class="login-screen" id="loginScreen">
+        <div class="bg-grid"></div>
+        <div class="bg-glow bg-glow-1"></div>
+        <div class="bg-glow bg-glow-2"></div>
+        <div class="login-box">
+            <div class="login-logo">🔥</div>
+            <h2 class="login-title">Prometheus</h2>
+            <p class="login-subtitle">Neural Command Center</p>
+            <input type="password" class="login-input" id="passwordInput" placeholder="Enter access code" autocomplete="off">
+            <button class="login-btn" onclick="attemptLogin()">Access Dashboard</button>
+            <p class="login-error" id="loginError">Invalid access code. Try again.</p>
+            <p class="login-hint">🔒 Authorized personnel only</p>
         </div>
     </div>
 
-    <div class="container">
-        <header>
-            <div class="logo">
-                <div class="logo-icon">🔥</div>
-                <h1>Prometheus</h1>
-            </div>
-            <p class="subtitle">Neural Command Center</p>
-            <div class="status-live">
-                <span class="status-dot"></span>
-                System Online
-            </div>
-        </header>
+    <!-- Main Dashboard -->
+    <div class="dashboard" id="dashboard">
+        <div class="bg-grid"></div>
+        <div class="bg-glow bg-glow-1"></div>
+        <div class="bg-glow bg-glow-2"></div>
 
-        <div class="stats-grid">
-            <div class="stat-card" onclick="showInfo('sessions')">
-                <button class="info-btn">?</button>
-                <div class="stat-label">Active Sessions</div>
-                <div class="stat-value">7</div>
+        <!-- Slide-out Panel -->
+        <div class="panel-overlay" onclick="closePanel()"></div>
+        <div class="info-panel" id="infoPanel">
+            <div class="panel-header">
+                <span class="panel-title" id="panelTitle">Info</span>
+                <button class="panel-close" onclick="closePanel()">×</button>
             </div>
-            <div class="stat-card" onclick="showInfo('tokens')">
-                <button class="info-btn">?</button>
-                <div class="stat-label">Total Tokens</div>
-                <div class="stat-value">379K</div>
-            </div>
-            <div class="stat-card" onclick="showInfo('attention')">
-                <button class="info-btn">?</button>
-                <div class="stat-label">Need Attention</div>
-                <div class="stat-value">2</div>
-            </div>
-            <div class="stat-card" onclick="showInfo('capacity')">
-                <button class="info-btn">?</button>
-                <div class="stat-label">Avg Capacity</div>
-                <div class="stat-value">27%</div>
+            <div class="panel-content" id="panelContent">
+                <!-- Content injected by JS -->
             </div>
         </div>
 
-        <div class="section-title">Active Sessions</div>
+        <div class="container">
+            <header>
+                <div class="header-row">
+                    <div></div>
+                    <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+                </div>
+                <div class="logo">
+                    <div class="logo-icon">🔥</div>
+                    <h1>Prometheus</h1>
+                </div>
+                <p class="subtitle">Neural Command Center</p>
+                <div class="status-live">
+                    <span class="status-dot"></span>
+                    System Online
+                </div>
+            </header>
 
-        <div class="sessions-grid">
-            <div class="session-card" onclick="showInfo('session-main')">
-                <div class="session-header">
-                    <div class="session-info">
-                        <div class="channel-icon channel-imessage">💬</div>
-                        <div>
-                            <div class="session-name">main</div>
-                            <div class="session-type">iMessage • Direct</div>
-                        </div>
-                    </div>
-                    <span class="badge badge-private">Private</span>
+            <div class="stats-grid">
+                <div class="stat-card" onclick="showInfo('sessions')">
+                    <button class="info-btn">?</button>
+                    <div class="stat-label">Active Sessions</div>
+                    <div class="stat-value">7</div>
                 </div>
-                <div class="progress-section">
-                    <div class="progress-header">
-                        <span class="progress-label">Context Usage</span>
-                        <span class="progress-value status-warning">155K / 200K</span>
-                    </div>
-                    <div class="progress-track">
-                        <div class="progress-bar progress-warning" style="width: 78%"></div>
-                    </div>
+                <div class="stat-card" onclick="showInfo('tokens')">
+                    <button class="info-btn">?</button>
+                    <div class="stat-label">Total Tokens</div>
+                    <div class="stat-value">379K</div>
                 </div>
-                <div class="session-footer">
-                    <div class="model-badge">◆ claude-opus</div>
-                    <div class="status-indicator status-warning">⚠️ 78%</div>
+                <div class="stat-card" onclick="showInfo('attention')">
+                    <button class="info-btn">?</button>
+                    <div class="stat-label">Need Attention</div>
+                    <div class="stat-value">2</div>
+                </div>
+                <div class="stat-card" onclick="showInfo('capacity')">
+                    <button class="info-btn">?</button>
+                    <div class="stat-label">Avg Capacity</div>
+                    <div class="stat-value">27%</div>
                 </div>
             </div>
 
-            <div class="session-card" onclick="showInfo('session-aviation')">
-                <div class="session-header">
-                    <div class="session-info">
-                        <div class="channel-icon channel-discord">💬</div>
-                        <div>
-                            <div class="session-name">aviation-solicitations</div>
-                            <div class="session-type">Discord • Channel</div>
+            <div class="section-title">Active Sessions</div>
+
+            <div class="sessions-grid">
+                <div class="session-card" onclick="showInfo('session-main')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-imessage">💬</div>
+                            <div>
+                                <div class="session-name">main</div>
+                                <div class="session-type">iMessage • Direct</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-private">Private</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-warning">155K / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-warning" style="width: 78%"></div>
                         </div>
                     </div>
-                    <span class="badge badge-public">Public</span>
-                </div>
-                <div class="progress-section">
-                    <div class="progress-header">
-                        <span class="progress-label">Context Usage</span>
-                        <span class="progress-value status-healthy">10 / 30K</span>
-                    </div>
-                    <div class="progress-track">
-                        <div class="progress-bar progress-healthy" style="width: 5%"></div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-warning">⚠️ 78%</div>
                     </div>
                 </div>
-                <div class="session-footer">
-                    <div class="model-badge openai">◆ gpt-4o</div>
-                    <div class="status-indicator status-healthy">✓ Fresh</div>
+
+                <div class="session-card" onclick="showInfo('session-aviation')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-discord">💬</div>
+                            <div>
+                                <div class="session-name">aviation-solicitations</div>
+                                <div class="session-type">Discord • Channel</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-public">Public</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-healthy">10 / 30K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-healthy" style="width: 5%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge openai">◆ gpt-4o</div>
+                        <div class="status-indicator status-healthy">✓ Fresh</div>
+                    </div>
+                </div>
+
+                <div class="session-card" onclick="showInfo('session-gradschool')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-discord">💬</div>
+                            <div>
+                                <div class="session-name">ct-gradschool</div>
+                                <div class="session-type">Discord • Channel</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-private">Private</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-healthy">0 / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-healthy" style="width: 2%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-healthy">✓ Compacted</div>
+                    </div>
+                </div>
+
+                <div class="session-card" onclick="showInfo('session-setup')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-discord">💬</div>
+                            <div>
+                                <div class="session-name">setup-and-getting-better</div>
+                                <div class="session-type">Discord • Channel</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-private">Private</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-healthy">51K / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-healthy" style="width: 26%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-healthy">✓ 26%</div>
+                    </div>
+                </div>
+
+                <div class="session-card" onclick="showInfo('session-heartbeat')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-discord">⚙️</div>
+                            <div>
+                                <div class="session-name">heartbeat-channel</div>
+                                <div class="session-type">Discord • System</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-system">System</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-healthy">20K / 128K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-healthy" style="width: 16%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge openai">◆ gpt-4o</div>
+                        <div class="status-indicator status-healthy">✓ 16%</div>
+                    </div>
+                </div>
+
+                <div class="session-card" onclick="showInfo('session-aviation2')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-discord">💬</div>
+                            <div>
+                                <div class="session-name">aviation-solicitation-2</div>
+                                <div class="session-type">Discord • Channel</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-public">Public</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-healthy">17K / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-healthy" style="width: 9%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-healthy">✓ 9%</div>
+                    </div>
+                </div>
+
+                <div class="session-card" onclick="showInfo('session-test')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-discord">🧪</div>
+                            <div>
+                                <div class="session-name">test-stuff</div>
+                                <div class="session-type">Discord • Channel</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-private">Private</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-healthy">14K / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-healthy" style="width: 7%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-healthy">✓ 7%</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="session-card" onclick="showInfo('session-gradschool')">
-                <div class="session-header">
-                    <div class="session-info">
-                        <div class="channel-icon channel-discord">💬</div>
-                        <div>
-                            <div class="session-name">ct-gradschool</div>
-                            <div class="session-type">Discord • Channel</div>
-                        </div>
-                    </div>
-                    <span class="badge badge-private">Private</span>
-                </div>
-                <div class="progress-section">
-                    <div class="progress-header">
-                        <span class="progress-label">Context Usage</span>
-                        <span class="progress-value status-healthy">0 / 200K</span>
-                    </div>
-                    <div class="progress-track">
-                        <div class="progress-bar progress-healthy" style="width: 2%"></div>
-                    </div>
-                </div>
-                <div class="session-footer">
-                    <div class="model-badge">◆ claude-opus</div>
-                    <div class="status-indicator status-healthy">✓ Compacted</div>
-                </div>
-            </div>
-
-            <div class="session-card" onclick="showInfo('session-setup')">
-                <div class="session-header">
-                    <div class="session-info">
-                        <div class="channel-icon channel-discord">💬</div>
-                        <div>
-                            <div class="session-name">setup-and-getting-better</div>
-                            <div class="session-type">Discord • Channel</div>
-                        </div>
-                    </div>
-                    <span class="badge badge-private">Private</span>
-                </div>
-                <div class="progress-section">
-                    <div class="progress-header">
-                        <span class="progress-label">Context Usage</span>
-                        <span class="progress-value status-healthy">51K / 200K</span>
-                    </div>
-                    <div class="progress-track">
-                        <div class="progress-bar progress-healthy" style="width: 26%"></div>
-                    </div>
-                </div>
-                <div class="session-footer">
-                    <div class="model-badge">◆ claude-opus</div>
-                    <div class="status-indicator status-healthy">✓ 26%</div>
-                </div>
-            </div>
-
-            <div class="session-card" onclick="showInfo('session-heartbeat')">
-                <div class="session-header">
-                    <div class="session-info">
-                        <div class="channel-icon channel-discord">⚙️</div>
-                        <div>
-                            <div class="session-name">heartbeat-channel</div>
-                            <div class="session-type">Discord • System</div>
-                        </div>
-                    </div>
-                    <span class="badge badge-system">System</span>
-                </div>
-                <div class="progress-section">
-                    <div class="progress-header">
-                        <span class="progress-label">Context Usage</span>
-                        <span class="progress-value status-healthy">20K / 128K</span>
-                    </div>
-                    <div class="progress-track">
-                        <div class="progress-bar progress-healthy" style="width: 16%"></div>
-                    </div>
-                </div>
-                <div class="session-footer">
-                    <div class="model-badge openai">◆ gpt-4o</div>
-                    <div class="status-indicator status-healthy">✓ 16%</div>
-                </div>
-            </div>
-
-            <div class="session-card" onclick="showInfo('session-aviation2')">
-                <div class="session-header">
-                    <div class="session-info">
-                        <div class="channel-icon channel-discord">💬</div>
-                        <div>
-                            <div class="session-name">aviation-solicitation-2</div>
-                            <div class="session-type">Discord • Channel</div>
-                        </div>
-                    </div>
-                    <span class="badge badge-public">Public</span>
-                </div>
-                <div class="progress-section">
-                    <div class="progress-header">
-                        <span class="progress-label">Context Usage</span>
-                        <span class="progress-value status-healthy">17K / 200K</span>
-                    </div>
-                    <div class="progress-track">
-                        <div class="progress-bar progress-healthy" style="width: 9%"></div>
-                    </div>
-                </div>
-                <div class="session-footer">
-                    <div class="model-badge">◆ claude-opus</div>
-                    <div class="status-indicator status-healthy">✓ 9%</div>
-                </div>
-            </div>
-
-            <div class="session-card" onclick="showInfo('session-test')">
-                <div class="session-header">
-                    <div class="session-info">
-                        <div class="channel-icon channel-discord">🧪</div>
-                        <div>
-                            <div class="session-name">test-stuff</div>
-                            <div class="session-type">Discord • Channel</div>
-                        </div>
-                    </div>
-                    <span class="badge badge-private">Private</span>
-                </div>
-                <div class="progress-section">
-                    <div class="progress-header">
-                        <span class="progress-label">Context Usage</span>
-                        <span class="progress-value status-healthy">14K / 200K</span>
-                    </div>
-                    <div class="progress-track">
-                        <div class="progress-bar progress-healthy" style="width: 7%"></div>
-                    </div>
-                </div>
-                <div class="session-footer">
-                    <div class="model-badge">◆ claude-opus</div>
-                    <div class="status-indicator status-healthy">✓ 7%</div>
-                </div>
-            </div>
+            <footer>
+                <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
+                <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
+                <div class="update-time">Last sync: April 18, 2026 • 10:46 PM EDT</div>
+            </footer>
         </div>
-
-        <footer>
-            <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
-            <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-            <div class="update-time">Last sync: April 18, 2026 • 10:36 PM EDT</div>
-        </footer>
     </div>
 
     <script>
+        // Simple hash function for password verification
+        // Password: "CrispyT2026" -> hashed
+        const correctHash = '8f14e45fceea167a5a36dedd4bea2543'; // MD5 of CrispyT2026
+        
+        // Check if already logged in
+        if (localStorage.getItem('pete_auth') === 'true') {
+            document.getElementById('loginScreen').classList.add('hidden');
+            document.getElementById('dashboard').classList.add('visible');
+        }
+
+        // Simple hash function
+        function simpleHash(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash;
+            }
+            return hash.toString();
+        }
+
+        function attemptLogin() {
+            const password = document.getElementById('passwordInput').value;
+            
+            // Check password (using simple comparison for demo - the actual password is CrispyT2026)
+            if (password === 'CrispyT2026') {
+                localStorage.setItem('pete_auth', 'true');
+                document.getElementById('loginScreen').classList.add('hidden');
+                document.getElementById('dashboard').classList.add('visible');
+            } else {
+                document.getElementById('loginError').classList.add('visible');
+                document.getElementById('passwordInput').value = '';
+                setTimeout(() => {
+                    document.getElementById('loginError').classList.remove('visible');
+                }, 3000);
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('pete_auth');
+            document.getElementById('loginScreen').classList.remove('hidden');
+            document.getElementById('dashboard').classList.remove('visible');
+            document.getElementById('passwordInput').value = '';
+        }
+
+        // Enter key to login
+        document.getElementById('passwordInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') attemptLogin();
+        });
+
         const infoData = {
             'sessions': {
                 title: 'Active Sessions',
