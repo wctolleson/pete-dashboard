@@ -840,7 +840,7 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">365K</div>
+                    <div class="stat-value">386K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
@@ -850,7 +850,7 @@
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">27%</div>
+                    <div class="stat-value">28%</div>
                 </div>
             </div>
 
@@ -871,41 +871,15 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-warning">151K / 200K</span>
+                            <span class="progress-value status-warning">153K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-warning" style="width: 75%"></div>
+                            <div class="progress-bar progress-warning" style="width: 77%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-warning">⚠ 75%</div>
-                    </div>
-                </div>
-
-                <div class="session-card" onclick="showInfo('session-aviation')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-discord">✈️</div>
-                            <div>
-                                <div class="session-name">aviation-solicitations</div>
-                                <div class="session-type">Discord • Channel</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-public">Public</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">16K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 8%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 8%</div>
+                        <div class="status-indicator status-warning">⚠ 77%</div>
                     </div>
                 </div>
 
@@ -923,15 +897,15 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">80K / 200K</span>
+                            <span class="progress-value status-healthy">93K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 40%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 46%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 40%</div>
+                        <div class="status-indicator status-healthy">✓ 46%</div>
                     </div>
                 </div>
 
@@ -958,6 +932,32 @@
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
                         <div class="status-indicator status-healthy">✓ 33%</div>
+                    </div>
+                </div>
+
+                <div class="session-card" onclick="showInfo('session-aviation')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-discord">✈️</div>
+                            <div>
+                                <div class="session-name">aviation-solicitations</div>
+                                <div class="session-type">Discord • Channel</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-public">Public</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-healthy">23K / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-healthy" style="width: 12%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-healthy">✓ 12%</div>
                     </div>
                 </div>
 
@@ -1043,7 +1043,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 19, 2026 • 3:42 PM EDT</div>
+                <div class="update-time">Last sync: April 19, 2026 • 4:38 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1110,7 +1110,7 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 449K means about 449,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 386K means about 386,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1119,12 +1119,12 @@
                 icon: '⚠️',
                 what: 'Sessions flagged as "Need Attention" are getting close to their memory limit (usually 60%+). They\'ll need to be compacted soon or Pete might lose context.',
                 why: 'When a session hits its limit, Pete has to summarize and forget older messages to make room. Catching it early prevents data loss and keeps conversations smooth.',
-                example: 'Like your phone warning you when storage is almost full. Currently: ct-gradschool (75%) needs monitoring.'
+                example: 'Like your phone warning you when storage is almost full. Currently: ct-gradschool (77%) needs monitoring.'
             },
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows the average memory usage across all sessions. 35% means most sessions have plenty of room. Lower is better.',
+                what: 'This shows the average memory usage across all sessions. 28% means most sessions have plenty of room. Lower is better.',
                 why: 'Helps you see overall system health at a glance. If average capacity creeps toward 50%+, it might be time to compact some sessions.',
                 example: 'Like checking the gas gauges on a fleet of cars — currently all tanks are well-fueled with plenty of room to go.'
             },
@@ -1132,28 +1132,28 @@
                 title: 'Main Session',
                 icon: '💬',
                 what: 'This is the primary webchat conversation — direct chats with Chris. It\'s marked PRIVATE because it contains personal context and conversations.',
-                why: 'At 38% capacity, this session is healthy with plenty of room for continued conversations.',
+                why: 'At 33% capacity, this session is healthy with plenty of room for continued conversations.',
                 example: 'This is like Chris\'s main chat thread with Pete. All the back-and-forth about work, projects, and daily tasks lives here.'
             },
             'session-gradschool': {
                 title: 'Grad School Channel',
                 icon: '🎓',
-                what: 'This session handles Chris\'s graduate coursework at UNC Charlotte. Currently at 75% — approaching compaction threshold.',
-                why: 'At 75%, this session should be compacted soon to avoid hitting the limit. Contains portfolio and assignment work.',
+                what: 'This session handles Chris\'s graduate coursework at UNC Charlotte. Currently at 77% — approaching compaction threshold.',
+                why: 'At 77%, this session should be compacted soon to avoid hitting the limit. Contains portfolio and assignment work.',
                 example: 'Used for help with assignments, video scripts for the AI portfolio, and final project work for the Master\'s degree.'
             },
             'session-aviation': {
                 title: 'Aviation Solicitations',
                 icon: '✈️',
                 what: 'This Discord channel tracks airport RFPs and solicitations. It runs weekly scans of 29 Mid-Atlantic airports looking for new opportunities.',
-                why: 'Marked PUBLIC because others (like Jmo) can see and participate. At 59% — healthy but actively used.',
+                why: 'Marked PUBLIC because others (like Jmo) can see and participate. At 12% — plenty of room.',
                 example: 'Every Monday, Pete checks airport procurement sites and reports any new RFPs for terminal construction or PM services.'
             },
             'session-setup': {
                 title: 'Setup & Getting Better',
                 icon: '🔧',
                 what: 'A Discord channel dedicated to configuring and improving Pete\'s capabilities — debugging, testing features, and tweaking settings.',
-                why: 'PRIVATE because it contains technical details about Pete\'s configuration that shouldn\'t be public.',
+                why: 'PRIVATE because it contains technical details about Pete\'s configuration that shouldn\'t be public. At 46% — healthy.',
                 example: 'Where Chris asks "how do I make Pete do X?" and we figure it out together through trial and error.'
             },
             'session-heartbeat': {
