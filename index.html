@@ -840,7 +840,7 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">403K</div>
+                    <div class="stat-value">383K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
@@ -850,7 +850,7 @@
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">30%</div>
+                    <div class="stat-value">28%</div>
                 </div>
             </div>
 
@@ -871,15 +871,15 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-warning">115K / 200K</span>
+                            <span class="progress-value status-healthy">95K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-warning" style="width: 58%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 48%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-warning">⚡ 58%</div>
+                        <div class="status-indicator status-healthy">✓ 48%</div>
                     </div>
                 </div>
 
@@ -1043,7 +1043,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 20, 2026 • 6:15 AM EDT</div>
+                <div class="update-time">Last sync: April 20, 2026 • 7:17 AM EDT</div>
             </footer>
         </div>
     </div>
@@ -1110,7 +1110,7 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 403K means about 403,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 383K means about 383,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1124,7 +1124,7 @@
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows the average memory usage across all sessions. 30% means most sessions have plenty of room. Lower is better.',
+                what: 'This shows the average memory usage across all sessions. 28% means most sessions have plenty of room. Lower is better.',
                 why: 'Helps you see overall system health at a glance. If average capacity creeps toward 50%+, it might be time to compact some sessions.',
                 example: 'Like checking the gas gauges on a fleet of cars — currently all tanks are well-fueled with plenty of room to go.'
             },
@@ -1138,8 +1138,8 @@
             'session-gradschool': {
                 title: 'Grad School Channel',
                 icon: '🎓',
-                what: 'This session handles Chris\'s graduate coursework at UNC Charlotte. Currently at 58% — getting higher but still healthy.',
-                why: 'Contains portfolio and assignment work. Heavy usage from recent final project work is normal.',
+                what: 'This session handles Chris\'s graduate coursework at UNC Charlotte. Currently at 48% — healthy with room to grow.',
+                why: 'Contains portfolio and assignment work. Steady usage from final project work is normal.',
                 example: 'Used for help with assignments, video scripts for the AI portfolio, and final project work for the Master\'s degree.'
             },
             'session-aviation': {
