@@ -840,7 +840,7 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">468K</div>
+                    <div class="stat-value">499K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
@@ -850,39 +850,13 @@
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">34%</div>
+                    <div class="stat-value">36%</div>
                 </div>
             </div>
 
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
-                <div class="session-card" onclick="showInfo('session-gradschool')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-discord">🎓</div>
-                            <div>
-                                <div class="session-name">ct-gradschool</div>
-                                <div class="session-type">Discord • Channel</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-private">Private</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-warning">131K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-warning" style="width: 66%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-warning">⚠ 66%</div>
-                    </div>
-                </div>
-
                 <div class="session-card" onclick="showInfo('session-aviation')">
                     <div class="session-header">
                         <div class="session-info">
@@ -897,15 +871,41 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">108K / 200K</span>
+                            <span class="progress-value status-warning">137K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 54%"></div>
+                            <div class="progress-bar progress-warning" style="width: 68%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 54%</div>
+                        <div class="status-indicator status-warning">⚠ 68%</div>
+                    </div>
+                </div>
+
+                <div class="session-card" onclick="showInfo('session-gradschool')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-discord">🎓</div>
+                            <div>
+                                <div class="session-name">ct-gradschool</div>
+                                <div class="session-type">Discord • Channel</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-private">Private</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-warning">133K / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-warning" style="width: 67%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-warning">⚠ 67%</div>
                     </div>
                 </div>
 
@@ -1043,7 +1043,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 20, 2026 • 1:31 PM EDT</div>
+                <div class="update-time">Last sync: April 20, 2026 • 3:36 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1110,7 +1110,7 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 468K means about 468,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 499K means about 499,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1119,12 +1119,12 @@
                 icon: '✅',
                 what: 'Sessions flagged as "Need Attention" are getting close to their memory limit (usually 75%+). They\'ll need to be compacted soon or Pete might lose context.',
                 why: 'When a session hits its limit, Pete has to summarize and forget older messages to make room. Catching it early prevents data loss and keeps conversations smooth.',
-                example: 'Currently at 0 — all sessions are healthy and well within their limits! ct-gradschool is at 66% (warning) but not critical. 🎉'
+                example: 'Currently at 0 — no sessions over 75%. aviation-solicitations (68%) and ct-gradschool (67%) are highest but still healthy. 🎉'
             },
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows the average memory usage across all sessions. 34% means most sessions have plenty of room. Lower is better.',
+                what: 'This shows the average memory usage across all sessions. 36% means most sessions have plenty of room. Lower is better.',
                 why: 'Helps you see overall system health at a glance. If average capacity creeps toward 50%+, it might be time to compact some sessions.',
                 example: 'Like checking the gas gauges on a fleet of cars — currently all tanks are well-fueled with plenty of room to go.'
             },
@@ -1138,16 +1138,16 @@
             'session-gradschool': {
                 title: 'Grad School Channel',
                 icon: '🎓',
-                what: 'This session handles Chris\'s graduate coursework at UNC Charlotte. Currently at 66% — watch status, highest of all sessions from recent final project work.',
-                why: 'Contains portfolio and assignment work. Usage increased from AI interview prep and final project submissions.',
-                example: 'Used for assignments, video scripts for the AI portfolio, and final project work for the Master\'s degree. Martha Edge interview and EVMS portfolio just wrapped up!'
+                what: 'This session handles Chris\'s graduate coursework at UNC Charlotte. Currently at 67% — second highest, from recent MWAA proposal work that overlapped with final project deadlines.',
+                why: 'Contains portfolio and assignment work. Usage built up during graduation crunch.',
+                example: 'Graduation completed! 🎓 This channel was critical for AI portfolio prep, Martha Edge interview, and the EVMS final project. Now pivoting to business development support.'
             },
             'session-aviation': {
                 title: 'Aviation Solicitations',
                 icon: '✈️',
-                what: 'This Discord channel tracks airport RFPs and solicitations. It runs weekly scans of 31 Mid-Atlantic airports looking for new opportunities.',
-                why: 'Marked PUBLIC because others (like Jmo) can see and participate. At 54% — room for more work.',
-                example: 'Every Sunday, Pete checks airport procurement sites and reports any new RFPs for terminal construction or PM services. MWAA PMO due April 30!'
+                what: 'This Discord channel tracks airport RFPs and solicitations. Currently the HIGHEST usage at 68% from active MWAA PMO proposal work.',
+                why: 'Marked PUBLIC because others (like Jmo) can see and participate. The MWAA PMO solicitation (due April 30) is actively being worked here.',
+                example: 'Hot right now! MWAA PMO proposal in progress. Red Team review happening this week. Also tracking new CRW on-call RFQ and MWAA EOR opportunity.'
             },
             'session-setup': {
                 title: 'Setup & Getting Better',
@@ -1159,21 +1159,21 @@
             'session-heartbeat': {
                 title: 'Heartbeat Channel',
                 icon: '💓',
-                what: 'A SYSTEM channel where Pete posts periodic check-ins, alerts, and status updates. Runs on the cheaper GPT-4o model.',
+                what: 'A SYSTEM channel where Pete posts periodic check-ins, alerts, and status updates. Runs on the cheaper GPT-4o model to save costs.',
                 why: 'Heartbeats let Pete proactively check things (email, calendar, etc.) without being asked. It\'s like Pete\'s internal clock.',
-                example: 'Every so often, Pete wakes up, checks if anything needs attention, and either reports findings or says "all good."'
+                example: 'Every so often, Pete wakes up, checks if anything needs attention, and either reports findings or says "all good." Weekly aviation scans get posted here too.'
             },
             'session-aviation2': {
                 title: 'Aviation Solicitation 2',
                 icon: '✈️',
-                what: 'A secondary channel for aviation work — used for deeper dives into specific solicitations like the MWAA proposal.',
+                what: 'A secondary channel for aviation work — used for deeper dives into specific solicitations. At just 9%, it\'s got tons of room.',
                 why: 'Keeps different aviation discussions organized without cluttering the main solicitations channel.',
-                example: 'While the main channel is for scanning, this one is for actually working on specific proposal responses.'
+                example: 'Used for detailed proposal discussions and document review separate from the main tracking channel.'
             },
             'session-test': {
                 title: 'Test Stuff',
                 icon: '🧪',
-                what: 'A sandbox channel for experimenting with Pete\'s features without affecting important conversations.',
+                what: 'A sandbox channel for experimenting with Pete\'s features without affecting important conversations. Only 7% used.',
                 why: 'Every system needs a safe place to try things that might break. Better to break here than in production.',
                 example: 'Testing new commands, trying out integrations, or just seeing what happens when you push buttons.'
             }
