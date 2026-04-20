@@ -835,12 +835,12 @@
                 <div class="stat-card" onclick="showInfo('sessions')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Active Sessions</div>
-                    <div class="stat-value">7</div>
+                    <div class="stat-value">8</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">499K</div>
+                    <div class="stat-value">577K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
@@ -850,7 +850,7 @@
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">36%</div>
+                    <div class="stat-value">37%</div>
                 </div>
             </div>
 
@@ -874,12 +874,12 @@
                             <span class="progress-value status-warning">137K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-warning" style="width: 68%"></div>
+                            <div class="progress-bar progress-warning" style="width: 69%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-warning">⚠ 68%</div>
+                        <div class="status-indicator status-warning">⚠ 69%</div>
                     </div>
                 </div>
 
@@ -958,6 +958,32 @@
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
                         <div class="status-indicator status-healthy">✓ 43%</div>
+                    </div>
+                </div>
+
+                <div class="session-card" onclick="showInfo('session-cron')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-webchat">📡</div>
+                            <div>
+                                <div class="session-name">weekly-aviation-scan</div>
+                                <div class="session-type">Cron • Automated</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-system">System</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-healthy">78K / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-healthy" style="width: 39%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-healthy">✓ 39%</div>
                     </div>
                 </div>
 
@@ -1043,7 +1069,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 20, 2026 • 3:36 PM EDT</div>
+                <div class="update-time">Last sync: April 20, 2026 • 4:38 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1105,12 +1131,12 @@
                 icon: '🧵',
                 what: 'A session is like an ongoing conversation thread. Each Discord channel, iMessage chat, or other communication channel gets its own session. Pete keeps track of each conversation separately.',
                 why: 'This matters because Pete can handle multiple conversations at once without mixing them up. If you\'re chatting in Discord and someone else texts via iMessage, both conversations stay separate and organized.',
-                example: 'Think of it like having 7 different phone calls going at once — Pete remembers what each conversation is about and who\'s in it.'
+                example: 'Think of it like having 8 different phone calls going at once — Pete remembers what each conversation is about and who\'s in it.'
             },
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 499K means about 499,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 577K means about 577,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1119,12 +1145,12 @@
                 icon: '✅',
                 what: 'Sessions flagged as "Need Attention" are getting close to their memory limit (usually 75%+). They\'ll need to be compacted soon or Pete might lose context.',
                 why: 'When a session hits its limit, Pete has to summarize and forget older messages to make room. Catching it early prevents data loss and keeps conversations smooth.',
-                example: 'Currently at 0 — no sessions over 75%. aviation-solicitations (68%) and ct-gradschool (67%) are highest but still healthy. 🎉'
+                example: 'Currently at 0 — no sessions over 75%. aviation-solicitations (69%) and ct-gradschool (67%) are highest but still healthy. 🎉'
             },
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows the average memory usage across all sessions. 36% means most sessions have plenty of room. Lower is better.',
+                what: 'This shows the average memory usage across all sessions. 37% means most sessions have plenty of room. Lower is better.',
                 why: 'Helps you see overall system health at a glance. If average capacity creeps toward 50%+, it might be time to compact some sessions.',
                 example: 'Like checking the gas gauges on a fleet of cars — currently all tanks are well-fueled with plenty of room to go.'
             },
@@ -1145,7 +1171,7 @@
             'session-aviation': {
                 title: 'Aviation Solicitations',
                 icon: '✈️',
-                what: 'This Discord channel tracks airport RFPs and solicitations. Currently the HIGHEST usage at 68% from active MWAA PMO proposal work.',
+                what: 'This Discord channel tracks airport RFPs and solicitations. Currently the HIGHEST usage at 69% from active MWAA PMO proposal work.',
                 why: 'Marked PUBLIC because others (like Jmo) can see and participate. The MWAA PMO solicitation (due April 30) is actively being worked here.',
                 example: 'Hot right now! MWAA PMO proposal in progress. Red Team review happening this week. Also tracking new CRW on-call RFQ and MWAA EOR opportunity.'
             },
@@ -1155,6 +1181,13 @@
                 what: 'A Discord channel dedicated to configuring and improving Pete\'s capabilities — debugging, testing features, and tweaking settings.',
                 why: 'PRIVATE because it contains technical details about Pete\'s configuration that shouldn\'t be public. At 46% — healthy.',
                 example: 'Where Chris asks "how do I make Pete do X?" and we figure it out together through trial and error.'
+            },
+            'session-cron': {
+                title: 'Weekly Aviation Scan',
+                icon: '📡',
+                what: 'An automated cron job that scans airport websites for new solicitations every week. Runs independently and posts findings to Discord.',
+                why: 'At 39% capacity, this session handles the weekly airport solicitation scanning. It processes 30+ airports across the Mid-Atlantic region.',
+                example: 'Today\'s scan found CRW on-call RFQ (due May 1) and MWAA EOR Services (due May 18). Results posted to #aviation-solicitations automatically.'
             },
             'session-heartbeat': {
                 title: 'Heartbeat Channel',
