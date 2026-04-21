@@ -854,17 +854,17 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">675K</div>
+                    <div class="stat-value">518K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Need Attention</div>
-                    <div class="stat-value">2</div>
+                    <div class="stat-value">1</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">43%</div>
+                    <div class="stat-value">33%</div>
                 </div>
             </div>
 
@@ -894,32 +894,6 @@
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
                         <div class="status-indicator status-critical">🚨 96%</div>
-                    </div>
-                </div>
-
-                <div class="session-card warning" onclick="showInfo('session-aviation')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-discord">✈️</div>
-                            <div>
-                                <div class="session-name">aviation-solicitations</div>
-                                <div class="session-type">Discord • Channel</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-public">Public</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-warning">176K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-warning" style="width: 88%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-warning">⚠ 88%</div>
                     </div>
                 </div>
 
@@ -1027,6 +1001,32 @@
                     </div>
                 </div>
 
+                <div class="session-card" onclick="showInfo('session-aviation')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-discord">✈️</div>
+                            <div>
+                                <div class="session-name">aviation-solicitations</div>
+                                <div class="session-type">Discord • Channel</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-public">Public</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-healthy">19K / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-healthy" style="width: 10%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-healthy">✓ 10%</div>
+                    </div>
+                </div>
+
                 <div class="session-card" onclick="showInfo('session-aviation2')">
                     <div class="session-header">
                         <div class="session-info">
@@ -1083,7 +1083,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 20, 2026 • 10:53 PM EDT</div>
+                <div class="update-time">Last sync: April 20, 2026 • 11:56 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1150,7 +1150,7 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 675K means about 675,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 518K means about 518,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1159,14 +1159,14 @@
                 icon: '🚨',
                 what: 'Sessions flagged as "Need Attention" are getting close to their memory limit (usually 75%+). They\'ll need to be compacted soon or Pete might lose context.',
                 why: 'When a session hits its limit, Pete has to summarize and forget older messages to make room. Catching it early prevents data loss and keeps conversations smooth.',
-                example: '🚨 Currently at 2 — ct-gradschool is at 96% CRITICAL and aviation-solicitations is at 88% WARNING! Both need compaction soon.'
+                example: '🚨 Currently at 1 — ct-gradschool is at 96% CRITICAL and needs compaction soon!'
             },
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows the average memory usage across all sessions. 43% means most sessions have room but two sessions are pulling the average up.',
-                why: 'Helps you see overall system health at a glance. The ct-gradschool and aviation-solicitations sessions are significantly above average.',
-                example: 'Like checking the gas gauges on a fleet of cars — most are fine but two are running low and need attention.'
+                what: 'This shows the average memory usage across all sessions. 33% means most sessions have plenty of room, with just ct-gradschool pulling the average up.',
+                why: 'Helps you see overall system health at a glance. The ct-gradschool session is significantly above average at 96%.',
+                example: 'Like checking the gas gauges on a fleet of cars — most are doing great, but one is running on fumes and needs a fill-up (compaction).'
             },
             'session-main': {
                 title: 'Main Session',
@@ -1185,8 +1185,8 @@
             'session-aviation': {
                 title: 'Aviation Solicitations',
                 icon: '✈️',
-                what: '⚠️ WARNING! This Discord channel is at 88% capacity (176K / 200K tokens) from active MWAA PMO proposal work.',
-                why: 'Marked PUBLIC because others (like Jmo) can see and participate. The MWAA PMO solicitation (due April 30) is actively being worked here with cover letters and team coordination.',
+                what: '✅ HEALTHY! This Discord channel is now at just 10% capacity (19K / 200K tokens) — recently compacted and ready for action.',
+                why: 'Marked PUBLIC because others (like Jmo) can see and participate. Lots of room for the MWAA PMO proposal work (due April 30).',
                 example: 'Hot right now! MWAA PMO Red Team review this week. Also tracking CRW on-call RFQ (May 1) and MWAA EOR Services (May 18).'
             },
             'session-setup': {
