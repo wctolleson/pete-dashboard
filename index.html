@@ -840,7 +840,7 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">577K</div>
+                    <div class="stat-value">583K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
@@ -857,6 +857,32 @@
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
+                <div class="session-card" onclick="showInfo('session-gradschool')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-discord">🎓</div>
+                            <div>
+                                <div class="session-name">ct-gradschool</div>
+                                <div class="session-type">Discord • Channel</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-private">Private</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-warning">139K / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-warning" style="width: 69%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-warning">⚠ 69%</div>
+                    </div>
+                </div>
+
                 <div class="session-card" onclick="showInfo('session-aviation')">
                     <div class="session-header">
                         <div class="session-info">
@@ -880,32 +906,6 @@
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
                         <div class="status-indicator status-warning">⚠ 68%</div>
-                    </div>
-                </div>
-
-                <div class="session-card" onclick="showInfo('session-gradschool')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-discord">🎓</div>
-                            <div>
-                                <div class="session-name">ct-gradschool</div>
-                                <div class="session-type">Discord • Channel</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-private">Private</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-warning">133K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-warning" style="width: 67%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-warning">⚠ 67%</div>
                     </div>
                 </div>
 
@@ -1069,7 +1069,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 20, 2026 • 7:45 PM EDT</div>
+                <div class="update-time">Last sync: April 20, 2026 • 8:48 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1136,7 +1136,7 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 577K means about 577,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 583K means about 583,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1145,7 +1145,7 @@
                 icon: '✅',
                 what: 'Sessions flagged as "Need Attention" are getting close to their memory limit (usually 75%+). They\'ll need to be compacted soon or Pete might lose context.',
                 why: 'When a session hits its limit, Pete has to summarize and forget older messages to make room. Catching it early prevents data loss and keeps conversations smooth.',
-                example: 'Currently at 0 — no sessions over 75%. aviation-solicitations (68%) and ct-gradschool (67%) are highest but still healthy. 🎉'
+                example: 'Currently at 0 — no sessions over 75%. ct-gradschool (69%) and aviation-solicitations (68%) are highest but still in the warning zone. 📊'
             },
             'capacity': {
                 title: 'Average Capacity',
@@ -1164,14 +1164,14 @@
             'session-gradschool': {
                 title: 'Grad School Channel',
                 icon: '🎓',
-                what: 'This session handles Chris\'s graduate coursework at UNC Charlotte. Currently at 67% — second highest, from recent MWAA proposal work that overlapped with final project deadlines.',
-                why: 'Contains portfolio and assignment work. Usage built up during graduation crunch.',
-                example: 'Graduation completed! 🎓 This channel was critical for AI portfolio prep, Martha Edge interview, and the EVMS final project. Now pivoting to business development support.'
+                what: 'This session handles Chris\'s graduate coursework at UNC Charlotte. Currently at 69% — HIGHEST capacity, from recent MWAA proposal work overlapping with final project discussions.',
+                why: 'Contains portfolio and assignment work. Usage built up during graduation crunch and ongoing proposal work.',
+                example: 'Graduation completed! 🎓 Now used for ongoing presentation prep and capstone discussions. Also being used for MWAA proposal slide coordination.'
             },
             'session-aviation': {
                 title: 'Aviation Solicitations',
                 icon: '✈️',
-                what: 'This Discord channel tracks airport RFPs and solicitations. Currently the HIGHEST usage at 68% from active MWAA PMO proposal work.',
+                what: 'This Discord channel tracks airport RFPs and solicitations. Currently at 68% from active MWAA PMO proposal work.',
                 why: 'Marked PUBLIC because others (like Jmo) can see and participate. The MWAA PMO solicitation (due April 30) is actively being worked here.',
                 example: 'Hot right now! MWAA PMO proposal in progress. Red Team review happening this week. Also tracking new CRW on-call RFQ and MWAA EOR opportunity.'
             },
