@@ -394,9 +394,9 @@
         }
 
         .stat-card:nth-child(3) .stat-value {
-            color: var(--accent-green);
+            color: var(--accent-amber);
             background: none;
-            -webkit-text-fill-color: var(--accent-green);
+            -webkit-text-fill-color: var(--accent-amber);
         }
 
         .stat-card:nth-child(4) .stat-value {
@@ -849,28 +849,54 @@
                 <div class="stat-card" onclick="showInfo('sessions')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Active Sessions</div>
-                    <div class="stat-value">8</div>
+                    <div class="stat-value">9</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">417K</div>
+                    <div class="stat-value">500K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Need Attention</div>
-                    <div class="stat-value">0</div>
+                    <div class="stat-value">1</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">27%</div>
+                    <div class="stat-value">28%</div>
                 </div>
             </div>
 
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
+                <div class="session-card warning" onclick="showInfo('session-admin')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-discord">⚙️</div>
+                            <div>
+                                <div class="session-name">ct-admin-channel</div>
+                                <div class="session-type">Discord • Channel</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-private">Private</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-warning">152K / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-warning" style="width: 76%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-warning">⚠ 76%</div>
+                    </div>
+                </div>
+
                 <div class="session-card" onclick="showInfo('session-setup')">
                     <div class="session-header">
                         <div class="session-info">
@@ -894,32 +920,6 @@
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
                         <div class="status-indicator status-healthy">✓ 46%</div>
-                    </div>
-                </div>
-
-                <div class="session-card" onclick="showInfo('session-main')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-imessage">💬</div>
-                            <div>
-                                <div class="session-name">main</div>
-                                <div class="session-type">BlueBubbles • Direct</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-private">Private</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">85K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 43%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 43%</div>
                     </div>
                 </div>
 
@@ -1053,6 +1053,32 @@
                     </div>
                 </div>
 
+                <div class="session-card" onclick="showInfo('session-main')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-webchat">💬</div>
+                            <div>
+                                <div class="session-name">main</div>
+                                <div class="session-type">Webchat • Direct</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-private">Private</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-healthy">16K / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-healthy" style="width: 8%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-healthy">✓ 8%</div>
+                    </div>
+                </div>
+
                 <div class="session-card" onclick="showInfo('session-test')">
                     <div class="session-header">
                         <div class="session-info">
@@ -1083,7 +1109,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 21, 2026 • 9:45 PM EDT</div>
+                <div class="update-time">Last sync: April 21, 2026 • 11:15 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1143,36 +1169,43 @@
             'sessions': {
                 title: 'Active Sessions',
                 icon: '🧵',
-                what: 'A session is like an ongoing conversation thread. Each Discord channel, iMessage chat, or other communication channel gets its own session. Pete keeps track of each conversation separately.',
-                why: 'This matters because Pete can handle multiple conversations at once without mixing them up. If you\'re chatting in Discord and someone else texts via iMessage, both conversations stay separate and organized.',
-                example: 'Think of it like having 8 different phone calls going at once — Pete remembers what each conversation is about and who\'s in it.'
+                what: 'A session is like an ongoing conversation thread. Each Discord channel, webchat, or other communication channel gets its own session. Pete keeps track of each conversation separately.',
+                why: 'This matters because Pete can handle multiple conversations at once without mixing them up. If you\'re chatting in Discord and someone else uses webchat, both conversations stay separate and organized.',
+                example: 'Think of it like having 9 different phone calls going at once — Pete remembers what each conversation is about and who\'s in it.'
             },
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 417K means about 417,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 500K means about 500,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
             'attention': {
                 title: 'Need Attention',
-                icon: '✅',
+                icon: '⚠️',
                 what: 'Sessions flagged as "Need Attention" are getting close to their memory limit (usually 75%+). They\'ll need to be compacted soon or Pete might lose context.',
                 why: 'When a session hits its limit, Pete has to summarize and forget older messages to make room. Catching it early prevents data loss and keeps conversations smooth.',
-                example: '✅ All clear! No sessions need immediate attention. Everything is running healthy.'
+                example: '⚠️ ct-admin-channel is at 76% — it will need compaction soon to avoid losing important context.'
             },
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows the average memory usage across all sessions. 27% means sessions are running lean with lots of headroom.',
-                why: 'Low average capacity is great — it means the system is healthy and efficient. Recent compactions have cleaned things up nicely.',
-                example: 'Like checking the gas gauges on a fleet of cars — everything\'s topped up and running smoothly!'
+                what: 'This shows the average memory usage across all sessions. 28% means sessions are running lean with lots of headroom.',
+                why: 'Low average capacity is great — it means the system is healthy and efficient. Most sessions have plenty of room.',
+                example: 'Like checking the gas gauges on a fleet of cars — most are topped up and running smoothly, but ct-admin-channel needs attention.'
+            },
+            'session-admin': {
+                title: 'Admin Channel',
+                icon: '⚙️',
+                what: '⚠️ WARNING! This session is at 76% capacity (152K / 200K tokens). Getting close to the compaction threshold.',
+                why: 'This channel handles admin/system discussions. At 76%, it\'s getting heavy and should be compacted soon to prevent context loss.',
+                example: 'Consider running a compaction or archiving old conversations before important context gets auto-summarized away.'
             },
             'session-main': {
                 title: 'Main Session',
                 icon: '💬',
-                what: 'This is the primary iMessage/BlueBubbles conversation — direct chats with Chris via his work phone. It\'s marked PRIVATE because it contains personal context and conversations.',
-                why: 'At 43% capacity, this session is healthy with plenty of room for continued conversations.',
+                what: 'The primary webchat session for direct conversations with Chris. At just 8% capacity, this session is very healthy.',
+                why: 'Recently compacted or fresh session with tons of headroom for continued conversations.',
                 example: 'This is like Chris\'s main chat thread with Pete. All the back-and-forth about work, projects, and daily tasks lives here.'
             },
             'session-gradschool': {
