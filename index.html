@@ -1059,7 +1059,7 @@
                             <div class="channel-icon channel-webchat">💬</div>
                             <div>
                                 <div class="session-name">main</div>
-                                <div class="session-type">Webchat • Direct</div>
+                                <div class="session-type">Heartbeat • Direct</div>
                             </div>
                         </div>
                         <span class="badge badge-private">Private</span>
@@ -1109,7 +1109,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 22, 2026 • 4:25 AM EDT</div>
+                <div class="update-time">Last sync: April 22, 2026 • 5:25 AM EDT</div>
             </footer>
         </div>
     </div>
@@ -1171,12 +1171,12 @@
                 icon: '🧵',
                 what: 'A session is like an ongoing conversation thread. Each Discord channel, webchat, or other communication channel gets its own session. Pete keeps track of each conversation separately.',
                 why: 'This matters because Pete can handle multiple conversations at once without mixing them up. If you\'re chatting in Discord and someone else uses webchat, both conversations stay separate and organized.',
-                example: 'Think of it like having 9 different phone calls going at once — Pete remembers what each conversation is about and who\'s in it.'
+                example: 'Think of it like having 10 different phone calls going at once — Pete remembers what each conversation is about and who\'s in it.'
             },
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 501K means about 501,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 500K means about 500,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1204,9 +1204,9 @@
             'session-main': {
                 title: 'Main Session',
                 icon: '💬',
-                what: 'The primary webchat session for direct conversations with Chris. At just 8% capacity, this session is very healthy.',
+                what: 'The primary heartbeat session for system operations. At just 8% capacity, this session is very healthy.',
                 why: 'Recently compacted or fresh session with tons of headroom for continued conversations.',
-                example: 'This is like Chris\'s main chat thread with Pete. All the back-and-forth about work, projects, and daily tasks lives here.'
+                example: 'This is the main heartbeat session where Pete checks in periodically and handles background tasks.'
             },
             'session-gradschool': {
                 title: 'Grad School Channel',
@@ -1234,7 +1234,7 @@
                 icon: '📡',
                 what: 'An automated cron job that scans airport websites for new solicitations every week. Runs independently and posts findings to Discord.',
                 why: 'At 39% capacity, this session handles the weekly airport solicitation scanning. It processes 30+ airports across the Mid-Atlantic region.',
-                example: 'Sunday\'s scan found CRW on-call RFQ (due May 1) and MWAA EOR Services (due May 18). Results posted to #aviation-solicitations automatically.'
+                example: 'Last scan found CRW on-call RFQ (due May 1) and MWAA EOR Services (due May 18). Results posted to #aviation-solicitations automatically.'
             },
             'session-heartbeat': {
                 title: 'Heartbeat Channel',
