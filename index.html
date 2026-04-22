@@ -394,19 +394,9 @@
         }
 
         .stat-card:nth-child(3) .stat-value {
-            color: var(--accent-amber);
+            color: var(--accent-green);
             background: none;
-            -webkit-text-fill-color: var(--accent-amber);
-        }
-
-        .stat-card:nth-child(3).has-alert {
-            border-color: rgba(245, 158, 11, 0.4);
-            animation: warning-pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes warning-pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
-            50% { box-shadow: 0 0 20px 0 rgba(245, 158, 11, 0.3); }
+            -webkit-text-fill-color: var(--accent-green);
         }
 
         .stat-card:nth-child(4) .stat-value {
@@ -487,11 +477,6 @@
             border-color: rgba(245, 158, 11, 0.4);
         }
 
-        .session-card.error {
-            border-color: rgba(239, 68, 68, 0.4);
-            animation: critical-pulse 2s ease-in-out infinite;
-        }
-
         @keyframes critical-pulse {
             0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
             50% { box-shadow: 0 0 20px 0 rgba(239, 68, 68, 0.3); }
@@ -568,12 +553,6 @@
             background: rgba(139, 92, 246, 0.15);
             color: var(--accent-purple);
             border: 1px solid rgba(139, 92, 246, 0.3);
-        }
-
-        .badge-error {
-            background: rgba(239, 68, 68, 0.15);
-            color: var(--accent-red);
-            border: 1px solid rgba(239, 68, 68, 0.3);
         }
 
         /* Progress Bar */
@@ -758,11 +737,6 @@
             margin-top: 16px;
         }
 
-        .panel-example.error {
-            background: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.2);
-        }
-
         .panel-example-title {
             font-size: 0.8rem;
             font-weight: 600;
@@ -771,10 +745,6 @@
             display: flex;
             align-items: center;
             gap: 6px;
-        }
-
-        .panel-example.error .panel-example-title {
-            color: var(--accent-red);
         }
 
         .panel-example-text {
@@ -884,46 +854,46 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">411K</div>
+                    <div class="stat-value">386K</div>
                 </div>
-                <div class="stat-card has-alert" onclick="showInfo('attention')">
+                <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Need Attention</div>
-                    <div class="stat-value">1</div>
+                    <div class="stat-value">0</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">23%</div>
+                    <div class="stat-value">22%</div>
                 </div>
             </div>
 
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
-                <div class="session-card error" onclick="showInfo('session-aviation')">
+                <div class="session-card" onclick="showInfo('session-admin')">
                     <div class="session-header">
                         <div class="session-info">
-                            <div class="channel-icon channel-discord">✈️</div>
+                            <div class="channel-icon channel-discord">⚙️</div>
                             <div>
-                                <div class="session-name">aviation-solicitations</div>
+                                <div class="session-name">ct-admin-channel</div>
                                 <div class="session-type">Discord • Channel</div>
                             </div>
                         </div>
-                        <span class="badge badge-error">⚠️ Error</span>
+                        <span class="badge badge-private">Private</span>
                     </div>
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-warning">98K / 200K</span>
+                            <span class="progress-value status-healthy">95K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-warning" style="width: 49%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 48%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-critical">⚠ 49%</div>
+                        <div class="status-indicator status-healthy">✓ 48%</div>
                     </div>
                 </div>
 
@@ -976,32 +946,6 @@
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
                         <div class="status-indicator status-healthy">✓ 39%</div>
-                    </div>
-                </div>
-
-                <div class="session-card" onclick="showInfo('session-admin')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-discord">⚙️</div>
-                            <div>
-                                <div class="session-name">ct-admin-channel</div>
-                                <div class="session-type">Discord • Channel</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-private">Private</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">39K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 19%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 19%</div>
                     </div>
                 </div>
 
@@ -1083,6 +1027,32 @@
                     </div>
                 </div>
 
+                <div class="session-card" onclick="showInfo('session-aviation')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-discord">✈️</div>
+                            <div>
+                                <div class="session-name">aviation-solicitations</div>
+                                <div class="session-type">Discord • Channel</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-public">Public</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-healthy">16K / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-healthy" style="width: 8%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-healthy">✓ 8%</div>
+                    </div>
+                </div>
+
                 <div class="session-card" onclick="showInfo('session-main')">
                     <div class="session-header">
                         <div class="session-info">
@@ -1139,7 +1109,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 22, 2026 • 9:25 AM EDT</div>
+                <div class="update-time">Last sync: April 22, 2026 • 10:28 AM EDT</div>
             </footer>
         </div>
     </div>
@@ -1206,39 +1176,37 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 411K means about 411,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 386K means about 386,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
             'attention': {
                 title: 'Need Attention',
-                icon: '⚠️',
-                what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 1 session needs attention.',
+                icon: '✅',
+                what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 0 sessions need attention.',
                 why: 'When a session hits its limit or has errors, Pete may lose context or fail to respond. Catching issues early prevents problems.',
-                example: '⚠️ aviation-solicitations has an API error! The session encountered an invalid request error and needs to be checked or compacted.',
-                isError: true
+                example: 'All systems green! No sessions are approaching capacity limits or experiencing errors. The previous aviation-solicitations error has been resolved.'
             },
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows the average memory usage across all sessions. 23% means sessions are running lean with lots of headroom.',
+                what: 'This shows the average memory usage across all sessions. 22% means sessions are running lean with lots of headroom.',
                 why: 'Low average capacity is great — it means the system is healthy and efficient. Most sessions have plenty of room.',
-                example: 'Like checking the gas gauges on a fleet of cars — most are topped up. One needs attention (aviation-solicitations with an error).'
-            },
-            'session-aviation': {
-                title: 'Aviation Solicitations',
-                icon: '⚠️',
-                what: '⚠️ ERROR STATE! This session encountered an API error (invalid_request_error). The message history may have become corrupted.',
-                why: 'This channel normally handles airport solicitation tracking. The error means it can\'t process new messages properly right now.',
-                example: 'Error: "messages.198.content.1: unexpected tool_use_id found" — likely needs session compaction or reset to clear corrupted history.',
-                isError: true
+                example: 'Like checking the gas gauges on a fleet of cars — all tanks are well above half full. System is running smoothly.'
             },
             'session-admin': {
                 title: 'Admin Channel',
                 icon: '⚙️',
-                what: '✅ HEALTHY! This session is at 19% capacity (39K / 200K tokens). Running lean and efficient.',
-                why: 'This channel handles admin/system discussions. Good headroom for ongoing work.',
-                example: 'Recently tested responses and verified Pete is alive and kicking in the admin channel.'
+                what: '✅ HEALTHY! This session is at 48% capacity (95K / 200K tokens). The busiest session but still well within limits.',
+                why: 'This channel handles admin/system discussions. Recently recovered the aviation-solicitations channel from corruption here.',
+                example: 'Just fixed the #aviation-solicitations session by recreating it after the API error. Fresh start with clean history.'
+            },
+            'session-aviation': {
+                title: 'Aviation Solicitations',
+                icon: '✈️',
+                what: '✅ RECOVERED! This session was reset and is now healthy at just 8% capacity (16K / 200K tokens). Fresh session with clean history.',
+                why: 'This channel tracks airport solicitations. After the corrupted history issue, it\'s been restored and working properly.',
+                example: 'Chris just asked about the MWAA PMO draft proposal. The session is back online and ready to help with solicitation tracking.'
             },
             'session-main': {
                 title: 'Main Session',
@@ -1258,7 +1226,7 @@
                 title: 'Setup & Getting Better',
                 icon: '🔧',
                 what: 'A Discord channel dedicated to configuring and improving Pete\'s capabilities — debugging, testing features, and tweaking settings.',
-                why: 'PRIVATE because it contains technical details about Pete\'s configuration that shouldn\'t be public. At 46% — healthy but the largest session.',
+                why: 'PRIVATE because it contains technical details about Pete\'s configuration that shouldn\'t be public. At 46% — healthy but one of the larger sessions.',
                 example: 'Where Chris asks "how do I make Pete do X?" and we figure it out together through trial and error.'
             },
             'session-cron': {
@@ -1295,10 +1263,6 @@
             const data = infoData[key];
             if (!data) return;
 
-            const exampleClass = data.isError ? 'panel-example error' : 'panel-example';
-            const exampleIcon = data.isError ? '⚠️' : '💡';
-            const exampleTitle = data.isError ? 'Issue details' : 'Real-world example';
-
             document.getElementById('panelTitle').textContent = data.title;
             document.getElementById('panelContent').innerHTML = `
                 <div class="panel-icon">${data.icon}</div>
@@ -1313,8 +1277,8 @@
                     <p class="panel-text">${data.why}</p>
                 </div>
                 
-                <div class="${exampleClass}">
-                    <div class="panel-example-title">${exampleIcon} ${exampleTitle}</div>
+                <div class="panel-example">
+                    <div class="panel-example-title">💡 Real-world example</div>
                     <p class="panel-example-text">${data.example}</p>
                 </div>
             `;
