@@ -854,7 +854,7 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">496K</div>
+                    <div class="stat-value">502K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
@@ -864,14 +864,14 @@
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">28%</div>
+                    <div class="stat-value">29%</div>
                 </div>
             </div>
 
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
-                <div class="session-card" onclick="showInfo('session-aviation')">
+                <div class="session-card warning" onclick="showInfo('session-aviation')">
                     <div class="session-header">
                         <div class="session-info">
                             <div class="channel-icon channel-discord">✈️</div>
@@ -989,15 +989,15 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">38K / 200K</span>
+                            <span class="progress-value status-healthy">44K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 19%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 22%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 19%</div>
+                        <div class="status-indicator status-healthy">✓ 22%</div>
                     </div>
                 </div>
 
@@ -1109,7 +1109,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 23, 2026 • 1:13 PM EDT</div>
+                <div class="update-time">Last sync: April 23, 2026 • 2:16 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1176,7 +1176,7 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 496K means about 496,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 502K means about 502,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1190,7 +1190,7 @@
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows the average memory usage across all sessions. 28% means sessions are running lean with lots of headroom.',
+                what: 'This shows the average memory usage across all sessions. 29% means sessions are running lean with lots of headroom.',
                 why: 'Low average capacity is great — it means the system is healthy and efficient. Most sessions have plenty of room.',
                 example: 'Like checking the gas gauges on a fleet of cars — all tanks are well above half full. System is running smoothly.'
             },
@@ -1218,9 +1218,9 @@
             'session-gradschool': {
                 title: 'Grad School Channel',
                 icon: '🎓',
-                what: '✅ HEALTHY! This session is at 19% capacity (38K / 200K tokens). Plenty of room for final project work!',
-                why: 'Chris\'s graduation is May 2026 — just weeks away! This channel handles grad school coordination.',
-                example: 'Recent work includes AI portfolio websites and final project submissions.'
+                what: '✅ HEALTHY! This session is at 22% capacity (44K / 200K tokens). Working on interview transcription and AI research analysis.',
+                why: 'Chris\'s graduation is May 2026 — just weeks away! Active with final project interview analysis work.',
+                example: 'Currently processing AI Working Group Lead interview for the research project — mapping to SAMR framework.'
             },
             'session-setup': {
                 title: 'Setup & Getting Better',
