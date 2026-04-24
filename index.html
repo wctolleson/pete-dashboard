@@ -1149,7 +1149,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 24, 2026 • 6:07 PM EDT</div>
+                <div class="update-time">Last sync: April 24, 2026 • 7:08 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1225,7 +1225,7 @@
                 icon: '✅',
                 what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 0 sessions need attention.',
                 why: 'When a session hits its limit or has errors, Pete may lose context or fail to respond. Catching issues early prevents problems.',
-                example: 'All systems green! No sessions are approaching capacity limits or experiencing errors. Everything is running smoothly.'
+                example: 'All systems green! Two sessions (gradschool & aviation) are in warning zone (62%) but still under the 75% threshold. Everything is running smoothly.'
             },
             'capacity': {
                 title: 'Average Capacity',
@@ -1329,7 +1329,7 @@
                     <p class="panel-example-text">${data.example}</p>
                 </div>
             `;
-
+            
             document.querySelector('.panel-overlay').classList.add('active');
             document.getElementById('infoPanel').classList.add('active');
         }
@@ -1339,7 +1339,7 @@
             document.getElementById('infoPanel').classList.remove('active');
         }
 
-        // ESC key to close panel
+        // Close panel with Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closePanel();
         });
