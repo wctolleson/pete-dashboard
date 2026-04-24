@@ -868,7 +868,7 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">551K</div>
+                    <div class="stat-value">555K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
@@ -1003,7 +1003,7 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">73K / 200K</span>
+                            <span class="progress-value status-healthy">74K / 200K</span>
                         </div>
                         <div class="progress-track">
                             <div class="progress-bar progress-healthy" style="width: 37%"></div>
@@ -1012,6 +1012,32 @@
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
                         <div class="status-indicator status-healthy">✓ 37%</div>
+                    </div>
+                </div>
+
+                <div class="session-card" onclick="showInfo('session-clt-pm')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-discord">🏗️</div>
+                            <div>
+                                <div class="session-name">ct-clt-project-management</div>
+                                <div class="session-type">Discord • Channel</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-private">Private</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-healthy">23K / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-healthy" style="width: 11%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-healthy">✓ 11%</div>
                     </div>
                 </div>
 
@@ -1038,32 +1064,6 @@
                     <div class="session-footer">
                         <div class="model-badge openai">◆ gpt-4o</div>
                         <div class="status-indicator status-healthy">✓ 16%</div>
-                    </div>
-                </div>
-
-                <div class="session-card new-badge" onclick="showInfo('session-clt-pm')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-discord">🏗️</div>
-                            <div>
-                                <div class="session-name">ct-clt-project-management</div>
-                                <div class="session-type">Discord • Channel</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-private">Private</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">19K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 10%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 10%</div>
                     </div>
                 </div>
 
@@ -1149,7 +1149,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 24, 2026 • 9:45 AM EDT</div>
+                <div class="update-time">Last sync: April 24, 2026 • 10:48 AM EDT</div>
             </footer>
         </div>
     </div>
@@ -1216,7 +1216,7 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 551K means about 551,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 555K means about 555,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1258,9 +1258,9 @@
             'session-gradschool': {
                 title: 'Grad School Channel',
                 icon: '🎓',
-                what: '✅ HEALTHY! This session is at 37% capacity (73K / 200K tokens). Working on interview transcription and AI research analysis.',
-                why: 'Chris\'s graduation is May 2026 — just weeks away! Active with final project interview analysis and thank-you email drafts.',
-                example: 'Recently drafted thank-you email to Keith from the AI Working Group interview — mapping to SAMR framework for research project.'
+                what: '✅ HEALTHY! This session is at 37% capacity (74K / 200K tokens). Working on interview transcription and AI research analysis.',
+                why: 'Chris\'s graduation is May 2026 — just weeks away! Active with final project interview analysis and AODB research.',
+                example: 'Recently explained AODB (Airport Operational Database) — the central data backbone for airport operations and AI implementations.'
             },
             'session-setup': {
                 title: 'Setup & Getting Better',
@@ -1293,9 +1293,9 @@
             'session-clt-pm': {
                 title: 'CLT Project Management',
                 icon: '🏗️',
-                what: '🆕 NEW! A dedicated channel for Chris\'s CLT PM work. Currently tracking ~$259M in active projects at Charlotte Douglas International Airport.',
-                why: 'This channel helps track CLT projects: CAP2 ($241M closeout), EPHX ($7M groundbreaking Monday!), Cargo 6 ($6.75M NTP June 15), AED Retrofit, TX-3 BHS design.',
-                example: 'CAP2 is nearly complete (200K SF, 10 gates) — legacy-level work! EPHX groundbreaking is Monday April 28. Cargo 6 NTP coming June 15.'
+                what: '✅ HEALTHY! A dedicated channel for Chris\'s CLT PM work. Currently tracking ~$259M in active projects at Charlotte Douglas International Airport.',
+                why: 'This channel helps track CLT projects: CAP2 ($241M closeout), EPHX groundbreaking, Cargo 6 ($6.75M NTP June 15), AED Retrofit, TX-3 BHS design.',
+                example: 'CAP2 is nearly complete (200K SF, 10 gates) — legacy-level work! EPHX groundbreaking is Monday April 28. First CLT PM task completed!'
             },
             'session-test': {
                 title: 'Test Stuff',
@@ -1325,7 +1325,7 @@
                 </div>
                 
                 <div class="panel-example">
-                    <div class="panel-example-title">💡 Real-world example</div>
+                    <div class="panel-example-title">💡 Example</div>
                     <p class="panel-example-text">${data.example}</p>
                 </div>
             `;
@@ -1339,7 +1339,7 @@
             document.getElementById('infoPanel').classList.remove('active');
         }
 
-        // Close on escape key
+        // Escape key to close panel
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closePanel();
         });
