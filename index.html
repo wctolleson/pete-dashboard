@@ -868,7 +868,7 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">586K</div>
+                    <div class="stat-value">592K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
@@ -925,7 +925,7 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-warning">105K / 200K</span>
+                            <span class="progress-value status-warning">107K / 200K</span>
                         </div>
                         <div class="progress-track">
                             <div class="progress-bar progress-warning" style="width: 53%"></div>
@@ -1029,15 +1029,15 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">23K / 200K</span>
+                            <span class="progress-value status-healthy">27K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 11%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 14%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 11%</div>
+                        <div class="status-indicator status-healthy">✓ 14%</div>
                     </div>
                 </div>
 
@@ -1149,7 +1149,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 24, 2026 • 11:51 AM EDT</div>
+                <div class="update-time">Last sync: April 24, 2026 • 12:54 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1216,7 +1216,7 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 586K means about 586,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 592K means about 592,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1258,9 +1258,9 @@
             'session-gradschool': {
                 title: 'Grad School Channel',
                 icon: '🎓',
-                what: '⚠️ MODERATE! This session is at 53% capacity (105K / 200K tokens). Active work on final project and PM/CM tools.',
+                what: '⚠️ MODERATE! This session is at 53% capacity (107K / 200K tokens). Active work on final project and PM/CM tools.',
                 why: 'Chris\'s graduation is May 2026 — just weeks away! Active with final project interview analysis, knowledge bombing, and PM/CM tools discussion.',
-                example: 'Recently loaded detailed PM/CM experience context for JE Dunn interview prep. Consultant + owner + contractor perspective building.'
+                example: 'Recently sent interview transcripts and analysis to Chris\'s CLT email. Consultant + owner + contractor perspective building.'
             },
             'session-setup': {
                 title: 'Setup & Getting Better',
@@ -1293,7 +1293,7 @@
             'session-clt-pm': {
                 title: 'CLT Project Management',
                 icon: '🏗️',
-                what: '✅ HEALTHY! A dedicated channel for Chris\'s CLT PM work. At 11% capacity with tons of room.',
+                what: '✅ HEALTHY! A dedicated channel for Chris\'s CLT PM work. At 14% capacity with tons of room.',
                 why: 'Recently loaded with PM/CM Tools knowledge bomb — tracking CLT projects and building AI tools for construction/program management.',
                 example: 'Supporting EVM Forecaster, Schedule Risk Analyzer, Pay App Generator, RFI/Submittal Reviewer, and Unity Construct Copilot development.'
             },
@@ -1339,7 +1339,7 @@
             document.getElementById('infoPanel').classList.remove('active');
         }
 
-        // Close panel with escape key
+        // ESC to close panel
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closePanel();
         });
