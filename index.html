@@ -868,7 +868,7 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">684K</div>
+                    <div class="stat-value">693K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
@@ -885,6 +885,33 @@
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
+                <!-- ct-gradschool - 132K/200K = 66% WARNING -->
+                <div class="session-card warning" onclick="showInfo('session-gradschool')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-discord">🎓</div>
+                            <div>
+                                <div class="session-name">ct-gradschool</div>
+                                <div class="session-type">Discord • Channel</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-private">Private</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-warning">132K / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-warning" style="width: 66%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-warning">⚠ 66%</div>
+                    </div>
+                </div>
+
                 <!-- aviation-solicitations - 128K/200K = 64% WARNING -->
                 <div class="session-card warning" onclick="showInfo('session-aviation')">
                     <div class="session-header">
@@ -909,33 +936,6 @@
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
                         <div class="status-indicator status-warning">⚠ 64%</div>
-                    </div>
-                </div>
-
-                <!-- ct-gradschool - 124K/200K = 62% WARNING -->
-                <div class="session-card warning" onclick="showInfo('session-gradschool')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-discord">🎓</div>
-                            <div>
-                                <div class="session-name">ct-gradschool</div>
-                                <div class="session-type">Discord • Channel</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-private">Private</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-warning">124K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-warning" style="width: 62%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-warning">⚠ 62%</div>
                     </div>
                 </div>
 
@@ -1159,7 +1159,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 25, 2026 • 4:03 PM EDT</div>
+                <div class="update-time">Last sync: April 25, 2026 • 5:06 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1226,7 +1226,7 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 684K means about 684,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 693K means about 693,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1247,7 +1247,7 @@
             'session-main': {
                 title: 'Main Session',
                 icon: '💬',
-                what: '✨ FRESHLY COMPACTED! This session dropped from 84% to just 8% (16K / 200K tokens). The primary iMessage/BlueBubbles session is running clean.',
+                what: '✨ FRESHLY COMPACTED! This session is at just 8% (16K / 200K tokens). The primary iMessage/BlueBubbles session is running clean.',
                 why: 'This is the main direct-communication session. Compaction preserved essential context while clearing old messages. Ready for new conversations!',
                 example: 'Recently discussed Pete backup system and disaster recovery. Context was preserved during compaction — still knows who Chris is and recent projects.'
             },
@@ -1268,9 +1268,9 @@
             'session-gradschool': {
                 title: 'Grad School Channel',
                 icon: '🎓',
-                what: '⚠️ MODERATE! This session is at 62% capacity (124K / 200K tokens). Active work on final project and PM/CM tools.',
-                why: 'Chris\'s graduation is May 2026 — just weeks away! Active with final project interview analysis, knowledge bombing, and PM/CM tools discussion.',
-                example: 'Recently analyzed Laura Runge\'s interview — CLT BI Manager discussing semantic layering as critical for AI success.'
+                what: '⚠️ HIGHEST USAGE! This session is at 66% capacity (132K / 200K tokens). Active work on final project and PM/CM tools.',
+                why: 'Chris\'s graduation is May 2026 — just weeks away! Active with final project interview analysis, CrispyT.com website, and airplane graphics for the runway visualization.',
+                example: 'Recently worked on aircraft illustrations upgrade — from fish-shapes to proper airplane icons. Theseus handled the glow-up!'
             },
             'session-setup': {
                 title: 'Setup & Getting Better',
@@ -1312,28 +1312,28 @@
                 icon: '🧪',
                 what: 'A sandbox channel for experimenting with Pete\'s features without affecting important conversations. At 42% capacity.',
                 why: 'Every system needs a safe place to try things that might break. Better to break here than in production.',
-                example: 'Testing new commands, trying out integrations, or just seeing what happens when you push buttons. Recently tested Discord reconnection after downtime.'
+                example: 'Where we tested voice mode, camera integration, and various features before deploying them to real channels.'
             }
         };
 
         function showInfo(key) {
-            const info = infoData[key];
-            if (!info) return;
+            const data = infoData[key];
+            if (!data) return;
 
-            document.getElementById('panelTitle').textContent = info.title;
+            document.getElementById('panelTitle').textContent = data.title;
             document.getElementById('panelContent').innerHTML = `
-                <div class="panel-icon">${info.icon}</div>
+                <div class="panel-icon">${data.icon}</div>
                 <div class="panel-section">
-                    <div class="panel-section-title">What is this?</div>
-                    <p class="panel-text">${info.what}</p>
+                    <div class="panel-section-title">What Is This?</div>
+                    <p class="panel-text">${data.what}</p>
                 </div>
                 <div class="panel-section">
-                    <div class="panel-section-title">Why does it matter?</div>
-                    <p class="panel-text">${info.why}</p>
+                    <div class="panel-section-title">Why It Matters</div>
+                    <p class="panel-text">${data.why}</p>
                 </div>
                 <div class="panel-example">
-                    <div class="panel-example-title">💡 In Practice</div>
-                    <p class="panel-example-text">${info.example}</p>
+                    <div class="panel-example-title">💡 Example</div>
+                    <p class="panel-example-text">${data.example}</p>
                 </div>
             `;
 
