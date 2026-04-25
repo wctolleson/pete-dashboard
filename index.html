@@ -1149,7 +1149,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 25, 2026 • 3:19 AM EDT</div>
+                <div class="update-time">Last sync: April 25, 2026 • 4:22 AM EDT</div>
             </footer>
         </div>
     </div>
@@ -1325,18 +1325,18 @@
                 </div>
                 
                 <div class="panel-example">
-                    <div class="panel-example-title">💡 In plain English</div>
+                    <div class="panel-example-title">💡 Example</div>
                     <p class="panel-example-text">${data.example}</p>
                 </div>
             `;
 
-            document.querySelector('.panel-overlay').classList.add('active');
             document.getElementById('infoPanel').classList.add('active');
+            document.querySelector('.panel-overlay').classList.add('active');
         }
 
         function closePanel() {
-            document.querySelector('.panel-overlay').classList.remove('active');
             document.getElementById('infoPanel').classList.remove('active');
+            document.querySelector('.panel-overlay').classList.remove('active');
         }
 
         // Close panel with Escape key
