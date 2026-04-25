@@ -394,9 +394,9 @@
         }
 
         .stat-card:nth-child(3) .stat-value {
-            color: var(--accent-amber);
+            color: var(--accent-green);
             background: none;
-            -webkit-text-fill-color: var(--accent-amber);
+            -webkit-text-fill-color: var(--accent-green);
         }
 
         .stat-card:nth-child(4) .stat-value {
@@ -477,8 +477,8 @@
             border-color: rgba(245, 158, 11, 0.4);
         }
 
-        .session-card.new-badge::after {
-            content: 'NEW';
+        .session-card.compacted::after {
+            content: '✨ FRESH';
             position: absolute;
             top: 12px;
             right: 12px;
@@ -868,50 +868,23 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">837K</div>
+                    <div class="stat-value">684K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Need Attention</div>
-                    <div class="stat-value">1</div>
+                    <div class="stat-value">0</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">42%</div>
+                    <div class="stat-value">35%</div>
                 </div>
             </div>
 
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
-                <!-- main (BlueBubbles/webchat) - 168K/200K = 84% CRITICAL -->
-                <div class="session-card critical" onclick="showInfo('session-main')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-imessage">💬</div>
-                            <div>
-                                <div class="session-name">main</div>
-                                <div class="session-type">BlueBubbles • iMessage</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-private">Private</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-critical">168K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-critical" style="width: 84%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-critical">🔥 84%</div>
-                    </div>
-                </div>
-
                 <!-- aviation-solicitations - 128K/200K = 64% WARNING -->
                 <div class="session-card warning" onclick="showInfo('session-aviation')">
                     <div class="session-header">
@@ -1154,12 +1127,39 @@
                         <div class="status-indicator status-healthy">✓ 9%</div>
                     </div>
                 </div>
+
+                <!-- main (BlueBubbles/webchat) - 16K/200K = 8% HEALTHY (COMPACTED!) -->
+                <div class="session-card compacted" onclick="showInfo('session-main')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-imessage">💬</div>
+                            <div>
+                                <div class="session-name">main</div>
+                                <div class="session-type">BlueBubbles • iMessage</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-private">Private</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-healthy">16K / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-healthy" style="width: 8%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-healthy">✓ 8%</div>
+                    </div>
+                </div>
             </div>
 
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 25, 2026 • 3:02 PM EDT</div>
+                <div class="update-time">Last sync: April 25, 2026 • 4:03 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1226,30 +1226,30 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 837K means about 837,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 684K means about 684,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
             'attention': {
                 title: 'Need Attention',
-                icon: '⚠️',
-                what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 1 session needs attention.',
+                icon: '✅',
+                what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 0 sessions need attention!',
                 why: 'When a session hits its limit or has errors, Pete may lose context or fail to respond. Catching issues early prevents problems.',
-                example: '🔥 MAIN SESSION at 84%! The primary iMessage/webchat session is getting full. Consider compacting soon to avoid context loss.'
+                example: '🎉 All clear! Main session was recently compacted and is running fresh at 8%. No critical sessions right now.'
             },
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows the average memory usage across all sessions. 42% means sessions are using less than half their capacity on average.',
-                why: 'Average capacity gives a system health snapshot. Most sessions have plenty of room, but one (main) is running hot.',
-                example: 'Like checking the gas gauges on a fleet of cars — most tanks are well above half full, but one needs attention soon.'
+                what: 'This shows the average memory usage across all sessions. 35% means sessions are using about a third of their capacity on average — very healthy!',
+                why: 'Average capacity gives a system health snapshot. All sessions have plenty of room after recent compaction work.',
+                example: 'Like checking the gas gauges on a fleet of cars — most tanks are well above half full. System is running lean.'
             },
             'session-main': {
                 title: 'Main Session',
                 icon: '💬',
-                what: '🔥 CRITICAL! This session is at 84% capacity (168K / 200K tokens). The primary iMessage/BlueBubbles session needs compaction soon.',
-                why: 'This is the main direct-communication session. At 84%, it\'s past the 75% warning threshold. Compaction recommended to preserve context.',
-                example: 'Recently discussed Pete backup system and disaster recovery planning. Consider compacting before more important conversations.'
+                what: '✨ FRESHLY COMPACTED! This session dropped from 84% to just 8% (16K / 200K tokens). The primary iMessage/BlueBubbles session is running clean.',
+                why: 'This is the main direct-communication session. Compaction preserved essential context while clearing old messages. Ready for new conversations!',
+                example: 'Recently discussed Pete backup system and disaster recovery. Context was preserved during compaction — still knows who Chris is and recent projects.'
             },
             'session-admin': {
                 title: 'Admin Channel',
@@ -1262,15 +1262,15 @@
                 title: 'Aviation Solicitations',
                 icon: '✈️',
                 what: '⚠️ MODERATE! This session is at 64% capacity (128K / 200K tokens). The busiest session — active RFP work ongoing.',
-                why: 'This channel handles the FAA Carolinas PSI RFP analysis and other aviation solicitations. Active with ongoing labor category discussions.',
-                example: 'Recently analyzed FAA RFP documents to identify position requirements and evaluation criteria for the PSI response.'
+                why: 'This channel handles the FAA Carolinas PSI RFP analysis and other aviation solicitations. Recently discussed SOW-to-position mapping methodology.',
+                example: 'Learning to map SOW service categories to implied positions when solicitations don\'t explicitly define requirements.'
             },
             'session-gradschool': {
                 title: 'Grad School Channel',
                 icon: '🎓',
                 what: '⚠️ MODERATE! This session is at 62% capacity (124K / 200K tokens). Active work on final project and PM/CM tools.',
                 why: 'Chris\'s graduation is May 2026 — just weeks away! Active with final project interview analysis, knowledge bombing, and PM/CM tools discussion.',
-                example: 'Recently sent interview transcripts and analysis to Chris\'s CLT email. Consultant + owner + contractor perspective building.'
+                example: 'Recently analyzed Laura Runge\'s interview — CLT BI Manager discussing semantic layering as critical for AI success.'
             },
             'session-setup': {
                 title: 'Setup & Getting Better',
@@ -1312,31 +1312,28 @@
                 icon: '🧪',
                 what: 'A sandbox channel for experimenting with Pete\'s features without affecting important conversations. At 42% capacity.',
                 why: 'Every system needs a safe place to try things that might break. Better to break here than in production.',
-                example: 'Testing new commands, trying out integrations, or just seeing what happens when you push buttons. Recently researched vacation rentals for Memorial Day!'
+                example: 'Testing new commands, trying out integrations, or just seeing what happens when you push buttons. Recently tested Discord reconnection after downtime.'
             }
         };
 
         function showInfo(key) {
-            const data = infoData[key];
-            if (!data) return;
+            const info = infoData[key];
+            if (!info) return;
 
-            document.getElementById('panelTitle').textContent = data.title;
+            document.getElementById('panelTitle').textContent = info.title;
             document.getElementById('panelContent').innerHTML = `
-                <div class="panel-icon">${data.icon}</div>
-                
+                <div class="panel-icon">${info.icon}</div>
                 <div class="panel-section">
                     <div class="panel-section-title">What is this?</div>
-                    <p class="panel-text">${data.what}</p>
+                    <p class="panel-text">${info.what}</p>
                 </div>
-                
                 <div class="panel-section">
                     <div class="panel-section-title">Why does it matter?</div>
-                    <p class="panel-text">${data.why}</p>
+                    <p class="panel-text">${info.why}</p>
                 </div>
-                
                 <div class="panel-example">
-                    <div class="panel-example-title">💡 In simple terms</div>
-                    <p class="panel-example-text">${data.example}</p>
+                    <div class="panel-example-title">💡 In Practice</div>
+                    <p class="panel-example-text">${info.example}</p>
                 </div>
             `;
 
