@@ -868,7 +868,7 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">693K</div>
+                    <div class="stat-value">701K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
@@ -878,14 +878,14 @@
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">35%</div>
+                    <div class="stat-value">36%</div>
                 </div>
             </div>
 
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
-                <!-- ct-gradschool - 132K/200K = 66% WARNING -->
+                <!-- ct-gradschool - 141K/200K = 70% WARNING -->
                 <div class="session-card warning" onclick="showInfo('session-gradschool')">
                     <div class="session-header">
                         <div class="session-info">
@@ -900,15 +900,15 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-warning">132K / 200K</span>
+                            <span class="progress-value status-warning">141K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-warning" style="width: 66%"></div>
+                            <div class="progress-bar progress-warning" style="width: 70%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-warning">⚠ 66%</div>
+                        <div class="status-indicator status-warning">⚠ 70%</div>
                     </div>
                 </div>
 
@@ -1159,7 +1159,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 25, 2026 • 6:09 PM EDT</div>
+                <div class="update-time">Last sync: April 25, 2026 • 7:10 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1226,7 +1226,7 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 693K means about 693,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 701K means about 701,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1235,12 +1235,12 @@
                 icon: '✅',
                 what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 0 sessions need attention!',
                 why: 'When a session hits its limit or has errors, Pete may lose context or fail to respond. Catching issues early prevents problems.',
-                example: '🎉 All clear! Main session was recently compacted and is running fresh at 8%. No critical sessions right now.'
+                example: '🎉 All clear! ct-gradschool at 70% is the closest to threshold. Main session fresh at 8%. System healthy.'
             },
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows the average memory usage across all sessions. 35% means sessions are using about a third of their capacity on average — very healthy!',
+                what: 'This shows the average memory usage across all sessions. 36% means sessions are using about a third of their capacity on average — very healthy!',
                 why: 'Average capacity gives a system health snapshot. All sessions have plenty of room after recent compaction work.',
                 example: 'Like checking the gas gauges on a fleet of cars — most tanks are well above half full. System is running lean.'
             },
@@ -1268,9 +1268,9 @@
             'session-gradschool': {
                 title: 'Grad School Channel',
                 icon: '🎓',
-                what: '⚠️ HIGHEST USAGE! This session is at 66% capacity (132K / 200K tokens). Active work on final project and PM/CM tools.',
+                what: '⚠️ HIGHEST USAGE! This session is at 70% capacity (141K / 200K tokens). Active work on final project and PM/CM tools.',
                 why: 'Chris\'s graduation is May 2026 — just weeks away! Active with final project interview analysis, CrispyT.com website, and airplane graphics for the runway visualization.',
-                example: 'Recently worked on aircraft illustrations upgrade — from fish-shapes to proper airplane icons. Theseus handled the glow-up!'
+                example: 'Recently sent recap email to chris.tolleson@cltairport.com. Ready for Week 16 docs! Getting close to that 75% threshold.'
             },
             'session-setup': {
                 title: 'Setup & Getting Better',
