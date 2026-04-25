@@ -868,7 +868,7 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">609K</div>
+                    <div class="stat-value">648K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
@@ -878,7 +878,7 @@
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">31%</div>
+                    <div class="stat-value">33%</div>
                 </div>
             </div>
 
@@ -1015,6 +1015,32 @@
                     </div>
                 </div>
 
+                <div class="session-card" onclick="showInfo('session-test')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-discord">🧪</div>
+                            <div>
+                                <div class="session-name">test-stuff</div>
+                                <div class="session-type">Discord • Channel</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-private">Private</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-healthy">53K / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-healthy" style="width: 26%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-healthy">✓ 26%</div>
+                    </div>
+                </div>
+
                 <div class="session-card" onclick="showInfo('session-clt-pm')">
                     <div class="session-header">
                         <div class="session-info">
@@ -1118,38 +1144,12 @@
                         <div class="status-indicator status-healthy">✓ 8%</div>
                     </div>
                 </div>
-
-                <div class="session-card" onclick="showInfo('session-test')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-discord">🧪</div>
-                            <div>
-                                <div class="session-name">test-stuff</div>
-                                <div class="session-type">Discord • Channel</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-private">Private</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">14K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 7%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 7%</div>
-                    </div>
-                </div>
             </div>
 
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 24, 2026 • 7:08 PM EDT</div>
+                <div class="update-time">Last sync: April 24, 2026 • 8:11 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1216,7 +1216,7 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 609K means about 609,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 648K means about 648,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1230,7 +1230,7 @@
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows the average memory usage across all sessions. 31% means sessions are running lean with lots of headroom.',
+                what: 'This shows the average memory usage across all sessions. 33% means sessions are running lean with lots of headroom.',
                 why: 'Low average capacity is great — it means the system is healthy and efficient. Most sessions have plenty of room.',
                 example: 'Like checking the gas gauges on a fleet of cars — all tanks are well above half full. System is running smoothly.'
             },
@@ -1300,7 +1300,7 @@
             'session-test': {
                 title: 'Test Stuff',
                 icon: '🧪',
-                what: 'A sandbox channel for experimenting with Pete\'s features without affecting important conversations. Only 7% used.',
+                what: 'A sandbox channel for experimenting with Pete\'s features without affecting important conversations. At 26% capacity.',
                 why: 'Every system needs a safe place to try things that might break. Better to break here than in production.',
                 example: 'Testing new commands, trying out integrations, or just seeing what happens when you push buttons.'
             }
@@ -1329,7 +1329,7 @@
                     <p class="panel-example-text">${data.example}</p>
                 </div>
             `;
-            
+
             document.querySelector('.panel-overlay').classList.add('active');
             document.getElementById('infoPanel').classList.add('active');
         }
@@ -1339,7 +1339,7 @@
             document.getElementById('infoPanel').classList.remove('active');
         }
 
-        // Close panel with Escape key
+        // Close panel on Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closePanel();
         });
