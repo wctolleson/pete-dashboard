@@ -885,6 +885,7 @@
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
+                <!-- ct-gradschool - 124K/200K = 62% WARNING -->
                 <div class="session-card warning" onclick="showInfo('session-gradschool')">
                     <div class="session-header">
                         <div class="session-info">
@@ -911,6 +912,7 @@
                     </div>
                 </div>
 
+                <!-- aviation-solicitations - 124K/200K = 62% WARNING -->
                 <div class="session-card warning" onclick="showInfo('session-aviation')">
                     <div class="session-header">
                         <div class="session-info">
@@ -937,6 +939,7 @@
                     </div>
                 </div>
 
+                <!-- ct-admin-channel - 96K/200K = 48% HEALTHY -->
                 <div class="session-card" onclick="showInfo('session-admin')">
                     <div class="session-header">
                         <div class="session-info">
@@ -963,6 +966,7 @@
                     </div>
                 </div>
 
+                <!-- setup-and-getting-better - 93K/200K = 46% HEALTHY -->
                 <div class="session-card" onclick="showInfo('session-setup')">
                     <div class="session-header">
                         <div class="session-info">
@@ -989,6 +993,7 @@
                     </div>
                 </div>
 
+                <!-- test-stuff - 85K/200K = 42% HEALTHY -->
                 <div class="session-card" onclick="showInfo('session-test')">
                     <div class="session-header">
                         <div class="session-info">
@@ -1015,6 +1020,7 @@
                     </div>
                 </div>
 
+                <!-- weekly-aviation-scan (cron) - 78K/200K = 39% HEALTHY -->
                 <div class="session-card" onclick="showInfo('session-cron')">
                     <div class="session-header">
                         <div class="session-info">
@@ -1041,6 +1047,7 @@
                     </div>
                 </div>
 
+                <!-- ct-clt-project-management - 27K/200K = 14% HEALTHY -->
                 <div class="session-card" onclick="showInfo('session-clt-pm')">
                     <div class="session-header">
                         <div class="session-info">
@@ -1067,6 +1074,7 @@
                     </div>
                 </div>
 
+                <!-- heartbeat-channel - 20K/128K = 16% HEALTHY (GPT-4o) -->
                 <div class="session-card" onclick="showInfo('session-heartbeat')">
                     <div class="session-header">
                         <div class="session-info">
@@ -1093,6 +1101,7 @@
                     </div>
                 </div>
 
+                <!-- aviation-solicitation-2 - 17K/200K = 9% HEALTHY -->
                 <div class="session-card" onclick="showInfo('session-aviation2')">
                     <div class="session-header">
                         <div class="session-info">
@@ -1119,6 +1128,7 @@
                     </div>
                 </div>
 
+                <!-- main (BlueBubbles/iMessage) - 16K/200K = 8% HEALTHY -->
                 <div class="session-card" onclick="showInfo('session-main')">
                     <div class="session-header">
                         <div class="session-info">
@@ -1149,7 +1159,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 25, 2026 • 4:22 AM EDT</div>
+                <div class="update-time">Last sync: April 25, 2026 • 5:26 AM EDT</div>
             </footer>
         </div>
     </div>
@@ -1325,18 +1335,18 @@
                 </div>
                 
                 <div class="panel-example">
-                    <div class="panel-example-title">💡 Example</div>
+                    <div class="panel-example-title">💡 In simple terms</div>
                     <p class="panel-example-text">${data.example}</p>
                 </div>
             `;
 
-            document.getElementById('infoPanel').classList.add('active');
             document.querySelector('.panel-overlay').classList.add('active');
+            document.getElementById('infoPanel').classList.add('active');
         }
 
         function closePanel() {
-            document.getElementById('infoPanel').classList.remove('active');
             document.querySelector('.panel-overlay').classList.remove('active');
+            document.getElementById('infoPanel').classList.remove('active');
         }
 
         // Close panel with Escape key
