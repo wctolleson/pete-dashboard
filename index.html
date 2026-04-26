@@ -1159,7 +1159,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 26, 2026 • 2:20 AM EDT</div>
+                <div class="update-time">Last sync: April 26, 2026 • 3:21 AM EDT</div>
             </footer>
         </div>
     </div>
@@ -1332,11 +1332,11 @@
                     <p class="panel-text">${data.why}</p>
                 </div>
                 <div class="panel-example">
-                    <div class="panel-example-title">💡 In plain English</div>
+                    <div class="panel-example-title">💡 Real Example</div>
                     <p class="panel-example-text">${data.example}</p>
                 </div>
             `;
-            
+
             document.querySelector('.panel-overlay').classList.add('active');
             document.getElementById('infoPanel').classList.add('active');
         }
@@ -1346,7 +1346,7 @@
             document.getElementById('infoPanel').classList.remove('active');
         }
 
-        // ESC to close panel
+        // Close panel on Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closePanel();
         });
