@@ -882,25 +882,25 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">785K</div>
+                    <div class="stat-value">689K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Need Attention</div>
-                    <div class="stat-value">2</div>
+                    <div class="stat-value">1</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">36%</div>
+                    <div class="stat-value">29%</div>
                 </div>
             </div>
 
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
-                <!-- ct-gradschool - 177K/200K = 88% CRITICAL -->
-                <div class="session-card critical" onclick="showInfo('session-gradschool')">
+                <!-- ct-gradschool - 18K/200K = 9% FRESH -->
+                <div class="session-card compacted" onclick="showInfo('session-gradschool')">
                     <div class="session-header">
                         <div class="session-info">
                             <div class="channel-icon channel-discord">🎓</div>
@@ -914,15 +914,15 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-critical">177K / 200K</span>
+                            <span class="progress-value status-healthy">18K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-critical" style="width: 88%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 9%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-critical">🔴 88%</div>
+                        <div class="status-indicator status-healthy">✓ 9%</div>
                     </div>
                 </div>
 
@@ -1197,7 +1197,7 @@
                 </div>
 
                 <!-- dashboard-update (cron - this session) - NEW -->
-                <div class="session-card new" onclick="showInfo('session-dashboard')">
+                <div class="session-card" onclick="showInfo('session-dashboard')">
                     <div class="session-header">
                         <div class="session-info">
                             <div class="channel-icon channel-webchat">📊</div>
@@ -1211,15 +1211,15 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">0K / 200K</span>
+                            <span class="progress-value status-healthy">63K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 1%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 32%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 0%</div>
+                        <div class="status-indicator status-healthy">✓ 32%</div>
                     </div>
                 </div>
             </div>
@@ -1227,7 +1227,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 26, 2026 • 4:41 PM EDT</div>
+                <div class="update-time">Last sync: April 26, 2026 • 5:38 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1301,9 +1301,9 @@
             'attention': {
                 title: 'Need Attention',
                 icon: '⚠️',
-                what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 2 sessions need attention.',
+                what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 1 session needs attention.',
                 why: 'When a session hits its limit or has errors, Pete may lose context or fail to respond. Catching issues early prevents problems.',
-                example: '🔴 ct-gradschool is at 88% capacity — critical! May need compaction soon. ⚠️ aviation-solicitations at 64%.'
+                example: '⚠️ aviation-solicitations at 64% — not critical yet but worth monitoring during active RFP work. ct-gradschool just compacted to 9%!'
             },
             'capacity': {
                 title: 'Average Capacity',
@@ -1336,9 +1336,9 @@
             'session-gradschool': {
                 title: 'Grad School Channel',
                 icon: '🎓',
-                what: '🔴 CRITICAL! This session is at 88% capacity (177K / 200K tokens). Active work on final project and AI portfolio site.',
-                why: 'Chris\'s graduation is May 2026 — just weeks away! Recently completed Week 15 & 16 pages on the AI portfolio site with YouTube embeds.',
-                example: 'Just finished adding all 13 weeks of YouTube video embeds to the portfolio. Approaching 90% — compaction needed soon!'
+                what: '✨ FRESHLY COMPACTED! At 9% capacity (18K / 200K tokens). Context just cleared — ready for more portfolio work.',
+                why: 'Chris\'s graduation is May 2026 — just weeks away! Working on AI portfolio site and final project. Clean context means fast responses.',
+                example: 'Ready to continue building the capstone portfolio. Next up: embedded Excel charts and EVM data visualization!'
             },
             'session-setup': {
                 title: 'Setup & Getting Better',
@@ -1385,7 +1385,7 @@
             'session-dashboard': {
                 title: 'Dashboard Update',
                 icon: '📊',
-                what: '🆕 NEW! This is the cron job that updates this very dashboard. Just created — at 0% capacity.',
+                what: '✅ HEALTHY! At 32% capacity (63K / 200K tokens). The cron job that updates this very dashboard.',
                 why: 'Runs periodically to fetch session data and regenerate the dashboard HTML with current token counts and health status.',
                 example: 'Meta! This session is updating the page you\'re looking at right now. 🔄'
             }
