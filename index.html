@@ -939,33 +939,6 @@
                     </div>
                 </div>
 
-                <!-- ct-admin-channel - 96K/200K = 48% HEALTHY -->
-                <div class="session-card" onclick="showInfo('session-admin')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-discord">⚙️</div>
-                            <div>
-                                <div class="session-name">ct-admin-channel</div>
-                                <div class="session-type">Discord • Channel</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-private">Private</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">96K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 48%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 48%</div>
-                    </div>
-                </div>
-
                 <!-- setup-and-getting-better - 111K/200K = 56% HEALTHY -->
                 <div class="session-card" onclick="showInfo('session-setup')">
                     <div class="session-header">
@@ -990,6 +963,33 @@
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
                         <div class="status-indicator status-healthy">✓ 56%</div>
+                    </div>
+                </div>
+
+                <!-- ct-admin-channel - 96K/200K = 48% HEALTHY -->
+                <div class="session-card" onclick="showInfo('session-admin')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-discord">⚙️</div>
+                            <div>
+                                <div class="session-name">ct-admin-channel</div>
+                                <div class="session-type">Discord • Channel</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-private">Private</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-healthy">96K / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-healthy" style="width: 48%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-healthy">✓ 48%</div>
                     </div>
                 </div>
 
@@ -1159,7 +1159,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 26, 2026 • 11:32 AM EDT</div>
+                <div class="update-time">Last sync: April 26, 2026 • 12:33 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1226,7 +1226,7 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 718K means about 718,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 730K means about 730,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1235,7 +1235,7 @@
                 icon: '✅',
                 what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 0 sessions need attention!',
                 why: 'When a session hits its limit or has errors, Pete may lose context or fail to respond. Catching issues early prevents problems.',
-                example: '🎉 All clear! ct-gradschool at 73% is the closest to threshold. Main session fresh at 11%. System healthy.'
+                example: '🎉 All clear! ct-gradschool at 73% is the closest to threshold. System healthy across the board.'
             },
             'capacity': {
                 title: 'Average Capacity',
@@ -1261,7 +1261,7 @@
             'session-aviation': {
                 title: 'Aviation Solicitations',
                 icon: '✈️',
-                what: '⚠️ MODERATE! This session is at 64% capacity (128K / 200K tokens). The busiest session — active RFP work ongoing.',
+                what: '⚠️ MODERATE! This session is at 64% capacity (128K / 200K tokens). The busiest tracking session — active RFP work ongoing.',
                 why: 'This channel handles the FAA Carolinas PSI RFP analysis and other aviation solicitations. Recently discussed SOW-to-position mapping methodology.',
                 example: 'Learning to map SOW service categories to implied positions when solicitations don\'t explicitly define requirements.'
             },
@@ -1275,8 +1275,8 @@
             'session-setup': {
                 title: 'Setup & Getting Better',
                 icon: '🔧',
-                what: 'A Discord channel dedicated to configuring and improving Pete\'s capabilities — debugging, testing features, and tweaking settings.',
-                why: 'PRIVATE because it contains technical details about Pete\'s configuration that shouldn\'t be public. At 49% — healthy but one of the larger sessions. Recently set up learning goals for Chris: AI Agent Development, ML fundamentals, Prompt Engineering.',
+                what: 'A Discord channel dedicated to configuring and improving Pete\'s capabilities — debugging, testing features, and tweaking settings. At 56% capacity.',
+                why: 'PRIVATE because it contains technical details about Pete\'s configuration that shouldn\'t be public. Recently set up learning goals for Chris: AI Agent Development, ML fundamentals, Prompt Engineering.',
                 example: 'Where Chris asks "how do I make Pete do X?" and we figure it out together. Goal: "Get swole mentally at AI" 💪🧠'
             },
             'session-cron': {
