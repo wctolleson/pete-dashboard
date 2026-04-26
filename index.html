@@ -1074,33 +1074,6 @@
                     </div>
                 </div>
 
-                <!-- heartbeat-channel - 20K/128K = 16% HEALTHY (GPT-4o) -->
-                <div class="session-card" onclick="showInfo('session-heartbeat')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-discord">💓</div>
-                            <div>
-                                <div class="session-name">heartbeat-channel</div>
-                                <div class="session-type">Discord • System</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-system">System</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">20K / 128K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 16%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge openai">◆ gpt-4o</div>
-                        <div class="status-indicator status-healthy">✓ 16%</div>
-                    </div>
-                </div>
-
                 <!-- main (BlueBubbles/webchat) - 22K/200K = 11% HEALTHY -->
                 <div class="session-card compacted" onclick="showInfo('session-main')">
                     <div class="session-header">
@@ -1125,6 +1098,33 @@
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
                         <div class="status-indicator status-healthy">✓ 11%</div>
+                    </div>
+                </div>
+
+                <!-- heartbeat-channel - 20K/128K = 16% HEALTHY (GPT-4o) -->
+                <div class="session-card" onclick="showInfo('session-heartbeat')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-discord">💓</div>
+                            <div>
+                                <div class="session-name">heartbeat-channel</div>
+                                <div class="session-type">Discord • System</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-system">System</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-healthy">20K / 128K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-healthy" style="width: 16%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge openai">◆ gpt-4o</div>
+                        <div class="status-indicator status-healthy">✓ 16%</div>
                     </div>
                 </div>
 
@@ -1159,7 +1159,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 25, 2026 • 10:15 PM EDT</div>
+                <div class="update-time">Last sync: April 25, 2026 • 11:16 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1226,7 +1226,7 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 710K means about 710,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 712K means about 712,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1235,7 +1235,7 @@
                 icon: '✅',
                 what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 0 sessions need attention!',
                 why: 'When a session hits its limit or has errors, Pete may lose context or fail to respond. Catching issues early prevents problems.',
-                example: '🎉 All clear! ct-gradschool at 73% is the closest to threshold. Main session fresh at 10%. System healthy.'
+                example: '🎉 All clear! ct-gradschool at 73% is the closest to threshold. Main session fresh at 11%. System healthy.'
             },
             'capacity': {
                 title: 'Average Capacity',
@@ -1247,7 +1247,7 @@
             'session-main': {
                 title: 'Main Session',
                 icon: '💬',
-                what: '✨ FRESHLY COMPACTED! This session is at just 10% (20K / 200K tokens). The primary iMessage/BlueBubbles session is running clean.',
+                what: '✨ FRESHLY COMPACTED! This session is at just 11% (22K / 200K tokens). The primary iMessage/BlueBubbles session is running clean.',
                 why: 'This is the main direct-communication session. Compaction preserved essential context while clearing old messages. Ready for new conversations!',
                 example: 'Recently had Evie say hi to Pete via voice! Context was preserved during compaction — still knows who Chris is and recent projects.'
             },
@@ -1319,7 +1319,7 @@
         function showInfo(key) {
             const data = infoData[key];
             if (!data) return;
-            
+
             document.getElementById('panelTitle').textContent = data.title;
             document.getElementById('panelContent').innerHTML = `
                 <div class="panel-icon">${data.icon}</div>
@@ -1332,7 +1332,7 @@
                     <p class="panel-text">${data.why}</p>
                 </div>
                 <div class="panel-example">
-                    <div class="panel-example-title">💡 In Plain English</div>
+                    <div class="panel-example-title">💡 In plain English</div>
                     <p class="panel-example-text">${data.example}</p>
                 </div>
             `;
@@ -1346,7 +1346,7 @@
             document.getElementById('infoPanel').classList.remove('active');
         }
 
-        // Close panel with Escape key
+        // ESC to close panel
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closePanel();
         });
