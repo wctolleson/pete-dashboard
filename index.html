@@ -394,9 +394,9 @@
         }
 
         .stat-card:nth-child(3) .stat-value {
-            color: var(--accent-green);
+            color: var(--accent-amber);
             background: none;
-            -webkit-text-fill-color: var(--accent-green);
+            -webkit-text-fill-color: var(--accent-amber);
         }
 
         .stat-card:nth-child(4) .stat-value {
@@ -484,6 +484,20 @@
             right: 12px;
             padding: 4px 8px;
             background: var(--gradient-2);
+            border-radius: 6px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: white;
+        }
+
+        .session-card.new::after {
+            content: '🆕 NEW';
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 4px 8px;
+            background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
             border-radius: 6px;
             font-size: 0.65rem;
             font-weight: 700;
@@ -863,29 +877,29 @@
                 <div class="stat-card" onclick="showInfo('sessions')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Active Sessions</div>
-                    <div class="stat-value">10</div>
+                    <div class="stat-value">11</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">730K</div>
+                    <div class="stat-value">761K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Need Attention</div>
-                    <div class="stat-value">0</div>
+                    <div class="stat-value">1</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">37%</div>
+                    <div class="stat-value">35%</div>
                 </div>
             </div>
 
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
-                <!-- ct-gradschool - 146K/200K = 73% WARNING -->
+                <!-- ct-gradschool - 155K/200K = 77% WARNING -->
                 <div class="session-card warning" onclick="showInfo('session-gradschool')">
                     <div class="session-header">
                         <div class="session-info">
@@ -900,15 +914,15 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-warning">146K / 200K</span>
+                            <span class="progress-value status-warning">155K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-warning" style="width: 73%"></div>
+                            <div class="progress-bar progress-warning" style="width: 77%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-warning">⚠ 73%</div>
+                        <div class="status-indicator status-warning">⚠ 77%</div>
                     </div>
                 </div>
 
@@ -939,7 +953,7 @@
                     </div>
                 </div>
 
-                <!-- setup-and-getting-better - 111K/200K = 56% HEALTHY -->
+                <!-- setup-and-getting-better - 116K/200K = 58% HEALTHY -->
                 <div class="session-card" onclick="showInfo('session-setup')">
                     <div class="session-header">
                         <div class="session-info">
@@ -954,15 +968,15 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">111K / 200K</span>
+                            <span class="progress-value status-healthy">116K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 56%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 58%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 56%</div>
+                        <div class="status-indicator status-healthy">✓ 58%</div>
                     </div>
                 </div>
 
@@ -1154,12 +1168,39 @@
                         <div class="status-indicator status-healthy">✓ 9%</div>
                     </div>
                 </div>
+
+                <!-- ct-gains-lab - 17K/200K = 8% HEALTHY (NEW!) -->
+                <div class="session-card new" onclick="showInfo('session-gains-lab')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-discord">🧠</div>
+                            <div>
+                                <div class="session-name">ct-gains-lab</div>
+                                <div class="session-type">Discord • Channel</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-private">Private</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-healthy">17K / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-healthy" style="width: 8%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-healthy">✓ 8%</div>
+                    </div>
+                </div>
             </div>
 
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 26, 2026 • 1:36 PM EDT</div>
+                <div class="update-time">Last sync: April 26, 2026 • 2:36 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1221,27 +1262,27 @@
                 icon: '🧵',
                 what: 'A session is like an ongoing conversation thread. Each Discord channel, webchat, or other communication channel gets its own session. Pete keeps track of each conversation separately.',
                 why: 'This matters because Pete can handle multiple conversations at once without mixing them up. If you\'re chatting in Discord and someone else uses webchat, both conversations stay separate and organized.',
-                example: 'Think of it like having 10 different phone calls going at once — Pete remembers what each conversation is about and who\'s in it.'
+                example: 'Think of it like having 11 different phone calls going at once — Pete remembers what each conversation is about and who\'s in it.'
             },
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 730K means about 730,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 761K means about 761,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
             'attention': {
                 title: 'Need Attention',
-                icon: '✅',
-                what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 0 sessions need attention!',
+                icon: '⚠️',
+                what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 1 session needs attention.',
                 why: 'When a session hits its limit or has errors, Pete may lose context or fail to respond. Catching issues early prevents problems.',
-                example: '🎉 All clear! ct-gradschool at 73% is the closest to threshold. System healthy across the board.'
+                example: '⚠️ ct-gradschool is at 77% capacity — getting close to compaction threshold. Keep an eye on it during final project work!'
             },
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows the average memory usage across all sessions. 37% means sessions are using about a third of their capacity on average — very healthy!',
-                why: 'Average capacity gives a system health snapshot. All sessions have plenty of room after recent compaction work.',
+                what: 'This shows the average memory usage across all sessions. 35% means sessions are using about a third of their capacity on average — very healthy!',
+                why: 'Average capacity gives a system health snapshot. Most sessions have plenty of room after recent compaction work.',
                 example: 'Like checking the gas gauges on a fleet of cars — most tanks are well above half full. System is running lean.'
             },
             'session-main': {
@@ -1268,14 +1309,14 @@
             'session-gradschool': {
                 title: 'Grad School Channel',
                 icon: '🎓',
-                what: '⚠️ HIGHEST USAGE! This session is at 73% capacity (146K / 200K tokens). Active work on final project and PM/CM tools.',
+                what: '⚠️ HIGHEST USAGE! This session is at 77% capacity (155K / 200K tokens). Active work on final project and PM/CM tools.',
                 why: 'Chris\'s graduation is May 2026 — just weeks away! Active with final project interview analysis, AI video scripts, and Week 16 deliverables.',
-                example: 'Recently sent Week 15 and Week 16 video scripts to chris.tolleson@cltairport.com. Approaching 75% threshold but still healthy.'
+                example: 'Just added YouTube embeds for Week 2 video. Approaching 75% threshold — may need compaction soon if heavy work continues.'
             },
             'session-setup': {
                 title: 'Setup & Getting Better',
                 icon: '🔧',
-                what: 'A Discord channel dedicated to configuring and improving Pete\'s capabilities — debugging, testing features, and tweaking settings. At 56% capacity.',
+                what: 'A Discord channel dedicated to configuring and improving Pete\'s capabilities — debugging, testing features, and tweaking settings. At 58% capacity.',
                 why: 'PRIVATE because it contains technical details about Pete\'s configuration that shouldn\'t be public. Recently set up learning goals for Chris: AI Agent Development, ML fundamentals, Prompt Engineering.',
                 example: 'Where Chris asks "how do I make Pete do X?" and we figure it out together. Goal: "Get swole mentally at AI" 💪🧠'
             },
@@ -1312,14 +1353,21 @@
                 icon: '🧪',
                 what: 'A sandbox channel for experimenting with Pete\'s features without affecting important conversations. At 42% capacity.',
                 why: 'Every system needs a safe place to try things that might break. Better to break here than in production.',
-                example: 'Where we test new commands, debug issues, and try risky stuff safely.'
+                example: 'Where new features get tested before going live. Currently used for debugging and quick experiments.'
+            },
+            'session-gains-lab': {
+                title: 'CT Gains Lab',
+                icon: '🧠',
+                what: '🆕 BRAND NEW! The AI Learning Hub for Chris — at just 8% capacity (17K / 200K tokens). Fresh channel for getting swole mentally at AI!',
+                why: 'Dedicated space for AI Mental Gym quizzes, YouTube content summaries, prompt engineering practice, and Pete architecture deep-dives.',
+                example: 'Just kicked off with options: Baseline Quiz, Pete Deep Dive, Fresh Content Drop, or Topic Request. Ready to build those AI muscles! 💪🧠'
             }
         };
 
         function showInfo(key) {
             const data = infoData[key];
             if (!data) return;
-            
+
             document.getElementById('panelTitle').textContent = data.title;
             document.getElementById('panelContent').innerHTML = `
                 <div class="panel-icon">${data.icon}</div>
@@ -1332,11 +1380,11 @@
                     <p class="panel-text">${data.why}</p>
                 </div>
                 <div class="panel-example">
-                    <div class="panel-example-title">💡 In plain English</div>
+                    <div class="panel-example-title">💡 In Practice</div>
                     <p class="panel-example-text">${data.example}</p>
                 </div>
             `;
-            
+
             document.querySelector('.panel-overlay').classList.add('active');
             document.getElementById('infoPanel').classList.add('active');
         }
@@ -1346,7 +1394,7 @@
             document.getElementById('infoPanel').classList.remove('active');
         }
 
-        // Close panel on escape key
+        // Close panel with Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closePanel();
         });
