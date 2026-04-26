@@ -877,12 +877,12 @@
                 <div class="stat-card" onclick="showInfo('sessions')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Active Sessions</div>
-                    <div class="stat-value">11</div>
+                    <div class="stat-value">12</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">771K</div>
+                    <div class="stat-value">785K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
@@ -899,8 +899,8 @@
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
-                <!-- ct-gradschool - 162K/200K = 81% WARNING -->
-                <div class="session-card warning" onclick="showInfo('session-gradschool')">
+                <!-- ct-gradschool - 177K/200K = 88% CRITICAL -->
+                <div class="session-card critical" onclick="showInfo('session-gradschool')">
                     <div class="session-header">
                         <div class="session-info">
                             <div class="channel-icon channel-discord">🎓</div>
@@ -914,15 +914,15 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-warning">162K / 200K</span>
+                            <span class="progress-value status-critical">177K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-warning" style="width: 81%"></div>
+                            <div class="progress-bar progress-critical" style="width: 88%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-warning">⚠ 81%</div>
+                        <div class="status-indicator status-critical">🔴 88%</div>
                     </div>
                 </div>
 
@@ -1142,6 +1142,33 @@
                     </div>
                 </div>
 
+                <!-- ct-gains-lab - 19K/200K = 10% HEALTHY -->
+                <div class="session-card" onclick="showInfo('session-gains-lab')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-discord">🧠</div>
+                            <div>
+                                <div class="session-name">ct-gains-lab</div>
+                                <div class="session-type">Discord • Channel</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-private">Private</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-healthy">19K / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-healthy" style="width: 10%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-healthy">✓ 10%</div>
+                    </div>
+                </div>
+
                 <!-- aviation-solicitation-2 - 17K/200K = 9% HEALTHY -->
                 <div class="session-card" onclick="showInfo('session-aviation2')">
                     <div class="session-header">
@@ -1169,30 +1196,30 @@
                     </div>
                 </div>
 
-                <!-- ct-gains-lab - 19K/200K = 10% HEALTHY -->
-                <div class="session-card" onclick="showInfo('session-gains-lab')">
+                <!-- dashboard-update (cron - this session) - NEW -->
+                <div class="session-card new" onclick="showInfo('session-dashboard')">
                     <div class="session-header">
                         <div class="session-info">
-                            <div class="channel-icon channel-discord">🧠</div>
+                            <div class="channel-icon channel-webchat">📊</div>
                             <div>
-                                <div class="session-name">ct-gains-lab</div>
-                                <div class="session-type">Discord • Channel</div>
+                                <div class="session-name">dashboard-update</div>
+                                <div class="session-type">Cron • Automated</div>
                             </div>
                         </div>
-                        <span class="badge badge-private">Private</span>
+                        <span class="badge badge-system">System</span>
                     </div>
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">19K / 200K</span>
+                            <span class="progress-value status-healthy">0K / 200K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 10%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 1%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 10%</div>
+                        <div class="status-indicator status-healthy">✓ 0%</div>
                     </div>
                 </div>
             </div>
@@ -1200,7 +1227,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 26, 2026 • 3:40 PM EDT</div>
+                <div class="update-time">Last sync: April 26, 2026 • 4:41 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1262,27 +1289,27 @@
                 icon: '🧵',
                 what: 'A session is like an ongoing conversation thread. Each Discord channel, webchat, or other communication channel gets its own session. Pete keeps track of each conversation separately.',
                 why: 'This matters because Pete can handle multiple conversations at once without mixing them up. If you\'re chatting in Discord and someone else uses webchat, both conversations stay separate and organized.',
-                example: 'Think of it like having 11 different phone calls going at once — Pete remembers what each conversation is about and who\'s in it.'
+                example: 'Think of it like having 12 different phone calls going at once — Pete remembers what each conversation is about and who\'s in it.'
             },
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 761K means about 761,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 785K means about 785,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
             'attention': {
                 title: 'Need Attention',
                 icon: '⚠️',
-                what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 1 session needs attention.',
+                what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 2 sessions need attention.',
                 why: 'When a session hits its limit or has errors, Pete may lose context or fail to respond. Catching issues early prevents problems.',
-                example: '⚠️ ct-gradschool is at 77% capacity — getting close to compaction threshold. Keep an eye on it during final project work!'
+                example: '🔴 ct-gradschool is at 88% capacity — critical! May need compaction soon. ⚠️ aviation-solicitations at 64%.'
             },
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows the average memory usage across all sessions. 35% means sessions are using about a third of their capacity on average — very healthy!',
-                why: 'Average capacity gives a system health snapshot. Most sessions have plenty of room after recent compaction work.',
+                what: 'This shows the average memory usage across all sessions. 36% means sessions are using about a third of their capacity on average — healthy overall!',
+                why: 'Average capacity gives a system health snapshot. Most sessions have plenty of room.',
                 example: 'Like checking the gas gauges on a fleet of cars — most tanks are well above half full. System is running lean.'
             },
             'session-main': {
@@ -1302,22 +1329,22 @@
             'session-aviation': {
                 title: 'Aviation Solicitations',
                 icon: '✈️',
-                what: '⚠️ MODERATE! This session is at 64% capacity (128K / 200K tokens). The busiest tracking session — active RFP work ongoing.',
+                what: '⚠️ WARNING! This session is at 64% capacity (128K / 200K tokens). The busiest tracking session — active RFP work ongoing.',
                 why: 'This channel handles the FAA Carolinas PSI RFP analysis and other aviation solicitations. Recently discussed SOW-to-position mapping methodology.',
                 example: 'Learning to map SOW service categories to implied positions when solicitations don\'t explicitly define requirements.'
             },
             'session-gradschool': {
                 title: 'Grad School Channel',
                 icon: '🎓',
-                what: '⚠️ HIGHEST USAGE! This session is at 77% capacity (155K / 200K tokens). Active work on final project and PM/CM tools.',
-                why: 'Chris\'s graduation is May 2026 — just weeks away! Active with final project interview analysis, AI video scripts, and Week 16 deliverables.',
-                example: 'Just added YouTube embeds for Week 2 video. Approaching 75% threshold — may need compaction soon if heavy work continues.'
+                what: '🔴 CRITICAL! This session is at 88% capacity (177K / 200K tokens). Active work on final project and AI portfolio site.',
+                why: 'Chris\'s graduation is May 2026 — just weeks away! Recently completed Week 15 & 16 pages on the AI portfolio site with YouTube embeds.',
+                example: 'Just finished adding all 13 weeks of YouTube video embeds to the portfolio. Approaching 90% — compaction needed soon!'
             },
             'session-setup': {
                 title: 'Setup & Getting Better',
                 icon: '🔧',
                 what: 'A Discord channel dedicated to configuring and improving Pete\'s capabilities — debugging, testing features, and tweaking settings. At 58% capacity.',
-                why: 'PRIVATE because it contains technical details about Pete\'s configuration that shouldn\'t be public. Recently set up learning goals for Chris: AI Agent Development, ML fundamentals, Prompt Engineering.',
+                why: 'PRIVATE because it contains technical details about Pete\'s configuration that shouldn\'t be public. Recently set up the AI Gains Lab channel for learning.',
                 example: 'Where Chris asks "how do I make Pete do X?" and we figure it out together. Goal: "Get swole mentally at AI" 💪🧠'
             },
             'session-cron': {
@@ -1327,40 +1354,40 @@
                 why: 'At 39% capacity, this session handles the weekly airport solicitation scanning. It processes 30+ airports across the Mid-Atlantic region.',
                 example: 'Last scan (April 20) found CRW on-call RFQ (due May 1) and MWAA EOR Services (due May 18). Results posted to #aviation-solicitations automatically.'
             },
+            'session-clt-pm': {
+                title: 'CLT Project Management',
+                icon: '🏗️',
+                what: '✅ HEALTHY! At 14% capacity (27K / 200K tokens). This is mission control for CLT airport AI tools.',
+                why: 'Contains the full context dump about AI in AEC: TYLin AI Working Group, CLT BI team insights, and the big opportunity — no one is using AI for capital program management yet.',
+                example: 'The gap identified: CLT has AI for passenger flow & biometrics, but NOTHING for cost forecasting, schedule risk, or EVM. You\'re the bridge!'
+            },
             'session-heartbeat': {
                 title: 'Heartbeat Channel',
                 icon: '💓',
-                what: 'A SYSTEM channel where Pete posts periodic check-ins, alerts, and status updates. Runs on the cheaper GPT-4o model to save costs.',
-                why: 'Heartbeats let Pete proactively check things (email, calendar, etc.) without being asked. It\'s like Pete\'s internal clock.',
-                example: 'Every so often, Pete wakes up, checks if anything needs attention, and either reports findings or says "all good." Weekly aviation scans get posted here too.'
+                what: '✅ HEALTHY! At 16% capacity (20K / 128K tokens). This is the system health monitoring channel running on GPT-4o.',
+                why: 'Uses GPT-4o (lower cost) for routine health checks. Monitors system status, context health, and daily spend.',
+                example: 'Where Pete posts status updates, alerts, and performs periodic checks on email, calendar, and system health.'
             },
             'session-aviation2': {
                 title: 'Aviation Solicitation 2',
                 icon: '✈️',
-                what: 'A secondary channel for aviation work — used for deeper dives into specific solicitations. At just 9%, it\'s got tons of room.',
-                why: 'Keeps different aviation discussions organized without cluttering the main tracking channel.',
-                example: 'Used for detailed proposal discussions and document review separate from the main tracking channel.'
-            },
-            'session-clt-pm': {
-                title: 'CLT Project Management',
-                icon: '🏗️',
-                what: '✅ HEALTHY! A dedicated channel for Chris\'s CLT PM work. At 14% capacity with tons of room.',
-                why: 'Recently loaded with PM/CM Tools knowledge bomb — tracking CLT projects and building AI tools for construction/program management.',
-                example: 'Supporting EVM Forecaster, Schedule Risk Analyzer, Pay App Generator, RFI/Submittal Reviewer, and Unity Construct Copilot development.'
-            },
-            'session-test': {
-                title: 'Test Stuff',
-                icon: '🧪',
-                what: 'A sandbox channel for experimenting with Pete\'s features without affecting important conversations. At 42% capacity.',
-                why: 'Every system needs a safe place to try things that might break. Better to break here than in production.',
-                example: 'Where new features get tested before going live. Currently used for debugging and quick experiments.'
+                what: '✅ HEALTHY! At 9% capacity (17K / 200K tokens). Secondary aviation channel for overflow discussions.',
+                why: 'Created for additional aviation solicitation work. Jmo has access to this channel for collaborative proposal work.',
+                example: 'Used for extended discussions that don\'t fit in the main aviation-solicitations channel.'
             },
             'session-gains-lab': {
-                title: 'CT Gains Lab',
+                title: 'AI Gains Lab',
                 icon: '🧠',
-                what: '🆕 BRAND NEW! The AI Learning Hub for Chris — at just 8% capacity (17K / 200K tokens). Fresh channel for getting swole mentally at AI!',
-                why: 'Dedicated space for AI Mental Gym quizzes, YouTube content summaries, prompt engineering practice, and Pete architecture deep-dives.',
-                example: 'Just kicked off with options: Baseline Quiz, Pete Deep Dive, Fresh Content Drop, or Topic Request. Ready to build those AI muscles! 💪🧠'
+                what: '✅ HEALTHY! At 10% capacity (19K / 200K tokens). Chris\'s AI learning channel for quizzes and skill building.',
+                why: 'Dedicated channel for AI Mental Gym program: 5-10 multiple choice questions, targeting 70-90% score, gradually increasing difficulty.',
+                example: 'Topics include AI agents, ML fundamentals, prompt engineering, and Pete\'s own architecture. Baseline: 9/10 at intermediate level!'
+            },
+            'session-dashboard': {
+                title: 'Dashboard Update',
+                icon: '📊',
+                what: '🆕 NEW! This is the cron job that updates this very dashboard. Just created — at 0% capacity.',
+                why: 'Runs periodically to fetch session data and regenerate the dashboard HTML with current token counts and health status.',
+                example: 'Meta! This session is updating the page you\'re looking at right now. 🔄'
             }
         };
 
@@ -1380,7 +1407,7 @@
                     <p class="panel-text">${data.why}</p>
                 </div>
                 <div class="panel-example">
-                    <div class="panel-example-title">💡 In Practice</div>
+                    <div class="panel-example-title">💡 Real Example</div>
                     <p class="panel-example-text">${data.example}</p>
                 </div>
             `;
