@@ -892,7 +892,7 @@
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">25%</div>
+                    <div class="stat-value">24%</div>
                 </div>
             </div>
 
@@ -1088,7 +1088,7 @@
                     </div>
                 </div>
 
-                <!-- main (BlueBubbles/webchat) - 22K/200K = 11% HEALTHY -->
+                <!-- main (BlueBubbles/iMessage) - 22K/200K = 11% HEALTHY -->
                 <div class="session-card" onclick="showInfo('session-main')">
                     <div class="session-header">
                         <div class="session-info">
@@ -1227,37 +1227,21 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 26, 2026 • 9:57 PM EDT</div>
+                <div class="update-time">Last sync: April 26, 2026 • 11:00 PM EDT</div>
             </footer>
         </div>
     </div>
 
     <script>
-        // Simple hash function for password verification
-        // Password: "CrispyT2026" -> hashed
-        const correctHash = '8f14e45fceea167a5a36dedd4bea2543'; // MD5 of CrispyT2026
-        
         // Check if already logged in
         if (localStorage.getItem('pete_auth') === 'true') {
             document.getElementById('loginScreen').classList.add('hidden');
             document.getElementById('dashboard').classList.add('visible');
         }
 
-        // Simple hash function
-        function simpleHash(str) {
-            let hash = 0;
-            for (let i = 0; i < str.length; i++) {
-                const char = str.charCodeAt(i);
-                hash = ((hash << 5) - hash) + char;
-                hash = hash & hash;
-            }
-            return hash.toString();
-        }
-
         function attemptLogin() {
             const password = document.getElementById('passwordInput').value;
             
-            // Check password (using simple comparison for demo - the actual password is CrispyT2026)
             if (password === 'CrispyT2026') {
                 localStorage.setItem('pete_auth', 'true');
                 document.getElementById('loginScreen').classList.add('hidden');
@@ -1278,7 +1262,6 @@
             document.getElementById('passwordInput').value = '';
         }
 
-        // Enter key to login
         document.getElementById('passwordInput').addEventListener('keypress', (e) => {
             if (e.key === 'Enter') attemptLogin();
         });
@@ -1308,7 +1291,7 @@
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows the average memory usage across all sessions. 25% means sessions are using about a quarter of their capacity on average — very healthy!',
+                what: 'This shows the average memory usage across all sessions. 24% means sessions are using about a quarter of their capacity on average — very healthy!',
                 why: 'Average capacity gives a system health snapshot. All sessions have plenty of room to grow.',
                 example: 'Like checking the gas gauges on a fleet of cars — most tanks are three-quarters full. System is running lean and clean.'
             },
@@ -1351,50 +1334,50 @@
                 title: 'Test Stuff',
                 icon: '🧪',
                 what: 'At 42% capacity (85K / 200K tokens). Testing and experimentation channel.',
-                why: 'Used for trying new features, debugging, and experiments before rolling them out.',
-                example: 'Safe sandbox for testing without affecting production channels.'
+                why: 'Used for trying new features, debugging, and general experimentation.',
+                example: 'Safe space to test new capabilities before rolling them out to other channels.'
             },
             'session-cron': {
                 title: 'Weekly Aviation Scan',
                 icon: '📡',
-                what: 'At 39% capacity (78K / 200K tokens). Automated solicitation scanner.',
-                why: 'Runs weekly to scan airport solicitation websites for new PM/CM opportunities.',
-                example: 'Last scan found opportunities at CRW, MWAA, RDU, ROA, and LEX!'
+                what: 'At 39% capacity (78K / 200K tokens). Automated cron job for scanning solicitations.',
+                why: 'Runs weekly to scan 31+ airports for new PM/CM opportunities.',
+                example: 'Last scan found CRW On-Call RFQ and MWAA EOR Services opportunities!'
             },
             'session-clt-pm': {
                 title: 'CLT Project Management',
                 icon: '🏗️',
-                what: 'At 14% capacity (27K / 200K tokens). CLT airport project management channel.',
-                why: 'Dedicated channel for CLT-specific PM/CM work and AI tools development.',
-                example: 'Mission control for building AI tools for capital program management at CLT.'
+                what: 'At 14% capacity (27K / 200K tokens). CLT capital program management channel.',
+                why: 'Mission control for CLT-related work — the big opportunity identified in interviews.',
+                example: 'Key stakeholders: Keith Davidge (TYLin), Martha Edge, Rich Adkins, Keith Ince (CLT).'
             },
             'session-heartbeat': {
                 title: 'Heartbeat Channel',
                 icon: '💓',
-                what: 'At 16% capacity (20K / 128K tokens). System health monitoring on GPT-4o.',
-                why: 'Runs periodic health checks and posts system alerts. Uses GPT-4o for cost efficiency.',
-                example: 'Monitors email, calendar, context health, and spending limits.'
+                what: 'At 16% capacity (20K / 128K tokens). System health monitoring using GPT-4o.',
+                why: 'Runs on GPT-4o for cost efficiency. Handles system checks and alerts.',
+                example: 'Posts alerts for context health, spending, and system issues.'
             },
             'session-gains-lab': {
                 title: 'AI Gains Lab',
                 icon: '🧠',
-                what: 'At 10% capacity (19K / 200K tokens). AI learning and quiz channel.',
-                why: 'Chris\'s training ground for AI/ML concepts, prompt engineering, and Pete architecture.',
-                example: 'Daily quizzes from @NateBJones and @aiexplained-official YouTube content!'
+                what: 'At 10% capacity (19K / 200K tokens). AI learning and mental gym channel.',
+                why: 'Chris\'s learning channel for AI quizzes, YouTube monitoring, and Pete improvements.',
+                example: 'Baseline score: 9/10 at intermediate level. Ready for harder content!'
             },
             'session-aviation2': {
                 title: 'Aviation Solicitation 2',
                 icon: '✈️',
                 what: 'At 9% capacity (17K / 200K tokens). Secondary aviation channel.',
-                why: 'Public-facing channel for aviation solicitation discussions with external collaborators.',
-                example: 'Shared access for Jmo and other team members working on aviation opportunities.'
+                why: 'Overflow channel for aviation solicitation discussions and collaboration.',
+                example: 'Open to external collaborators like Jmo.'
             },
             'session-dashboard': {
                 title: 'Dashboard Update',
                 icon: '📊',
-                what: 'At 9% capacity (17K / 200K tokens). Automated dashboard cron job.',
-                why: 'Runs every 6 hours to update this dashboard with current session stats.',
-                example: 'You\'re looking at its output right now! Self-updating neural command center.'
+                what: 'At 9% capacity (17K / 200K tokens). Automated cron job that updates this dashboard.',
+                why: 'Runs periodically to refresh session stats and push to GitHub Pages.',
+                example: 'You\'re looking at the result right now! Auto-commits to pete-dashboard repo.'
             }
         };
 
@@ -1414,21 +1397,20 @@
                     <p class="panel-text">${data.why}</p>
                 </div>
                 <div class="panel-example">
-                    <div class="panel-example-title">💡 In plain English</div>
+                    <div class="panel-example-title">💡 In Human Terms</div>
                     <p class="panel-example-text">${data.example}</p>
                 </div>
             `;
             
-            document.querySelector('.panel-overlay').classList.add('active');
             document.getElementById('infoPanel').classList.add('active');
+            document.querySelector('.panel-overlay').classList.add('active');
         }
 
         function closePanel() {
-            document.querySelector('.panel-overlay').classList.remove('active');
             document.getElementById('infoPanel').classList.remove('active');
+            document.querySelector('.panel-overlay').classList.remove('active');
         }
 
-        // Close panel on Escape
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closePanel();
         });
