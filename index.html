@@ -545,6 +545,10 @@
             background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
         }
 
+        .channel-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+        }
+
         .session-name {
             font-weight: 600;
             font-size: 1rem;
@@ -892,7 +896,7 @@
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">26%</div>
+                    <div class="stat-value">24%</div>
                 </div>
             </div>
 
@@ -1227,7 +1231,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 27, 2026 • 3:08 AM EDT</div>
+                <div class="update-time">Last sync: April 27, 2026 • 4:08 AM EDT</div>
             </footer>
         </div>
     </div>
@@ -1347,37 +1351,37 @@
             'session-clt-pm': {
                 title: 'CLT Project Management',
                 icon: '🏗️',
-                what: 'At 14% capacity (27K / 200K tokens). Channel for CLT airport project management work.',
-                why: 'Mission control for AI tools in capital program management at CLT.',
-                example: 'The bridge between CLT data and TYLin AI infrastructure — building EVM tools, schedule analyzers, and more!'
+                what: 'At 14% capacity (27K / 200K tokens). Channel for CLT airport project discussions.',
+                why: 'Contains valuable interview insights about AI adoption at CLT and TYLin.',
+                example: 'Key gap identified: CLT uses AI for passenger flow but NOT for capital program management — that\'s our opportunity!'
             },
             'session-heartbeat': {
                 title: 'Heartbeat Channel',
                 icon: '💓',
-                what: 'At 16% capacity (20K / 128K tokens). System monitoring channel running on GPT-4o.',
-                why: 'Handles periodic health checks and system alerts. Uses GPT-4o for cost efficiency.',
-                example: 'Monitors email, calendar, and system health — sends alerts when something needs attention.'
+                what: 'At 16% capacity (20K / 128K tokens). System health monitoring on GPT-4o.',
+                why: 'Uses GPT-4o (cheaper) for routine system checks and health monitoring.',
+                example: 'Runs periodic checks for email, calendar, and system status — the nervous system of Pete.'
             },
             'session-gains-lab': {
                 title: 'AI Gains Lab',
                 icon: '🧠',
-                what: 'At 10% capacity (19K / 200K tokens). AI learning and mental gym channel.',
-                why: 'Where Chris levels up his AI knowledge with quizzes, YouTube content, and Pete improvements.',
-                example: 'Baseline score: 9/10 at intermediate level. Ready for harder content when Chris wants a brain workout!'
+                what: 'At 10% capacity (19K / 200K tokens). Chris\'s AI learning channel.',
+                why: 'Dedicated space for AI quizzes, learning sessions, and skill building.',
+                example: 'Baseline: 9/10, intermediate level — ready for harder content! Get swole mentally 💪🧠'
             },
             'session-aviation2': {
-                title: 'Aviation Solicitations 2',
+                title: 'Aviation Solicitation 2',
                 icon: '✈️',
                 what: 'At 9% capacity (17K / 200K tokens). Secondary aviation channel.',
-                why: 'Public-facing aviation solicitation discussions and collaboration.',
-                example: 'Accessible to authorized team members like Jmo for aviation PM/CM work.'
+                why: 'Public channel where Jmo and others can participate in solicitation discussions.',
+                example: 'Accessible to external collaborators for aviation industry discussions.'
             },
             'session-dashboard': {
                 title: 'Dashboard Update',
                 icon: '📊',
-                what: 'At ~9% capacity (17K / 200K tokens). Automated cron job that updates this dashboard.',
-                why: 'Runs periodically to refresh session stats and push updates to GitHub Pages.',
-                example: 'You\'re looking at its handiwork right now! 🔥'
+                what: 'At 9% capacity (17K / 200K tokens). Automated dashboard refresh cron job.',
+                why: 'Updates Pete\'s Neural Dashboard with current session statistics.',
+                example: 'Runs periodically to keep the dashboard fresh and accurate.'
             }
         };
 
@@ -1393,11 +1397,11 @@
                     <p class="panel-text">${data.what}</p>
                 </div>
                 <div class="panel-section">
-                    <div class="panel-section-title">Why does it matter?</div>
+                    <div class="panel-section-title">Why it matters</div>
                     <p class="panel-text">${data.why}</p>
                 </div>
                 <div class="panel-example">
-                    <div class="panel-example-title">💡 Think of it this way</div>
+                    <div class="panel-example-title">💡 In Plain English</div>
                     <p class="panel-example-text">${data.example}</p>
                 </div>
             `;
@@ -1411,6 +1415,7 @@
             document.getElementById('infoPanel').classList.remove('active');
         }
 
+        // Close panel on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closePanel();
         });
