@@ -881,12 +881,12 @@
                 <div class="stat-card" onclick="showInfo('sessions')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Active Sessions</div>
-                    <div class="stat-value">12</div>
+                    <div class="stat-value">13</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">561K</div>
+                    <div class="stat-value">616K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
@@ -1035,6 +1035,33 @@
                     <div class="session-footer">
                         <div class="model-badge">◆ claude-opus</div>
                         <div class="status-indicator status-healthy">✓ 29%</div>
+                    </div>
+                </div>
+
+                <!-- youtube-content-monitor (cron) - 55K/200K = 28% HEALTHY -->
+                <div class="session-card" onclick="showInfo('session-youtube')">
+                    <div class="session-header">
+                        <div class="session-info">
+                            <div class="channel-icon channel-webchat">📺</div>
+                            <div>
+                                <div class="session-name">youtube-content-monitor</div>
+                                <div class="session-type">Cron • Automated</div>
+                            </div>
+                        </div>
+                        <span class="badge badge-system">System</span>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Context Usage</span>
+                            <span class="progress-value status-healthy">55K / 200K</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-bar progress-healthy" style="width: 28%"></div>
+                        </div>
+                    </div>
+                    <div class="session-footer">
+                        <div class="model-badge">◆ claude-opus</div>
+                        <div class="status-indicator status-healthy">✓ 28%</div>
                     </div>
                 </div>
 
@@ -1231,7 +1258,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 27, 2026 • 4:08 AM EDT</div>
+                <div class="update-time">Last sync: April 27, 2026 • 5:12 AM EDT</div>
             </footer>
         </div>
     </div>
@@ -1276,12 +1303,12 @@
                 icon: '🧵',
                 what: 'A session is like an ongoing conversation thread. Each Discord channel, webchat, or other communication channel gets its own session. Pete keeps track of each conversation separately.',
                 why: 'This matters because Pete can handle multiple conversations at once without mixing them up. If you\'re chatting in Discord and someone else uses webchat, both conversations stay separate and organized.',
-                example: 'Think of it like having 12 different phone calls going at once — Pete remembers what each conversation is about and who\'s in it.'
+                example: 'Think of it like having 13 different phone calls going at once — Pete remembers what each conversation is about and who\'s in it.'
             },
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 561K means about 561,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 616K means about 616,000 tokens are currently being tracked across all sessions.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1346,49 +1373,56 @@
                 icon: '📡',
                 what: 'At 39% capacity (78K / 200K tokens). Automated cron job for scanning solicitations.',
                 why: 'Runs weekly to scan 31+ airports for new PM/CM opportunities.',
-                example: 'Last scan found CRW On-Call RFQ and MWAA EOR Services opportunities!'
+                example: 'Last scan: April 20, 2026 — found CRW On-Call RFQ and MWAA EOR Services opportunities!'
             },
-            'session-clt-pm': {
-                title: 'CLT Project Management',
-                icon: '🏗️',
-                what: 'At 14% capacity (27K / 200K tokens). Channel for CLT airport project discussions.',
-                why: 'Contains valuable interview insights about AI adoption at CLT and TYLin.',
-                example: 'Key gap identified: CLT uses AI for passenger flow but NOT for capital program management — that\'s our opportunity!'
+            'session-youtube': {
+                title: 'YouTube Content Monitor',
+                icon: '📺',
+                what: 'At 28% capacity (55K / 200K tokens). Automated cron job for monitoring AI learning channels.',
+                why: 'Checks AI Explained and Nate B Jones for new content, generates summaries and quiz questions.',
+                example: 'Just posted catch-up summary with 3 recent videos + quiz question to #ai-learning!'
             },
             'session-heartbeat': {
                 title: 'Heartbeat Channel',
                 icon: '💓',
-                what: 'At 16% capacity (20K / 128K tokens). System health monitoring on GPT-4o.',
-                why: 'Uses GPT-4o (cheaper) for routine system checks and health monitoring.',
-                example: 'Runs periodic checks for email, calendar, and system status — the nervous system of Pete.'
+                what: 'At 16% capacity (20K / 128K tokens). System health monitoring channel running on GPT-4o.',
+                why: 'Lightweight model for periodic health checks and alerts. Uses GPT-4o for cost efficiency.',
+                example: 'Posts system alerts and status updates. Running lean on a smaller context window.'
             },
             'session-gains-lab': {
-                title: 'AI Gains Lab',
+                title: 'CT Gains Lab',
                 icon: '🧠',
-                what: 'At 10% capacity (19K / 200K tokens). Chris\'s AI learning channel.',
-                why: 'Dedicated space for AI quizzes, learning sessions, and skill building.',
-                example: 'Baseline: 9/10, intermediate level — ready for harder content! Get swole mentally 💪🧠'
+                what: 'At 10% capacity (19K / 200K tokens). AI Mental Gym and learning channel.',
+                why: 'New channel for AI learning content, quizzes, and Pete improvements.',
+                example: 'YouTube monitoring posts summaries here. Quiz questions from AI Explained and Nate B Jones!'
+            },
+            'session-clt-pm': {
+                title: 'CLT Project Management',
+                icon: '🏗️',
+                what: 'At 14% capacity (27K / 200K tokens). Mission control for CLT AI tools.',
+                why: 'Contains interview notes from Keith Davidge, Martha Edge, Rich Adkins — the roadmap for AI tools.',
+                example: 'The Gap: CLT has no AI for capital program management. Tools to build: EVM Forecaster, Schedule Risk Analyzer, Pay App Generator.'
             },
             'session-aviation2': {
                 title: 'Aviation Solicitation 2',
                 icon: '✈️',
                 what: 'At 9% capacity (17K / 200K tokens). Secondary aviation channel.',
-                why: 'Public channel where Jmo and others can participate in solicitation discussions.',
-                example: 'Accessible to external collaborators for aviation industry discussions.'
+                why: 'Public channel for aviation solicitation discussions with external members.',
+                example: 'Guest access enabled — Jmo and others can participate in opportunity discussions.'
             },
             'session-dashboard': {
                 title: 'Dashboard Update',
                 icon: '📊',
-                what: 'At 9% capacity (17K / 200K tokens). Automated dashboard refresh cron job.',
-                why: 'Updates Pete\'s Neural Dashboard with current session statistics.',
-                example: 'Runs periodically to keep the dashboard fresh and accurate.'
+                what: 'At 9% capacity (17K / 200K tokens). Automated cron job that updates this dashboard.',
+                why: 'Runs periodically to refresh session stats and push to GitHub Pages.',
+                example: 'You\'re looking at its output right now! Self-updating neural command center.'
             }
         };
 
         function showInfo(key) {
             const data = infoData[key];
             if (!data) return;
-            
+
             document.getElementById('panelTitle').textContent = data.title;
             document.getElementById('panelContent').innerHTML = `
                 <div class="panel-icon">${data.icon}</div>
@@ -1397,11 +1431,11 @@
                     <p class="panel-text">${data.what}</p>
                 </div>
                 <div class="panel-section">
-                    <div class="panel-section-title">Why it matters</div>
+                    <div class="panel-section-title">Why does it matter?</div>
                     <p class="panel-text">${data.why}</p>
                 </div>
                 <div class="panel-example">
-                    <div class="panel-example-title">💡 In Plain English</div>
+                    <div class="panel-example-title">💡 In Practice</div>
                     <p class="panel-example-text">${data.example}</p>
                 </div>
             `;
@@ -1415,7 +1449,6 @@
             document.getElementById('infoPanel').classList.remove('active');
         }
 
-        // Close panel on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closePanel();
         });
