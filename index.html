@@ -1227,7 +1227,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 26, 2026 • 11:00 PM EDT</div>
+                <div class="update-time">Last sync: April 27, 2026 • 12:03 AM EDT</div>
             </footer>
         </div>
     </div>
@@ -1347,37 +1347,37 @@
             'session-clt-pm': {
                 title: 'CLT Project Management',
                 icon: '🏗️',
-                what: 'At 14% capacity (27K / 200K tokens). CLT capital program management channel.',
-                why: 'Mission control for CLT-related work — the big opportunity identified in interviews.',
-                example: 'Key stakeholders: Keith Davidge (TYLin), Martha Edge, Rich Adkins, Keith Ince (CLT).'
+                what: 'At 14% capacity (27K / 200K tokens). Channel for CLT airport project management work.',
+                why: 'Mission control for AI tools in capital program management at CLT.',
+                example: 'The bridge between CLT data and TYLin AI infrastructure — building EVM tools, schedule analyzers, and more!'
             },
             'session-heartbeat': {
                 title: 'Heartbeat Channel',
                 icon: '💓',
-                what: 'At 16% capacity (20K / 128K tokens). System health monitoring using GPT-4o.',
-                why: 'Runs on GPT-4o for cost efficiency. Handles system checks and alerts.',
-                example: 'Posts alerts for context health, spending, and system issues.'
+                what: 'At 16% capacity (20K / 128K tokens). System monitoring channel running on GPT-4o.',
+                why: 'Handles periodic health checks and system alerts. Uses GPT-4o for cost efficiency.',
+                example: 'Monitors email, calendar, and system health — sends alerts when something needs attention.'
             },
             'session-gains-lab': {
                 title: 'AI Gains Lab',
                 icon: '🧠',
                 what: 'At 10% capacity (19K / 200K tokens). AI learning and mental gym channel.',
-                why: 'Chris\'s learning channel for AI quizzes, YouTube monitoring, and Pete improvements.',
-                example: 'Baseline score: 9/10 at intermediate level. Ready for harder content!'
+                why: 'Where Chris levels up his AI knowledge with quizzes, YouTube content, and Pete improvements.',
+                example: 'Baseline score: 9/10 at intermediate level. Ready for harder content when Chris wants a brain workout!'
             },
             'session-aviation2': {
-                title: 'Aviation Solicitation 2',
+                title: 'Aviation Solicitations 2',
                 icon: '✈️',
                 what: 'At 9% capacity (17K / 200K tokens). Secondary aviation channel.',
-                why: 'Overflow channel for aviation solicitation discussions and collaboration.',
-                example: 'Open to external collaborators like Jmo.'
+                why: 'Public-facing aviation solicitation discussions and collaboration.',
+                example: 'Accessible to authorized team members like Jmo for aviation PM/CM work.'
             },
             'session-dashboard': {
                 title: 'Dashboard Update',
                 icon: '📊',
-                what: 'At 9% capacity (17K / 200K tokens). Automated cron job that updates this dashboard.',
-                why: 'Runs periodically to refresh session stats and push to GitHub Pages.',
-                example: 'You\'re looking at the result right now! Auto-commits to pete-dashboard repo.'
+                what: 'At ~9% capacity (17K / 200K tokens). Automated cron job that updates this dashboard.',
+                why: 'Runs periodically to refresh session stats and push updates to GitHub Pages.',
+                example: 'You\'re looking at its handiwork right now! 🔥'
             }
         };
 
@@ -1397,18 +1397,18 @@
                     <p class="panel-text">${data.why}</p>
                 </div>
                 <div class="panel-example">
-                    <div class="panel-example-title">💡 In Human Terms</div>
+                    <div class="panel-example-title">💡 Think of it this way</div>
                     <p class="panel-example-text">${data.example}</p>
                 </div>
             `;
             
-            document.getElementById('infoPanel').classList.add('active');
             document.querySelector('.panel-overlay').classList.add('active');
+            document.getElementById('infoPanel').classList.add('active');
         }
 
         function closePanel() {
-            document.getElementById('infoPanel').classList.remove('active');
             document.querySelector('.panel-overlay').classList.remove('active');
+            document.getElementById('infoPanel').classList.remove('active');
         }
 
         document.addEventListener('keydown', (e) => {
