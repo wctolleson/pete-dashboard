@@ -873,7 +873,7 @@
                 <p class="subtitle">Neural Command Center</p>
                 <div class="status-live">
                     <span class="status-dot"></span>
-                    Healthy: Gateway running • Context 76K/272K (28%)
+                    Healthy: Gateway running • Context 76K/272K (28%) • fallback warning auto-resolved
                 </div>
             </header>
 
@@ -903,7 +903,7 @@
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
-                <!-- current main session - 76K/272K = 28% HEALTHY; OpenClaw gateway OK; sessions_list count 0; synced 2026-04-28 8:52 AM EDT -->
+                <!-- current main session - 76K/272K = 28% HEALTHY; OpenClaw gateway OK; sessions_list count 0; synced 2026-04-28 9:53 AM EDT -->
                 <div class="session-card" onclick="showInfo('session-current')">
                     <div class="session-header">
                         <div class="session-info">
@@ -961,7 +961,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> OpenClaw</div>
-                <div class="update-time">Last sync: April 28, 2026 • 8:52 AM EDT</div>
+                <div class="update-time">Last sync: April 28, 2026 • 9:53 AM EDT</div>
             </footer>
         </div>
     </div>
@@ -1006,7 +1006,7 @@
                 icon: '🧵',
                 what: 'A session is like an ongoing conversation thread. Each Discord channel, webchat, or other communication channel gets its own session. Pete keeps track of each conversation separately.',
                 why: 'This matters because Pete can handle multiple conversations at once without mixing them up. If you\'re chatting in Discord and someone else uses webchat, both conversations stay separate and organized.',
-                example: 'Think of it like having the currently visible OpenClaw session list going at once — Pete remembers what each conversation is about and who\'s in it.'
+                example: 'Think of it like checking the currently visible OpenClaw session list: 0 additional sessions are visible right now, plus this current main session.'
             },
             'tokens': {
                 title: 'Total Tokens',
@@ -1018,16 +1018,16 @@
             'attention': {
                 title: 'Need Attention',
                 icon: '✅',
-                what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 0 items need attention: Gateway is running and context is healthy. A recent unknown-model fallback warning resolved automatically to gpt-5.5.',
+                what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 0 items need attention: Gateway is running and context is healthy. A recent unknown-model fallback warning resolved automatically to gpt-5.5 during the 9:53 AM health check.',
                 why: 'When a session hits its limit or has errors, Pete may lose context or fail to respond. Catching issues early prevents problems.',
-                example: 'Everything is green right now: context has plenty of headroom and Gateway is active.'
+                example: 'Everything is green right now: context has plenty of headroom, Gateway is active, and the model fallback recovered automatically.'
             },
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows the average memory usage across all sessions. 28% means the current main session is using about one-quarter of its context window — healthy.',
-                why: 'Average capacity gives a system health snapshot. All sessions have plenty of room to grow.',
-                example: 'Like checking the gas gauges on a fleet of cars — most tanks are three-quarters full. System is running lean and clean.'
+                what: 'This shows memory usage across visible sessions. With no additional visible sessions, the current main session is the average: 28% of its context window — healthy.',
+                why: 'Average capacity gives a system health snapshot. The active main session has plenty of room to grow.',
+                example: 'Like checking the gas gauge before a drive — the tank is mostly full. System is running lean and clean.'
             },
             'session-main': {
                 title: 'Main Session',
