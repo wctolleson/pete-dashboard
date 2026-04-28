@@ -871,9 +871,9 @@
                     <h1>Prometheus</h1>
                 </div>
                 <p class="subtitle">Neural Command Center</p>
-                <div class="status-live" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.35); color: var(--accent-amber);">
-                    <span class="status-dot" style="background: var(--accent-amber);"></span>
-                    Degraded: Gateway service check failed
+                <div class="status-live">
+                    <span class="status-dot"></span>
+                    Healthy: Gateway running • Context clear
                 </div>
             </header>
 
@@ -886,25 +886,25 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">55K</div>
+                    <div class="stat-value">64K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Need Attention</div>
-                    <div class="stat-value">1</div>
+                    <div class="stat-value">0</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">20%</div>
+                    <div class="stat-value">23%</div>
                 </div>
             </div>
 
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
-                <!-- current main session - 55K/272K = 20% HEALTHY; system health DEGRADED -->
-                <div class="session-card warning" onclick="showInfo('session-current')">
+                <!-- current main session - 64K/272K = 23% HEALTHY; system health OK -->
+                <div class="session-card" onclick="showInfo('session-current')">
                     <div class="session-header">
                         <div class="session-info">
                             <div class="channel-icon channel-webchat">🔥</div>
@@ -918,15 +918,15 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">55K / 272K</span>
+                            <span class="progress-value status-healthy">64K / 272K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 20%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 23%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
                         <div class="model-badge">◆ gpt-5.5</div>
-                        <div class="status-indicator status-warning">⚠ Health degraded</div>
+                        <div class="status-indicator status-healthy">✓ healthy</div>
                     </div>
                 </div>
 
@@ -961,7 +961,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 27, 2026 • 10:52 PM EDT</div>
+                <div class="update-time">Last sync: April 27, 2026 • 11:53 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1011,21 +1011,21 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 55K means about 55,000 tokens are currently in the active main context.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 64K means about 64,000 tokens are currently in the active main context.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
             'attention': {
                 title: 'Need Attention',
                 icon: '✅',
-                what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 1 health item needs monitoring: the local health script reports the Gateway is not running.',
+                what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 0 items need attention: Gateway is running and context is healthy.',
                 why: 'When a session hits its limit or has errors, Pete may lose context or fail to respond. Catching issues early prevents problems.',
-                example: 'Context is healthy, but Gateway health is degraded and should be checked if external routing acts strange.'
+                example: 'Everything is green right now: context has plenty of headroom and Gateway is active.'
             },
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows the average memory usage across all sessions. 20% means the current main session is using about one-fifth of its context window — healthy.',
+                what: 'This shows the average memory usage across all sessions. 23% means the current main session is using less than one-quarter of its context window — healthy.',
                 why: 'Average capacity gives a system health snapshot. All sessions have plenty of room to grow.',
                 example: 'Like checking the gas gauges on a fleet of cars — most tanks are three-quarters full. System is running lean and clean.'
             },
@@ -1116,9 +1116,9 @@
             'session-current': {
                 title: 'Current Main Session',
                 icon: '🔥',
-                what: 'At 20% capacity (55K / 272K tokens). The active OpenClaw main session has healthy context headroom.',
-                why: 'This is Pete\'s current working lane. Token usage is safe, but the health check reported Gateway is not running.',
-                example: 'Memory is fine; system routing needs a watchful eye. If tools or channels act odd, Gateway is the first suspect.'
+                what: 'At 23% capacity (64K / 272K tokens). The active OpenClaw main session has healthy context headroom.',
+                why: 'This is Pete\'s current working lane. Token usage is safe and the health check confirms Gateway is running.',
+                example: 'Memory is fine; system routing is healthy. Keep watching for model fallback warnings, but no action is needed.'
             },
             'session-none': {
                 title: 'No Additional Visible Sessions',
@@ -1130,7 +1130,7 @@
             'session-dashboard': {
                 title: 'Dashboard Update',
                 icon: '📊',
-                what: 'This automated cron run refreshed the Neural Dashboard at 10:52 PM EDT.'
+                what: 'This automated cron run refreshed the Neural Dashboard at 11:53 PM EDT.',
                 why: 'Runs periodically to keep the dashboard current with fresh session data.',
                 example: 'You\'re looking at its work right now! Updates token counts, health status, timestamps.'
             }
