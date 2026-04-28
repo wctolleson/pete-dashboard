@@ -873,7 +873,7 @@
                 <p class="subtitle">Neural Command Center</p>
                 <div class="status-live">
                     <span class="status-dot"></span>
-                    Gateway running • Context 92K/272K (34%) • model fallback warning recurring
+                    Gateway running • Context 93K/272K (34%) • model fallback warning recurring
                 </div>
             </header>
 
@@ -886,7 +886,7 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">92K</div>
+                    <div class="stat-value">93K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
@@ -903,7 +903,7 @@
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
-                <!-- current main session - 92K/272K = 34% HEALTHY; OpenClaw gateway OK; sessions_list count 0; recurring unknown-model fallback warning; synced 2026-04-28 3:52 PM EDT -->
+                <!-- current main session - 93K/272K = 34% HEALTHY; OpenClaw gateway OK; sessions_list count 0; recurring unknown-model fallback warning; synced 2026-04-28 4:52 PM EDT -->
                 <div class="session-card" onclick="showInfo('session-current')">
                     <div class="session-header">
                         <div class="session-info">
@@ -918,7 +918,7 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">92K / 272K</span>
+                            <span class="progress-value status-healthy">93K / 272K</span>
                         </div>
                         <div class="progress-track">
                             <div class="progress-bar progress-healthy" style="width: 34%"></div>
@@ -961,7 +961,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> OpenClaw</div>
-                <div class="update-time">Last sync: April 28, 2026 • 3:52 PM EDT</div>
+                <div class="update-time">Last sync: April 28, 2026 • 4:52 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1011,7 +1011,7 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 92K means about 92,000 tokens are currently in the active main context.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 93K means about 93,000 tokens are currently in the active main context.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1116,7 +1116,7 @@
             'session-current': {
                 title: 'Current Main Session',
                 icon: '🔥',
-                what: 'At 34% capacity (92K / 272K tokens). The active OpenClaw main session has healthy context headroom.',
+                what: 'At 34% capacity (93K / 272K tokens). The active OpenClaw main session has healthy context headroom.',
                 why: 'This is Pete\'s current working lane. Token usage is safe and the health check confirms Gateway is running.',
                 example: 'Memory is fine and Gateway is running. Health check is mostly green: Gateway is running, both external drives are mounted, Discord recently reconnected, and OpenClaw is successfully falling back to gpt-5.5. The recurring anthropic/claude-sonnet-4 model warning should be cleaned up when convenient.'
             },
@@ -1130,7 +1130,7 @@
             'session-dashboard': {
                 title: 'Dashboard Update',
                 icon: '📊',
-                what: 'This automated cron run refreshed the Neural Dashboard at 3:52 PM EDT.',
+                what: 'This automated cron run refreshed the Neural Dashboard at 4:52 PM EDT.',
                 why: 'Runs periodically to keep the dashboard current with fresh session data.',
                 example: 'You\'re looking at its work right now! Updates token counts, health status, timestamps.'
             }
