@@ -873,7 +873,7 @@
                 <p class="subtitle">Neural Command Center</p>
                 <div class="status-live">
                     <span class="status-dot"></span>
-                    Healthy: Gateway running • Context clear
+                    Healthy: Gateway running • Context 64K/272K (23%)
                 </div>
             </header>
 
@@ -903,7 +903,7 @@
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
-                <!-- current main session - 64K/272K = 23% HEALTHY; system health OK -->
+                <!-- current main session - 64K/272K = 23% HEALTHY; OpenClaw gateway OK; recent transient model rate-limit repaired -->
                 <div class="session-card" onclick="showInfo('session-current')">
                     <div class="session-header">
                         <div class="session-info">
@@ -961,7 +961,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 27, 2026 • 11:53 PM EDT</div>
+                <div class="update-time">Last sync: April 28, 2026 • 12:52 AM EDT</div>
             </footer>
         </div>
     </div>
@@ -1118,7 +1118,7 @@
                 icon: '🔥',
                 what: 'At 23% capacity (64K / 272K tokens). The active OpenClaw main session has healthy context headroom.',
                 why: 'This is Pete\'s current working lane. Token usage is safe and the health check confirms Gateway is running.',
-                example: 'Memory is fine; system routing is healthy. Keep watching for model fallback warnings, but no action is needed.'
+                example: 'Memory is fine and Gateway is running. A transient model rate-limit warning was logged during the cron lane and OpenClaw repaired the affected session file automatically; no user action is needed.'
             },
             'session-none': {
                 title: 'No Additional Visible Sessions',
@@ -1130,7 +1130,7 @@
             'session-dashboard': {
                 title: 'Dashboard Update',
                 icon: '📊',
-                what: 'This automated cron run refreshed the Neural Dashboard at 11:53 PM EDT.',
+                what: 'This automated cron run refreshed the Neural Dashboard at 12:52 AM EDT.',
                 why: 'Runs periodically to keep the dashboard current with fresh session data.',
                 example: 'You\'re looking at its work right now! Updates token counts, health status, timestamps.'
             }
