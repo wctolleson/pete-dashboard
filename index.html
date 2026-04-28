@@ -871,9 +871,9 @@
                     <h1>Prometheus</h1>
                 </div>
                 <p class="subtitle">Neural Command Center</p>
-                <div class="status-live">
-                    <span class="status-dot"></span>
-                    System Online
+                <div class="status-live" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.35); color: var(--accent-amber);">
+                    <span class="status-dot" style="background: var(--accent-amber);"></span>
+                    Degraded: Gateway service check failed
                 </div>
             </header>
 
@@ -881,144 +881,36 @@
                 <div class="stat-card" onclick="showInfo('sessions')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Active Sessions</div>
-                    <div class="stat-value">13</div>
+                    <div class="stat-value">1</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">599K</div>
+                    <div class="stat-value">76K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Need Attention</div>
-                    <div class="stat-value">0</div>
+                    <div class="stat-value">1</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">23%</div>
+                    <div class="stat-value">28%</div>
                 </div>
             </div>
 
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
-                <!-- setup-and-getting-better - 116K/200K = 58% HEALTHY -->
-                <div class="session-card" onclick="showInfo('session-setup')">
+                <!-- current main session - 76K/272K = 28% HEALTHY; system health DEGRADED -->
+                <div class="session-card warning" onclick="showInfo('session-current')">
                     <div class="session-header">
                         <div class="session-info">
-                            <div class="channel-icon channel-discord">🔧</div>
+                            <div class="channel-icon channel-webchat">🔥</div>
                             <div>
-                                <div class="session-name">setup-and-getting-better</div>
-                                <div class="session-type">Discord • Channel</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-private">Private</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">116K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 58%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 58%</div>
-                    </div>
-                </div>
-
-                <!-- ct-admin-channel - 96K/200K = 48% HEALTHY -->
-                <div class="session-card" onclick="showInfo('session-admin')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-discord">⚙️</div>
-                            <div>
-                                <div class="session-name">ct-admin-channel</div>
-                                <div class="session-type">Discord • Channel</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-private">Private</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">96K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 48%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 48%</div>
-                    </div>
-                </div>
-
-                <!-- test-stuff - 85K/200K = 42% HEALTHY -->
-                <div class="session-card" onclick="showInfo('session-test')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-discord">🧪</div>
-                            <div>
-                                <div class="session-name">test-stuff</div>
-                                <div class="session-type">Discord • Channel</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-private">Private</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">85K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 42%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 42%</div>
-                    </div>
-                </div>
-
-                <!-- ct-gradschool - 58K/200K = 29% HEALTHY -->
-                <div class="session-card" onclick="showInfo('session-gradschool')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-discord">🎓</div>
-                            <div>
-                                <div class="session-name">ct-gradschool</div>
-                                <div class="session-type">Discord • Channel</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-private">Private</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">58K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 29%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 29%</div>
-                    </div>
-                </div>
-
-                <!-- youtube-content-monitor (cron) - 55K/200K = 28% HEALTHY -->
-                <div class="session-card" onclick="showInfo('session-youtube')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-webchat">📺</div>
-                            <div>
-                                <div class="session-name">youtube-content-monitor</div>
-                                <div class="session-type">Cron • Automated</div>
+                                <div class="session-name">agent:main:main</div>
+                                <div class="session-type">OpenClaw • Current Session</div>
                             </div>
                         </div>
                         <span class="badge badge-system">System</span>
@@ -1026,231 +918,42 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">55K / 200K</span>
+                            <span class="progress-value status-healthy">76K / 272K</span>
                         </div>
                         <div class="progress-track">
                             <div class="progress-bar progress-healthy" style="width: 28%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 28%</div>
+                        <div class="model-badge">◆ gpt-5.5</div>
+                        <div class="status-indicator status-warning">⚠ Health degraded</div>
                     </div>
                 </div>
 
-                <!-- weekly-aviation-scan (cron) - 50K/200K = 25% HEALTHY -->
-                <div class="session-card" onclick="showInfo('session-cron')">
+                <!-- sessions_list returned no other visible sessions -->
+                <div class="session-card" onclick="showInfo('session-none')">
                     <div class="session-header">
                         <div class="session-info">
-                            <div class="channel-icon channel-webchat">📡</div>
+                            <div class="channel-icon channel-webchat">🧵</div>
                             <div>
-                                <div class="session-name">weekly-aviation-scan</div>
-                                <div class="session-type">Cron • Automated</div>
+                                <div class="session-name">No additional visible sessions</div>
+                                <div class="session-type">sessions_list • count 0</div>
                             </div>
                         </div>
-                        <span class="badge badge-system">System</span>
+                        <span class="badge badge-private">Clear</span>
                     </div>
                     <div class="progress-section">
                         <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">50K / 200K</span>
+                            <span class="progress-label">Tracked External Sessions</span>
+                            <span class="progress-value status-healthy">0 / 0</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 25%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 0%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 25%</div>
-                    </div>
-                </div>
-
-                <!-- heartbeat-channel - 28K/200K = 14% HEALTHY -->
-                <div class="session-card" onclick="showInfo('session-heartbeat')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-discord">💓</div>
-                            <div>
-                                <div class="session-name">heartbeat-channel</div>
-                                <div class="session-type">Discord • System</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-system">System</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">28K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 14%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 14%</div>
-                    </div>
-                </div>
-
-                <!-- ct-clt-project-management - 27K/200K = 14% HEALTHY -->
-                <div class="session-card" onclick="showInfo('session-clt-pm')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-discord">🏗️</div>
-                            <div>
-                                <div class="session-name">ct-clt-project-management</div>
-                                <div class="session-type">Discord • Channel</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-private">Private</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">27K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 14%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 14%</div>
-                    </div>
-                </div>
-
-                <!-- aviation-solicitations - 23K/200K = 12% HEALTHY -->
-                <div class="session-card compacted" onclick="showInfo('session-aviation')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-discord">✈️</div>
-                            <div>
-                                <div class="session-name">aviation-solicitations</div>
-                                <div class="session-type">Discord • Channel</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-public">Public</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">23K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 12%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 12%</div>
-                    </div>
-                </div>
-
-                <!-- ct-gains-lab - 22K/200K = 11% HEALTHY -->
-                <div class="session-card" onclick="showInfo('session-gains-lab')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-discord">🧠</div>
-                            <div>
-                                <div class="session-name">ct-gains-lab</div>
-                                <div class="session-type">Discord • Channel</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-private">Private</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">22K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 11%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 11%</div>
-                    </div>
-                </div>
-
-                <!-- main (BlueBubbles/iMessage) - 22K/200K = 11% HEALTHY -->
-                <div class="session-card" onclick="showInfo('session-main')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-imessage">💬</div>
-                            <div>
-                                <div class="session-name">main</div>
-                                <div class="session-type">BlueBubbles • iMessage</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-private">Private</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">22K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 11%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 11%</div>
-                    </div>
-                </div>
-
-                <!-- aviation-solicitation-2 - 17K/200K = 9% HEALTHY -->
-                <div class="session-card" onclick="showInfo('session-aviation2')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-discord">✈️</div>
-                            <div>
-                                <div class="session-name">aviation-solicitation-2</div>
-                                <div class="session-type">Discord • Channel</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-public">Public</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">17K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 9%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 9%</div>
-                    </div>
-                </div>
-
-                <!-- dashboard-update (cron - this session) -->
-                <div class="session-card" onclick="showInfo('session-dashboard')">
-                    <div class="session-header">
-                        <div class="session-info">
-                            <div class="channel-icon channel-webchat">📊</div>
-                            <div>
-                                <div class="session-name">dashboard-update</div>
-                                <div class="session-type">Cron • Automated</div>
-                            </div>
-                        </div>
-                        <span class="badge badge-system">System</span>
-                    </div>
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">17K / 200K</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 9%"></div>
-                        </div>
-                    </div>
-                    <div class="session-footer">
-                        <div class="model-badge">◆ claude-opus</div>
-                        <div class="status-indicator status-healthy">✓ 9%</div>
+                        <div class="model-badge">◆ none visible</div>
+                        <div class="status-indicator status-healthy">✓ clear</div>
                     </div>
                 </div>
             </div>
@@ -1258,7 +961,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> Clawdbot</div>
-                <div class="update-time">Last sync: April 27, 2026 • 7:17 AM EDT</div>
+                <div class="update-time">Last sync: April 27, 2026 • 9:52 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1303,26 +1006,26 @@
                 icon: '🧵',
                 what: 'A session is like an ongoing conversation thread. Each Discord channel, webchat, or other communication channel gets its own session. Pete keeps track of each conversation separately.',
                 why: 'This matters because Pete can handle multiple conversations at once without mixing them up. If you\'re chatting in Discord and someone else uses webchat, both conversations stay separate and organized.',
-                example: 'Think of it like having 13 different phone calls going at once — Pete remembers what each conversation is about and who\'s in it.'
+                example: 'Think of it like having the currently visible OpenClaw session list going at once — Pete remembers what each conversation is about and who\'s in it.'
             },
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 599K means about 599,000 tokens are currently being tracked across all sessions.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 76K means about 76,000 tokens are currently in the active main context.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
             'attention': {
                 title: 'Need Attention',
                 icon: '✅',
-                what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 0 sessions need monitoring!',
+                what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 1 health item needs monitoring: the local health script reports the Gateway is not running.',
                 why: 'When a session hits its limit or has errors, Pete may lose context or fail to respond. Catching issues early prevents problems.',
-                example: '🎉 All clear! Every session is running healthy with plenty of headroom. System is in great shape!'
+                example: 'Context is healthy, but Gateway health is degraded and should be checked if external routing acts strange.'
             },
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows the average memory usage across all sessions. 23% means sessions are using about a quarter of their capacity on average — very healthy!',
+                what: 'This shows the average memory usage across all sessions. 28% means the current main session is using a little over a quarter of its context window — healthy.',
                 why: 'Average capacity gives a system health snapshot. All sessions have plenty of room to grow.',
                 example: 'Like checking the gas gauges on a fleet of cars — most tanks are three-quarters full. System is running lean and clean.'
             },
@@ -1410,10 +1113,24 @@
                 why: 'Public channel where Jmo and others can access aviation opportunity info.',
                 example: 'Channel permissions visible to authorized users outside the private CT channels.'
             },
+            'session-current': {
+                title: 'Current Main Session',
+                icon: '🔥',
+                what: 'At 28% capacity (76K / 272K tokens). The active OpenClaw main session has healthy context headroom.',
+                why: 'This is Pete\'s current working lane. Token usage is safe, but the health check reported Gateway is not running.',
+                example: 'Memory is fine; system routing needs a watchful eye. If tools or channels act odd, Gateway is the first suspect.'
+            },
+            'session-none': {
+                title: 'No Additional Visible Sessions',
+                icon: '🧵',
+                what: 'sessions_list returned count 0, so no other visible sessions were available to display during this update.',
+                why: 'The dashboard now reflects live tool data instead of stale historical cards.',
+                example: 'Clean slate from sessions_list; only the current run had token data available.'
+            },
             'session-dashboard': {
                 title: 'Dashboard Update',
                 icon: '📊',
-                what: 'At 9% capacity (17K / 200K tokens). This cron job updating the Neural Dashboard!',
+                what: 'This automated cron run refreshed the Neural Dashboard at 9:52 PM EDT.',
                 why: 'Runs periodically to keep the dashboard current with fresh session data.',
                 example: 'You\'re looking at its work right now! Updates token counts, health status, timestamps.'
             }
