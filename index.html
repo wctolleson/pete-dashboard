@@ -873,7 +873,7 @@
                 <p class="subtitle">Neural Command Center</p>
                 <div class="status-live">
                     <span class="status-dot"></span>
-                    Gateway running • Context 27K/272K (10%) • 1 warning
+                    Gateway running • Context 30K/272K (11%) • 1 warning
                 </div>
             </header>
 
@@ -886,7 +886,7 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">27K</div>
+                    <div class="stat-value">30K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
@@ -896,14 +896,14 @@
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">10%</div>
+                    <div class="stat-value">11%</div>
                 </div>
             </div>
 
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
-                <!-- current main session - 27K/272K = 10% HEALTHY; OpenClaw gateway OK; sessions_list count 0; 1 warning: recurring anthropic/claude-sonnet-4 fallback; synced 2026-04-28 6:52 PM EDT -->
+                <!-- current main session - 30K/272K = 11% HEALTHY; OpenClaw gateway OK; sessions_list count 0; current turn tokens 4.8K in / 412 out; 1 warning: recurring anthropic/claude-sonnet-4 fallback; synced 2026-04-28 7:52 PM EDT -->
                 <div class="session-card" onclick="showInfo('session-current')">
                     <div class="session-header">
                         <div class="session-info">
@@ -918,10 +918,10 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">27K / 272K</span>
+                            <span class="progress-value status-healthy">30K / 272K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 10%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 11%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
@@ -961,7 +961,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> OpenClaw</div>
-                <div class="update-time">Last sync: April 28, 2026 • 6:52 PM EDT</div>
+                <div class="update-time">Last sync: April 28, 2026 • 7:52 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1011,7 +1011,7 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 27K means about 27,000 tokens are currently in the active main context.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 30K means about 30,000 tokens are currently in the active main context.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1025,7 +1025,7 @@
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows memory usage across visible sessions. With no additional visible sessions, the current main session is the average: 10% of its context window — very healthy.',
+                what: 'This shows memory usage across visible sessions. With no additional visible sessions, the current main session is the average: 11% of its context window — very healthy.',
                 why: 'Average capacity gives a system health snapshot. The active main session has plenty of room to grow.',
                 example: 'Like checking the gas gauge before a drive — the tank is mostly full. System is running lean and clean.'
             },
@@ -1116,7 +1116,7 @@
             'session-current': {
                 title: 'Current Main Session',
                 icon: '🔥',
-                what: 'At 10% capacity (27K / 272K tokens). The active OpenClaw main session has excellent context headroom.',
+                what: 'At 11% capacity (30K / 272K tokens). The active OpenClaw main session has excellent context headroom. Current run usage: 4.8K input tokens / 412 output tokens.',
                 why: 'This is Pete\'s current working lane. Token usage is safe and the health check confirms Gateway is running.',
                 example: 'Memory is very healthy and Gateway is running. sessions_list returned no additional visible sessions; the only watch item is the recurring model fallback warning.'
             },
@@ -1130,7 +1130,7 @@
             'session-dashboard': {
                 title: 'Dashboard Update',
                 icon: '📊',
-                what: 'This automated cron run refreshed the Neural Dashboard at 6:52 PM EDT.',
+                what: 'This automated cron run refreshed the Neural Dashboard at 7:52 PM EDT.',
                 why: 'Runs periodically to keep the dashboard current with fresh session data.',
                 example: 'You\'re looking at its work right now! Updates token counts, health status, timestamps.'
             }
