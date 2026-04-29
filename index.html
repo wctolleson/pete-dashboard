@@ -873,7 +873,7 @@
                 <p class="subtitle">Neural Command Center</p>
                 <div class="status-live">
                     <span class="status-dot"></span>
-                    Gateway running • Context 34K/272K (12%) • healthy
+                    Gateway running • Context 38K/272K (14%) • healthy
                 </div>
             </header>
 
@@ -886,7 +886,7 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">34K</div>
+                    <div class="stat-value">38K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
@@ -896,14 +896,14 @@
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">12%</div>
+                    <div class="stat-value">14%</div>
                 </div>
             </div>
 
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
-                <!-- current main session - 34K/272K = 12% HEALTHY; OpenClaw gateway OK; Discord connected; sessions_list count 0; current turn tokens 4.5K in / 510 out; cache 88% hit; health green; synced 2026-04-29 2:52 PM EDT -->
+                <!-- current main session - 38K/272K = 14% HEALTHY; OpenClaw gateway OK; Discord connected; sessions_list count 0; current turn tokens 4.4K in / 503 out; cache 89% hit; health green; synced 2026-04-29 3:52 PM EDT -->
                 <div class="session-card" onclick="showInfo('session-current')">
                     <div class="session-header">
                         <div class="session-info">
@@ -918,10 +918,10 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">34K / 272K</span>
+                            <span class="progress-value status-healthy">38K / 272K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 12%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 14%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
@@ -961,7 +961,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> OpenClaw</div>
-                <div class="update-time">Last sync: April 29, 2026 • 2:52 PM EDT</div>
+                <div class="update-time">Last sync: April 29, 2026 • 3:52 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1011,7 +1011,7 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 34K means about 34,000 tokens are currently in the active main context.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 38K means about 38,000 tokens are currently in the active main context.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1025,7 +1025,7 @@
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows memory usage across visible sessions. With no additional visible sessions, the current main session is the average: 12% of its context window — very healthy.',
+                what: 'This shows memory usage across visible sessions. With no additional visible sessions, the current main session is the average: 14% of its context window — very healthy.',
                 why: 'Average capacity gives a system health snapshot. The active main session has plenty of room to grow.',
                 example: 'Like checking the gas gauge before a drive — the tank is mostly full. System is running lean and clean.'
             },
@@ -1116,7 +1116,7 @@
             'session-current': {
                 title: 'Current Main Session',
                 icon: '🔥',
-                what: 'At 12% capacity (34K / 272K tokens). The active OpenClaw main session has excellent context headroom. Current run usage: 4.5K input tokens / 510 output tokens.',
+                what: 'At 14% capacity (38K / 272K tokens). The active OpenClaw main session has excellent context headroom. Current run usage: 4.4K input tokens / 503 output tokens.',
                 why: 'This is Pete\'s current working lane. Token usage is safe and the health check confirms Gateway is running, Discord is connected, and both external drives are mounted.',
                 example: 'Memory is very healthy, Gateway is running, Discord is connected, and storage is mounted. sessions_list returned no additional visible sessions; no current attention items are flagged.'
             },
@@ -1130,7 +1130,7 @@
             'session-dashboard': {
                 title: 'Dashboard Update',
                 icon: '📊',
-                what: 'This automated cron run refreshed the Neural Dashboard at 2:52 PM EDT.',
+                what: 'This automated cron run refreshed the Neural Dashboard at 3:52 PM EDT.',
                 why: 'Runs periodically to keep the dashboard current with fresh session data.',
                 example: 'You\'re looking at its work right now! Updates token counts, health status, timestamps.'
             }
