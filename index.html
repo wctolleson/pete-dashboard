@@ -873,7 +873,7 @@
                 <p class="subtitle">Neural Command Center</p>
                 <div class="status-live">
                     <span class="status-dot"></span>
-                    Gateway running • Context 61K/272K (23%) • 1 warning
+                    Gateway running • Context 65K/272K (24%) • 3 warnings
                 </div>
             </header>
 
@@ -886,24 +886,24 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">61K</div>
+                    <div class="stat-value">65K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Need Attention</div>
-                    <div class="stat-value">1</div>
+                    <div class="stat-value">3</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">23%</div>
+                    <div class="stat-value">24%</div>
                 </div>
             </div>
 
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
-                <!-- current main session - 61K/272K = 23% HEALTHY; OpenClaw gateway OK; sessions_list count 0; current turn tokens 61K in / 339 out; cache 50% hit; health check passed with 1 warning: recurring anthropic/claude-sonnet-4 fallback; synced 2026-04-29 4:52 AM EDT -->
+                <!-- current main session - 65K/272K = 24% HEALTHY; OpenClaw gateway OK; sessions_list count 0; current turn tokens 64K in / 300 out; cache 50% hit; health check passed with 3 warnings: recurring anthropic/claude-sonnet-4 fallback, Bonjour re-advertise/restart, one delivery retry abort; synced 2026-04-29 5:52 AM EDT -->
                 <div class="session-card" onclick="showInfo('session-current')">
                     <div class="session-header">
                         <div class="session-info">
@@ -918,10 +918,10 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">61K / 272K</span>
+                            <span class="progress-value status-healthy">65K / 272K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 23%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 24%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
@@ -961,7 +961,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> OpenClaw</div>
-                <div class="update-time">Last sync: April 29, 2026 • 4:52 AM EDT</div>
+                <div class="update-time">Last sync: April 29, 2026 • 5:52 AM EDT</div>
             </footer>
         </div>
     </div>
@@ -1011,28 +1011,28 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 61K means about 61,000 tokens are currently in the active main context.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 65K means about 65,000 tokens are currently in the active main context.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
             'attention': {
                 title: 'Need Attention',
                 icon: '✅',
-                what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 1 item needs attention: Gateway is running and context is healthy, but the logs show a recurring anthropic/claude-sonnet-4 model fallback warning.',
+                what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 3 warning items need attention: Gateway is running and context is healthy, but recent logs show a recurring anthropic/claude-sonnet-4 model fallback warning, Bonjour advertiser recovery noise, and one delivery retry abort.',
                 why: 'When a session hits its limit or has errors, Pete may lose context or fail to respond. Catching issues early prevents problems.',
-                example: 'Core health is mostly green: context has plenty of headroom and Gateway is active; model config cleanup is the one watch item.'
+                example: 'Core health is mostly green: context has plenty of headroom and Gateway is active; model config cleanup plus transient Bonjour/delivery noise are the watch items.'
             },
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows memory usage across visible sessions. With no additional visible sessions, the current main session is the average: 23% of its context window — very healthy.',
+                what: 'This shows memory usage across visible sessions. With no additional visible sessions, the current main session is the average: 24% of its context window — very healthy.',
                 why: 'Average capacity gives a system health snapshot. The active main session has plenty of room to grow.',
                 example: 'Like checking the gas gauge before a drive — the tank is mostly full. System is running lean and clean.'
             },
             'session-main': {
                 title: 'Main Session',
                 icon: '💬',
-                what: 'At 23% (61K / 272K tokens). The primary OpenClaw main session is running clean with plenty of headroom.',
+                what: 'At 24% (65K / 272K tokens). The primary OpenClaw main session is running clean with plenty of headroom.',
                 why: 'This is the main direct-communication session. Currently lean and ready for new conversations!',
                 example: 'Primary channel for direct iMessage conversations with Chris.'
             },
@@ -1116,9 +1116,9 @@
             'session-current': {
                 title: 'Current Main Session',
                 icon: '🔥',
-                what: 'At 23% capacity (61K / 272K tokens). The active OpenClaw main session has excellent context headroom. Current run usage: 61K input tokens / 339 output tokens.',
+                what: 'At 24% capacity (65K / 272K tokens). The active OpenClaw main session has excellent context headroom. Current run usage: 64K input tokens / 300 output tokens.',
                 why: 'This is Pete\'s current working lane. Token usage is safe and the health check confirms Gateway is running.',
-                example: 'Memory is very healthy and Gateway is running. sessions_list returned no additional visible sessions; the current watch item is the recurring anthropic/claude-sonnet-4 fallback warning.'
+                example: 'Memory is very healthy and Gateway is running. sessions_list returned no additional visible sessions; current watch items are the recurring anthropic/claude-sonnet-4 fallback warning, Bonjour advertiser recovery noise, and one delivery retry abort.'
             },
             'session-none': {
                 title: 'No Additional Visible Sessions',
@@ -1130,7 +1130,7 @@
             'session-dashboard': {
                 title: 'Dashboard Update',
                 icon: '📊',
-                what: 'This automated cron run refreshed the Neural Dashboard at 4:52 AM EDT.',
+                what: 'This automated cron run refreshed the Neural Dashboard at 5:52 AM EDT.',
                 why: 'Runs periodically to keep the dashboard current with fresh session data.',
                 example: 'You\'re looking at its work right now! Updates token counts, health status, timestamps.'
             }
