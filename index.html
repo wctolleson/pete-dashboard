@@ -873,7 +873,7 @@
                 <p class="subtitle">Neural Command Center</p>
                 <div class="status-live">
                     <span class="status-dot"></span>
-                    Gateway running • Context 83K/272K (30%) • healthy
+                    Gateway running • Context 87K/272K (32%) • healthy
                 </div>
             </header>
 
@@ -886,7 +886,7 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">83K</div>
+                    <div class="stat-value">87K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
@@ -896,14 +896,14 @@
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">30%</div>
+                    <div class="stat-value">32%</div>
                 </div>
             </div>
 
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
-                <!-- current main session - 83K/272K = 30% HEALTHY; OpenClaw gateway OK; Discord connected; X10 Pro and Elements mounted; sessions_list count 0; current session tokens 79K in / 491 out; cache 51% hit / 82K cached; health green; synced 2026-04-30 3:52 AM EDT -->
+                <!-- current main session - 87K/272K = 32% HEALTHY; OpenClaw gateway OK; Discord connected; X10 Pro and Elements mounted; sessions_list count 0; current session tokens 85K in / 485 out; cache 50% hit / 86K cached; health green; synced 2026-04-30 4:52 AM EDT -->
                 <div class="session-card" onclick="showInfo('session-current')">
                     <div class="session-header">
                         <div class="session-info">
@@ -918,10 +918,10 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">83K / 272K</span>
+                            <span class="progress-value status-healthy">87K / 272K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 30%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 32%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
@@ -1011,7 +1011,7 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 83K means about 83,000 tokens are currently in the active main context.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 87K means about 87,000 tokens are currently in the active main context.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
@@ -1025,14 +1025,14 @@
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows memory usage across visible sessions. With no additional visible sessions, the current main session is the average: 30% of its context window — very healthy.',
+                what: 'This shows memory usage across visible sessions. With no additional visible sessions, the current main session is the average: 32% of its context window — very healthy.',
                 why: 'Average capacity gives a system health snapshot. The active main session has plenty of room to grow.',
                 example: 'Like checking the gas gauge before a drive — the tank is mostly full. System is running lean and clean.'
             },
             'session-main': {
                 title: 'Main Session',
                 icon: '💬',
-                what: 'At 30% (83K / 272K tokens). The primary OpenClaw main session is running clean with plenty of headroom.',
+                what: 'At 32% (87K / 272K tokens). The primary OpenClaw main session is running clean with plenty of headroom.',
                 why: 'This is the main direct-communication session. Currently lean and ready for new conversations!',
                 example: 'Primary channel for direct iMessage conversations with Chris.'
             },
@@ -1116,9 +1116,9 @@
             'session-current': {
                 title: 'Current Main Session',
                 icon: '🔥',
-                what: 'At 30% capacity (83K / 272K tokens). The active OpenClaw main session has excellent context headroom. Current session usage: 79K input tokens / 491 output tokens.',
+                what: 'At 32% capacity (87K / 272K tokens). The active OpenClaw main session has excellent context headroom. Current session usage: 85K input tokens / 485 output tokens.',
                 why: 'This is Pete\'s current working lane. Token usage is safe and the health check confirms Gateway is running and both external drives are mounted.',
-                example: 'Memory is very healthy at 29%, Gateway is running, Discord is connected, and both external drives are mounted. sessions_list returned no additional visible sessions; no current attention items are flagged.'
+                example: 'Memory is very healthy at 32%, Gateway is running, Discord is connected, and both external drives are mounted. sessions_list returned no additional visible sessions; no current attention items are flagged.'
             },
             'session-none': {
                 title: 'No Additional Visible Sessions',
