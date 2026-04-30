@@ -873,7 +873,7 @@
                 <p class="subtitle">Neural Command Center</p>
                 <div class="status-live">
                     <span class="status-dot"></span>
-                    Gateway running • Context 39K/272K (15%) • healthy
+                    Gateway running • Context 47K/272K (17%) • healthy
                 </div>
             </header>
 
@@ -886,7 +886,7 @@
                 <div class="stat-card" onclick="showInfo('tokens')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Total Tokens</div>
-                    <div class="stat-value">34K</div>
+                    <div class="stat-value">42K</div>
                 </div>
                 <div class="stat-card" onclick="showInfo('attention')">
                     <button class="info-btn">?</button>
@@ -896,14 +896,14 @@
                 <div class="stat-card" onclick="showInfo('capacity')">
                     <button class="info-btn">?</button>
                     <div class="stat-label">Avg Capacity</div>
-                    <div class="stat-value">15%</div>
+                    <div class="stat-value">17%</div>
                 </div>
             </div>
 
             <div class="section-title">Active Sessions</div>
 
             <div class="sessions-grid">
-                <!-- current main session - 39K/272K = 15% HEALTHY; OpenClaw gateway OK; Discord connected; X10 Pro and Elements mounted; sessions_list count 0; current run tokens 34K in / 404 out; cache 53% hit / 39K cached; health green; synced 2026-04-30 6:52 PM EDT -->
+                <!-- current main session - 47K/272K = 17% HEALTHY; OpenClaw gateway OK; Discord connected; X10 Pro and Elements mounted; sessions_list count 0; current run tokens 42K in / 485 out; cache 53% hit / 46K cached; health green; BlueBubbles typing indicator warning is non-critical (Private API disabled); synced 2026-04-30 7:52 PM EDT -->
                 <div class="session-card" onclick="showInfo('session-current')">
                     <div class="session-header">
                         <div class="session-info">
@@ -918,10 +918,10 @@
                     <div class="progress-section">
                         <div class="progress-header">
                             <span class="progress-label">Context Usage</span>
-                            <span class="progress-value status-healthy">39K / 272K</span>
+                            <span class="progress-value status-healthy">47K / 272K</span>
                         </div>
                         <div class="progress-track">
-                            <div class="progress-bar progress-healthy" style="width: 15%"></div>
+                            <div class="progress-bar progress-healthy" style="width: 17%"></div>
                         </div>
                     </div>
                     <div class="session-footer">
@@ -961,7 +961,7 @@
             <footer>
                 <div class="footer-text">Real-time neural session monitoring • Click any card for details</div>
                 <div class="footer-brand">🔥 Prometheus <span style="color: var(--text-muted)">×</span> OpenClaw</div>
-                <div class="update-time">Last sync: April 30, 2026 • 6:52 PM EDT</div>
+                <div class="update-time">Last sync: April 30, 2026 • 7:52 PM EDT</div>
             </footer>
         </div>
     </div>
@@ -1011,28 +1011,28 @@
             'tokens': {
                 title: 'Total Tokens',
                 icon: '🧮',
-                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 34K means about 34,000 input tokens were processed in the active run, with 39K total context currently loaded.',
+                what: 'Tokens are the "words" AI understands. Every message, response, and piece of context uses tokens. 42K means about 42,000 input tokens were processed in the active run, with 47K total context currently loaded.',
                 why: 'Tokens = memory = cost. The more tokens Pete uses, the more it costs to run. It\'s like a phone plan — you pay for usage. Keeping tokens low saves money.',
                 example: 'Imagine your brain could only remember 200,000 words at a time. Once full, you\'d need to forget old stuff to learn new things. That\'s compaction.'
             },
             'attention': {
                 title: 'Need Attention',
                 icon: '✅',
-                what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 0 sessions need attention: Gateway is running, storage is mounted, and context is healthy. Recent Discord DNS/memory-file errors are historical/resolved; core health remains green.',
+                what: 'Sessions flagged as "Need Attention" have issues — either approaching memory limit (75%+) or experiencing errors. Currently 0 sessions need attention: Gateway is running, Discord is connected, storage is mounted, and context is healthy. Recent BlueBubbles typing-indicator errors are non-critical because messaging still works; the Private API typing feature is disabled.',
                 why: 'When a session hits its limit or has errors, Pete may lose context or fail to respond. Catching issues early prevents problems.',
                 example: 'Core health is green: context has plenty of headroom, Gateway is active, and no visible sessions are flagged.'
             },
             'capacity': {
                 title: 'Average Capacity',
                 icon: '📊',
-                what: 'This shows memory usage across visible sessions. With no additional visible sessions, the current main session is the average: 15% of its context window — very healthy.',
+                what: 'This shows memory usage across visible sessions. With no additional visible sessions, the current main session is the average: 17% of its context window — very healthy.',
                 why: 'Average capacity gives a system health snapshot. The active main session has plenty of room to grow.',
                 example: 'Like checking the gas gauge before a drive — the tank is mostly full. System is running lean and clean.'
             },
             'session-main': {
                 title: 'Main Session',
                 icon: '💬',
-                what: 'At 15% (39K / 272K tokens). The primary OpenClaw main session is running clean with plenty of headroom.',
+                what: 'At 17% (47K / 272K tokens). The primary OpenClaw main session is running clean with plenty of headroom.',
                 why: 'This is the main direct-communication session. Currently lean and ready for new conversations!',
                 example: 'Primary channel for direct iMessage conversations with Chris.'
             },
@@ -1116,7 +1116,7 @@
             'session-current': {
                 title: 'Current Main Session',
                 icon: '🔥',
-                what: 'At 15% capacity (39K / 272K tokens). The active OpenClaw main session has excellent context headroom. Current run usage: 34K input tokens / 404 output tokens; cache is 53% hit with 39K cached.',
+                what: 'Current main session is at 17% (47K / 272K) with 42K input tokens and 485 output tokens in this run.',
                 why: 'This is Pete\'s current working lane. Token usage is safe and the health check confirms Gateway is running and both external drives are mounted.',
                 example: 'Memory is healthy at 13%, Gateway is running, both external drives are mounted, and sessions_list returned no additional visible sessions; no current attention items are flagged.'
             },
